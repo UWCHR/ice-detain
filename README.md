@@ -1,0 +1,103 @@
+# ICE immigration detention data
+
+This repository processes and analyzes U.S. Immigration and Customs Enforcement (ICE) data released pursuant to FOIA requests by the University of Washington Center for Human Rights.
+
+The datasets analyzed here were released by ICE's Enforcement and Removal Operations (ERO) Law Enforcement Systems and Analysis Division (LESA); the datasets represent person-by-person, facility-by-facility detention history records from 2011-10-01 through 2024-01-15.
+
+## FOIA request
+
+> We are seeking person-by-person, facility-by-facility detention history records from the ERO LESA Statistical Tracking Unit of all people in immigration detention nationwide from 10/1/2011 to date, in XLS, XLSX, or CSV spreadsheet format; including but not limited to the following fields and including any related definitions, legends, or codebooks: - Unique subject identifier: Non-personally identifiable sequence number or other designation to identify records relating to the same subject. (Such information was previously released pursuant to FOIA 2015-ICFO-95379.) - Detention Stay Book In Date - Book In Date And Time - Book Out Date And Time - Detention Stay Book Out Date - Birth Country - Citizenship Country - Race - Ethnicity - Gender - Age at Book In - Entry Date - Entry Status - LPR Yes No - Most Serious Criminal Conviction (MSCC) - MSCC Code - MSCC Conviction Date - MSCC Sentence Days - MSCC Sentence Months - MSCC Sentence Years - Aggravated Felon - Aggravated Felon Type - Rc Threat Level - Apprehension COL - 287(g) Arrest - Border Patrol Arrest or Arresting Agency - Book In After Detainer - Apprehension Program - Initial Detention Facility Code - Initial Detention Facility - History Detention Facility Code - History Detention Facility - Order of Detention - History Book In DCO - History Book Out Date And Time - History Release Reason - Detainer Prepare Date - Detainer Prior to Bookin Date (Yes/No) - Detainer Threat Level - Detainer Detention Facility - Detainer Detention Facility Code.
+> We are not providing third party consent forms for all those whose data would be included and therefore understand that as a result, personally-identifiable information will be redacted to protect their privacy. However, the FOIA requires that all segregable information be provided to requesters, and personally-identifiable information is segregable from the remainder of this information. Such information was previously released pursuant to FOIA 2015-ICFO-95379 and FOIA 2019-ICFO-10844.
+
+# Respository description
+
+## Data
+
+Large data files are excluded from this repository; data associated with this repository can be obtained here: https://drive.google.com/drive/folders/1Guhtpv80sh2FJ90-t1GyCtNzSa0Jsvzr?usp=drive_link
+
+To execute tasks in this repository, first download the data files linked above and ensure it is stored in the indicated directory within the Git respository: original, untransformed datasets are stored in `import/input/`; compressed, CSV-formatted files are stored in `import/frozen/`.
+
+Final datasets with minimal cleaning and standardization are generated in `export/output/`. Users interested in reviewing the final datasets without executing the code contained in this repository can find export datasets as of Sept. 4, 2024 at the following link: https://drive.google.com/drive/folders/1OQLU7IzhbodsrD2wZm-5fV57UIsnOW4x?usp=drive_link
+
+## Structure
+
+This project uses "Principled Data Processing" techniques and tools developed by [@HRDAG](https://github.com/HRDAG); see for example ["The Task Is A Quantum of Workflow."](https://hrdag.org/2016/06/14/the-task-is-a-quantum-of-workflow/)
+
+- `import/` - Convenience task for file import; original Excel files in `input/` are saved as compressed csv files in `frozen/`.
+- `concat/` - Concatenates individual input files into Feather format output, standardizes column names, drops records missing `anonymized_identifier`, adds row and sequence ids, drops trivial number of duplicated records.
+- `unique-stays/` - Performs various calculations per placement, individual, and stay and adds relevant fields; outputs full dataset, as well as dataset with one representative record per stay for calculations which require unique stay records. This task could be broken into separate steps for additional clarity.
+- `headcount/` - Calculates daily detention headcount by given characteristic, e.g. per facility, by gender/nationality. Very slow, could this be optimized?
+- `export/` - Convenience task, final datasets in `output/`.
+- `share/` - Resources potentially used by multiple tasks but not created or transformed in this repo.
+
+# Data description
+
+Each row represents an individual detention placement record per person per facility. Consecutive records represent successive detention placements in an overall detention stay of one or more placements. Individual people can experience one or more detention stay.
+
+## Original data fields
+
+Data was released without any data dictionary or field definitions; therefore we have had to infer significance of some values.
+
+- `stay_book_in_date_time`: Detention stay start date
+- `detention_book_in_date_and_time`: Detention placement start date (per facility)
+- `detention_book_out_date_time`: Detention placement end date; missing values represent current placement at time of release of data
+- `stay_book_out_date_time`: Detention stay end date, missing values represent current stay at time of release of data
+- `birth_country_per`: Unclear how different from `birth_country_ero`
+- `birth_country_ero`: Unclear how different from `birth_country_per`
+- `citizenship_country`: Largely complete
+- `race`: Largely incomplete
+- `ethnic`: Largely incomplete
+- `gender`: Largely complete
+- `birth_date`: Redacted
+- `birth_year`:
+- `entry_date`:
+- `entry_status`:
+- `most_serious_conviction_(msc)_criminal_charge_category`:
+- `msc_charge`:
+- `msc_charge_code`:
+- `msc_conviction_date`:
+- `msc_sentence_days`:
+- `msc_sentence_months`:
+- `msc_sentence_years`:
+- `msc_crime_class`:
+- `case_threat_level`: Redacted
+- `apprehension_threat_level`: Redacted
+- `final_program`: Appears to represent DHS division responsible for decision to detain
+- `detention_facility_code`:
+- `detention_facility`:
+- `area_of_responsibility`: ICE field office responsible for detention facility
+- `docket_control_office`:
+- `detention_release_reason`: Missing values indiciate ongoing detention
+- `stay_release_reason`: Missing values indiciate ongoing detention
+- `alien_file_number`: Redacted
+- `anonymized_identifier`: Anonymized unique individual identifier, assumed to be generated from hash of `alien_file_number`
+
+## Additional analysis fields
+
+- `filename`: Original data filename
+- `hash`: Unique row identifier based on original data fields
+- `rowid`: Record sequence across input files
+- `file_rowid`: Record sequece within input file
+- `stay_length`: Length of stay (missing for ongoing stays)
+- `placement_length`: Length of placement (missing for ongoing placement)
+- `stay_length_min`: Minimum length of stay (based on date of release of dataset for ongoing stays)
+- `placement_length_min`: Minimum length of placement (based on date of release of dataset for ongoing placements)
+- `total_stays`: Total completed/ongoing detention stays per individual
+- `total_placements`: Total completed/ongoing detention placements per individual
+- `current_stay`: Does row relate to a current detention stay?
+- `stay_count`: Consecutive identifier per stay per person
+- `placement_count`: Consecutive identifier per placement per person
+- `stay_placements`: Consecutive identifier per placement per stay per person
+- `first_facil`: Stay book-in facility
+- `last_facil`: Stay book-out facility
+- `longest_placement_facil`: Longest placement facility per stay
+
+# Acknowledgements
+
+UWCHR is grateful to [Prof. David Hausman](https://www.david-hausman.com/) and the ACLU of California for obtaining and sharing a previous verison of this dataset; and to [Prof. Abraham Flaxman](https://globalhealth.washington.edu/faculty/abraham-flaxman) for assistance in analyzing a previous version of this dataset.
+
+# To-do
+
+- [ ] Create `docs/` and associated tasks
+- [ ] Bring in ICE detention facility characteristics and related notes, analyze how many facilities here are represented
+- [ ] Test whether possible to generate headcount as vector of detention dates and record/individual hash values so that we can easily join in other characteristics: would this be too cumbersome?
