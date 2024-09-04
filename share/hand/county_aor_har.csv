@@ -1,0 +1,3223 @@
+geoid,geoid_state,geoid_county,name,aor
+01001,01,001,"autauga county, alabama",NOL
+01003,01,003,"baldwin county, alabama",NOL
+01005,01,005,"barbour county, alabama",NOL
+01007,01,007,"bibb county, alabama",NOL
+01009,01,009,"blount county, alabama",NOL
+01011,01,011,"bullock county, alabama",NOL
+01013,01,013,"butler county, alabama",NOL
+01015,01,015,"calhoun county, alabama",NOL
+01017,01,017,"chambers county, alabama",NOL
+01019,01,019,"cherokee county, alabama",NOL
+01021,01,021,"chilton county, alabama",NOL
+01023,01,023,"choctaw county, alabama",NOL
+01025,01,025,"clarke county, alabama",NOL
+01027,01,027,"clay county, alabama",NOL
+01029,01,029,"cleburne county, alabama",NOL
+01031,01,031,"coffee county, alabama",NOL
+01033,01,033,"colbert county, alabama",NOL
+01035,01,035,"conecuh county, alabama",NOL
+01037,01,037,"coosa county, alabama",NOL
+01039,01,039,"covington county, alabama",NOL
+01041,01,041,"crenshaw county, alabama",NOL
+01043,01,043,"cullman county, alabama",NOL
+01045,01,045,"dale county, alabama",NOL
+01047,01,047,"dallas county, alabama",NOL
+01049,01,049,"dekalb county, alabama",NOL
+01051,01,051,"elmore county, alabama",NOL
+01053,01,053,"escambia county, alabama",NOL
+01055,01,055,"etowah county, alabama",NOL
+01057,01,057,"fayette county, alabama",NOL
+01059,01,059,"franklin county, alabama",NOL
+01061,01,061,"geneva county, alabama",NOL
+01063,01,063,"greene county, alabama",NOL
+01065,01,065,"hale county, alabama",NOL
+01067,01,067,"henry county, alabama",NOL
+01069,01,069,"houston county, alabama",NOL
+01071,01,071,"jackson county, alabama",NOL
+01073,01,073,"jefferson county, alabama",NOL
+01075,01,075,"lamar county, alabama",NOL
+01077,01,077,"lauderdale county, alabama",NOL
+01079,01,079,"lawrence county, alabama",NOL
+01081,01,081,"lee county, alabama",NOL
+01083,01,083,"limestone county, alabama",NOL
+01085,01,085,"lowndes county, alabama",NOL
+01087,01,087,"macon county, alabama",NOL
+01089,01,089,"madison county, alabama",NOL
+01091,01,091,"marengo county, alabama",NOL
+01093,01,093,"marion county, alabama",NOL
+01095,01,095,"marshall county, alabama",NOL
+01097,01,097,"mobile county, alabama",NOL
+01099,01,099,"monroe county, alabama",NOL
+01101,01,101,"montgomery county, alabama",NOL
+01103,01,103,"morgan county, alabama",NOL
+01105,01,105,"perry county, alabama",NOL
+01107,01,107,"pickens county, alabama",NOL
+01109,01,109,"pike county, alabama",NOL
+01111,01,111,"randolph county, alabama",NOL
+01113,01,113,"russell county, alabama",NOL
+01115,01,115,"st. clair county, alabama",NOL
+01117,01,117,"shelby county, alabama",NOL
+01119,01,119,"sumter county, alabama",NOL
+01121,01,121,"talladega county, alabama",NOL
+01123,01,123,"tallapoosa county, alabama",NOL
+01125,01,125,"tuscaloosa county, alabama",NOL
+01127,01,127,"walker county, alabama",NOL
+01129,01,129,"washington county, alabama",NOL
+01131,01,131,"wilcox county, alabama",NOL
+01133,01,133,"winston county, alabama",NOL
+02013,02,013,"aleutians east borough, alaska",SEA
+02016,02,016,"aleutians west census area, alaska",SEA
+02020,02,020,"anchorage municipality, alaska",SEA
+02050,02,050,"bethel census area, alaska",SEA
+02060,02,060,"bristol bay borough, alaska",SEA
+02068,02,068,"denali borough, alaska",SEA
+02070,02,070,"dillingham census area, alaska",SEA
+02090,02,090,"fairbanks north star borough, alaska",SEA
+02100,02,100,"haines borough, alaska",SEA
+02105,02,105,"hoonah-angoon census area, alaska",SEA
+02110,02,110,"juneau city and borough, alaska",SEA
+02122,02,122,"kenai peninsula borough, alaska",SEA
+02130,02,130,"ketchikan gateway borough, alaska",SEA
+02150,02,150,"kodiak island borough, alaska",SEA
+02158,02,158,"kusilvak census area, alaska",SEA
+02164,02,164,"lake and peninsula borough, alaska",SEA
+02170,02,170,"matanuska-susitna borough, alaska",SEA
+02180,02,180,"nome census area, alaska",SEA
+02185,02,185,"north slope borough, alaska",SEA
+02188,02,188,"northwest arctic borough, alaska",SEA
+02195,02,195,"petersburg borough, alaska",SEA
+02198,02,198,"prince of wales-hyder census area, alaska",SEA
+02220,02,220,"sitka city and borough, alaska",SEA
+02230,02,230,"skagway municipality, alaska",SEA
+02240,02,240,"southeast fairbanks census area, alaska",SEA
+02261,02,261,"valdez-cordova census area, alaska",SEA
+02275,02,275,"wrangell city and borough, alaska",SEA
+02282,02,282,"yakutat city and borough, alaska",SEA
+02290,02,290,"yukon-koyukuk census area, alaska",SEA
+02063,02,063,"copper river census area, alaska",SEA
+02066,02,066,"chugach census area, alaska",SEA
+04001,04,001,"apache county, arizona",PHO
+04003,04,003,"cochise county, arizona",PHO
+04005,04,005,"coconino county, arizona",PHO
+04007,04,007,"gila county, arizona",PHO
+04009,04,009,"graham county, arizona",PHO
+04011,04,011,"greenlee county, arizona",PHO
+04012,04,012,"la paz county, arizona",PHO
+04013,04,013,"maricopa county, arizona",PHO
+04015,04,015,"mohave county, arizona",PHO
+04017,04,017,"navajo county, arizona",PHO
+04019,04,019,"pima county, arizona",PHO
+04021,04,021,"pinal county, arizona",PHO
+04023,04,023,"santa cruz county, arizona",PHO
+04025,04,025,"yavapai county, arizona",PHO
+04027,04,027,"yuma county, arizona",PHO
+05001,05,001,"arkansas county, arkansas",NOL
+05003,05,003,"ashley county, arkansas",NOL
+05005,05,005,"baxter county, arkansas",NOL
+05007,05,007,"benton county, arkansas",NOL
+05009,05,009,"boone county, arkansas",NOL
+05011,05,011,"bradley county, arkansas",NOL
+05013,05,013,"calhoun county, arkansas",NOL
+05015,05,015,"carroll county, arkansas",NOL
+05017,05,017,"chicot county, arkansas",NOL
+05019,05,019,"clark county, arkansas",NOL
+05021,05,021,"clay county, arkansas",NOL
+05023,05,023,"cleburne county, arkansas",NOL
+05025,05,025,"cleveland county, arkansas",NOL
+05027,05,027,"columbia county, arkansas",NOL
+05029,05,029,"conway county, arkansas",NOL
+05031,05,031,"craighead county, arkansas",NOL
+05033,05,033,"crawford county, arkansas",NOL
+05035,05,035,"crittenden county, arkansas",NOL
+05037,05,037,"cross county, arkansas",NOL
+05039,05,039,"dallas county, arkansas",NOL
+05041,05,041,"desha county, arkansas",NOL
+05043,05,043,"drew county, arkansas",NOL
+05045,05,045,"faulkner county, arkansas",NOL
+05047,05,047,"franklin county, arkansas",NOL
+05049,05,049,"fulton county, arkansas",NOL
+05051,05,051,"garland county, arkansas",NOL
+05053,05,053,"grant county, arkansas",NOL
+05055,05,055,"greene county, arkansas",NOL
+05057,05,057,"hempstead county, arkansas",NOL
+05059,05,059,"hot spring county, arkansas",NOL
+05061,05,061,"howard county, arkansas",NOL
+05063,05,063,"independence county, arkansas",NOL
+05065,05,065,"izard county, arkansas",NOL
+05067,05,067,"jackson county, arkansas",NOL
+05069,05,069,"jefferson county, arkansas",NOL
+05071,05,071,"johnson county, arkansas",NOL
+05073,05,073,"lafayette county, arkansas",NOL
+05075,05,075,"lawrence county, arkansas",NOL
+05077,05,077,"lee county, arkansas",NOL
+05079,05,079,"lincoln county, arkansas",NOL
+05081,05,081,"little river county, arkansas",NOL
+05083,05,083,"logan county, arkansas",NOL
+05085,05,085,"lonoke county, arkansas",NOL
+05087,05,087,"madison county, arkansas",NOL
+05089,05,089,"marion county, arkansas",NOL
+05091,05,091,"miller county, arkansas",NOL
+05093,05,093,"mississippi county, arkansas",NOL
+05095,05,095,"monroe county, arkansas",NOL
+05097,05,097,"montgomery county, arkansas",NOL
+05099,05,099,"nevada county, arkansas",NOL
+05101,05,101,"newton county, arkansas",NOL
+05103,05,103,"ouachita county, arkansas",NOL
+05105,05,105,"perry county, arkansas",NOL
+05107,05,107,"phillips county, arkansas",NOL
+05109,05,109,"pike county, arkansas",NOL
+05111,05,111,"poinsett county, arkansas",NOL
+05113,05,113,"polk county, arkansas",NOL
+05115,05,115,"pope county, arkansas",NOL
+05117,05,117,"prairie county, arkansas",NOL
+05119,05,119,"pulaski county, arkansas",NOL
+05121,05,121,"randolph county, arkansas",NOL
+05123,05,123,"st. francis county, arkansas",NOL
+05125,05,125,"saline county, arkansas",NOL
+05127,05,127,"scott county, arkansas",NOL
+05129,05,129,"searcy county, arkansas",NOL
+05131,05,131,"sebastian county, arkansas",NOL
+05133,05,133,"sevier county, arkansas",NOL
+05135,05,135,"sharp county, arkansas",NOL
+05137,05,137,"stone county, arkansas",NOL
+05139,05,139,"union county, arkansas",NOL
+05141,05,141,"van buren county, arkansas",NOL
+05143,05,143,"washington county, arkansas",NOL
+05145,05,145,"white county, arkansas",NOL
+05147,05,147,"woodruff county, arkansas",NOL
+05149,05,149,"yell county, arkansas",NOL
+06001,06,001,"alameda county, california",SFR
+06003,06,003,"alpine county, california",SFR
+06005,06,005,"amador county, california",SFR
+06007,06,007,"butte county, california",SFR
+06009,06,009,"calaveras county, california",SFR
+06011,06,011,"colusa county, california",SFR
+06013,06,013,"contra costa county, california",SFR
+06015,06,015,"del norte county, california",SFR
+06017,06,017,"el dorado county, california",SFR
+06019,06,019,"fresno county, california",SFR
+06021,06,021,"glenn county, california",SFR
+06023,06,023,"humboldt county, california",SFR
+06025,06,025,"imperial county, california",SND
+06027,06,027,"inyo county, california",SFR
+06029,06,029,"kern county, california",SFR
+06031,06,031,"kings county, california",SFR
+06033,06,033,"lake county, california",SFR
+06035,06,035,"lassen county, california",SFR
+06037,06,037,"los angeles county, california",LOS
+06039,06,039,"madera county, california",SFR
+06041,06,041,"marin county, california",SFR
+06043,06,043,"mariposa county, california",SFR
+06045,06,045,"mendocino county, california",SFR
+06047,06,047,"merced county, california",SFR
+06049,06,049,"modoc county, california",SFR
+06051,06,051,"mono county, california",SFR
+06053,06,053,"monterey county, california",SFR
+06055,06,055,"napa county, california",SFR
+06057,06,057,"nevada county, california",SFR
+06059,06,059,"orange county, california",LOS
+06061,06,061,"placer county, california",SFR
+06063,06,063,"plumas county, california",SFR
+06065,06,065,"riverside county, california",LOS
+06067,06,067,"sacramento county, california",SFR
+06069,06,069,"san benito county, california",SFR
+06071,06,071,"san bernardino county, california",LOS
+06073,06,073,"san diego county, california",SND
+06075,06,075,"san francisco county, california",SFR
+06077,06,077,"san joaquin county, california",SFR
+06079,06,079,"san luis obispo county, california",LOS
+06081,06,081,"san mateo county, california",SFR
+06083,06,083,"santa barbara county, california",LOS
+06085,06,085,"santa clara county, california",SFR
+06087,06,087,"santa cruz county, california",SFR
+06089,06,089,"shasta county, california",SFR
+06091,06,091,"sierra county, california",SFR
+06093,06,093,"siskiyou county, california",SFR
+06095,06,095,"solano county, california",SFR
+06097,06,097,"sonoma county, california",SFR
+06099,06,099,"stanislaus county, california",SFR
+06101,06,101,"sutter county, california",SFR
+06103,06,103,"tehama county, california",SFR
+06105,06,105,"trinity county, california",SFR
+06107,06,107,"tulare county, california",SFR
+06109,06,109,"tuolumne county, california",SFR
+06111,06,111,"ventura county, california",LOS
+06113,06,113,"yolo county, california",SFR
+06115,06,115,"yuba county, california",SFR
+08001,08,001,"adams county, colorado",DEN
+08003,08,003,"alamosa county, colorado",DEN
+08005,08,005,"arapahoe county, colorado",DEN
+08007,08,007,"archuleta county, colorado",DEN
+08009,08,009,"baca county, colorado",DEN
+08011,08,011,"bent county, colorado",DEN
+08013,08,013,"boulder county, colorado",DEN
+08014,08,014,"broomfield county, colorado",DEN
+08015,08,015,"chaffee county, colorado",DEN
+08017,08,017,"cheyenne county, colorado",DEN
+08019,08,019,"clear creek county, colorado",DEN
+08021,08,021,"conejos county, colorado",DEN
+08023,08,023,"costilla county, colorado",DEN
+08025,08,025,"crowley county, colorado",DEN
+08027,08,027,"custer county, colorado",DEN
+08029,08,029,"delta county, colorado",DEN
+08031,08,031,"denver county, colorado",DEN
+08033,08,033,"dolores county, colorado",DEN
+08035,08,035,"douglas county, colorado",DEN
+08037,08,037,"eagle county, colorado",DEN
+08039,08,039,"elbert county, colorado",DEN
+08041,08,041,"el paso county, colorado",DEN
+08043,08,043,"fremont county, colorado",DEN
+08045,08,045,"garfield county, colorado",DEN
+08047,08,047,"gilpin county, colorado",DEN
+08049,08,049,"grand county, colorado",DEN
+08051,08,051,"gunnison county, colorado",DEN
+08053,08,053,"hinsdale county, colorado",DEN
+08055,08,055,"huerfano county, colorado",DEN
+08057,08,057,"jackson county, colorado",DEN
+08059,08,059,"jefferson county, colorado",DEN
+08061,08,061,"kiowa county, colorado",DEN
+08063,08,063,"kit carson county, colorado",DEN
+08065,08,065,"lake county, colorado",DEN
+08067,08,067,"la plata county, colorado",DEN
+08069,08,069,"larimer county, colorado",DEN
+08071,08,071,"las animas county, colorado",DEN
+08073,08,073,"lincoln county, colorado",DEN
+08075,08,075,"logan county, colorado",DEN
+08077,08,077,"mesa county, colorado",DEN
+08079,08,079,"mineral county, colorado",DEN
+08081,08,081,"moffat county, colorado",DEN
+08083,08,083,"montezuma county, colorado",DEN
+08085,08,085,"montrose county, colorado",DEN
+08087,08,087,"morgan county, colorado",DEN
+08089,08,089,"otero county, colorado",DEN
+08091,08,091,"ouray county, colorado",DEN
+08093,08,093,"park county, colorado",DEN
+08095,08,095,"phillips county, colorado",DEN
+08097,08,097,"pitkin county, colorado",DEN
+08099,08,099,"prowers county, colorado",DEN
+08101,08,101,"pueblo county, colorado",DEN
+08103,08,103,"rio blanco county, colorado",DEN
+08105,08,105,"rio grande county, colorado",DEN
+08107,08,107,"routt county, colorado",DEN
+08109,08,109,"saguache county, colorado",DEN
+08111,08,111,"san juan county, colorado",DEN
+08113,08,113,"san miguel county, colorado",DEN
+08115,08,115,"sedgwick county, colorado",DEN
+08117,08,117,"summit county, colorado",DEN
+08119,08,119,"teller county, colorado",DEN
+08121,08,121,"washington county, colorado",DEN
+08123,08,123,"weld county, colorado",DEN
+08125,08,125,"yuma county, colorado",DEN
+09001,09,001,"fairfield county, connecticut",BOS
+09003,09,003,"hartford county, connecticut",BOS
+09005,09,005,"litchfield county, connecticut",BOS
+09007,09,007,"middlesex county, connecticut",BOS
+09009,09,009,"new haven county, connecticut",BOS
+09011,09,011,"new london county, connecticut",BOS
+09013,09,013,"tolland county, connecticut",BOS
+09015,09,015,"windham county, connecticut",BOS
+10001,10,001,"kent county, delaware",PHI
+10003,10,003,"new castle county, delaware",PHI
+10005,10,005,"sussex county, delaware",PHI
+11001,11,001,"district of columbia, district of columbia",WAS
+12001,12,001,"alachua county, florida",MIA
+12003,12,003,"baker county, florida",MIA
+12005,12,005,"bay county, florida",MIA
+12007,12,007,"bradford county, florida",MIA
+12009,12,009,"brevard county, florida",MIA
+12011,12,011,"broward county, florida",MIA
+12013,12,013,"calhoun county, florida",MIA
+12015,12,015,"charlotte county, florida",MIA
+12017,12,017,"citrus county, florida",MIA
+12019,12,019,"clay county, florida",MIA
+12021,12,021,"collier county, florida",MIA
+12023,12,023,"columbia county, florida",MIA
+12027,12,027,"desoto county, florida",MIA
+12029,12,029,"dixie county, florida",MIA
+12031,12,031,"duval county, florida",MIA
+12033,12,033,"escambia county, florida",MIA
+12035,12,035,"flagler county, florida",MIA
+12037,12,037,"franklin county, florida",MIA
+12039,12,039,"gadsden county, florida",MIA
+12041,12,041,"gilchrist county, florida",MIA
+12043,12,043,"glades county, florida",MIA
+12045,12,045,"gulf county, florida",MIA
+12047,12,047,"hamilton county, florida",MIA
+12049,12,049,"hardee county, florida",MIA
+12051,12,051,"hendry county, florida",MIA
+12053,12,053,"hernando county, florida",MIA
+12055,12,055,"highlands county, florida",MIA
+12057,12,057,"hillsborough county, florida",MIA
+12059,12,059,"holmes county, florida",MIA
+12061,12,061,"indian river county, florida",MIA
+12063,12,063,"jackson county, florida",MIA
+12065,12,065,"jefferson county, florida",MIA
+12067,12,067,"lafayette county, florida",MIA
+12069,12,069,"lake county, florida",MIA
+12071,12,071,"lee county, florida",MIA
+12073,12,073,"leon county, florida",MIA
+12075,12,075,"levy county, florida",MIA
+12077,12,077,"liberty county, florida",MIA
+12079,12,079,"madison county, florida",MIA
+12081,12,081,"manatee county, florida",MIA
+12083,12,083,"marion county, florida",MIA
+12085,12,085,"martin county, florida",MIA
+12086,12,086,"miami-dade county, florida",MIA
+12087,12,087,"monroe county, florida",MIA
+12089,12,089,"nassau county, florida",MIA
+12091,12,091,"okaloosa county, florida",MIA
+12093,12,093,"okeechobee county, florida",MIA
+12095,12,095,"orange county, florida",MIA
+12097,12,097,"osceola county, florida",MIA
+12099,12,099,"palm beach county, florida",MIA
+12101,12,101,"pasco county, florida",MIA
+12103,12,103,"pinellas county, florida",MIA
+12105,12,105,"polk county, florida",MIA
+12107,12,107,"putnam county, florida",MIA
+12109,12,109,"st. johns county, florida",MIA
+12111,12,111,"st. lucie county, florida",MIA
+12113,12,113,"santa rosa county, florida",MIA
+12115,12,115,"sarasota county, florida",MIA
+12117,12,117,"seminole county, florida",MIA
+12119,12,119,"sumter county, florida",MIA
+12121,12,121,"suwannee county, florida",MIA
+12123,12,123,"taylor county, florida",MIA
+12125,12,125,"union county, florida",MIA
+12127,12,127,"volusia county, florida",MIA
+12129,12,129,"wakulla county, florida",MIA
+12131,12,131,"walton county, florida",MIA
+12133,12,133,"washington county, florida",MIA
+13001,13,001,"appling county, georgia",ATL
+13003,13,003,"atkinson county, georgia",ATL
+13005,13,005,"bacon county, georgia",ATL
+13007,13,007,"baker county, georgia",ATL
+13009,13,009,"baldwin county, georgia",ATL
+13011,13,011,"banks county, georgia",ATL
+13013,13,013,"barrow county, georgia",ATL
+13015,13,015,"bartow county, georgia",ATL
+13017,13,017,"ben hill county, georgia",ATL
+13019,13,019,"berrien county, georgia",ATL
+13021,13,021,"bibb county, georgia",ATL
+13023,13,023,"bleckley county, georgia",ATL
+13025,13,025,"brantley county, georgia",ATL
+13027,13,027,"brooks county, georgia",ATL
+13029,13,029,"bryan county, georgia",ATL
+13031,13,031,"bulloch county, georgia",ATL
+13033,13,033,"burke county, georgia",ATL
+13035,13,035,"butts county, georgia",ATL
+13037,13,037,"calhoun county, georgia",ATL
+13039,13,039,"camden county, georgia",ATL
+13043,13,043,"candler county, georgia",ATL
+13045,13,045,"carroll county, georgia",ATL
+13047,13,047,"catoosa county, georgia",ATL
+13049,13,049,"charlton county, georgia",ATL
+13051,13,051,"chatham county, georgia",ATL
+13053,13,053,"chattahoochee county, georgia",ATL
+13055,13,055,"chattooga county, georgia",ATL
+13057,13,057,"cherokee county, georgia",ATL
+13059,13,059,"clarke county, georgia",ATL
+13061,13,061,"clay county, georgia",ATL
+13063,13,063,"clayton county, georgia",ATL
+13065,13,065,"clinch county, georgia",ATL
+13067,13,067,"cobb county, georgia",ATL
+13069,13,069,"coffee county, georgia",ATL
+13071,13,071,"colquitt county, georgia",ATL
+13073,13,073,"columbia county, georgia",ATL
+13075,13,075,"cook county, georgia",ATL
+13077,13,077,"coweta county, georgia",ATL
+13079,13,079,"crawford county, georgia",ATL
+13081,13,081,"crisp county, georgia",ATL
+13083,13,083,"dade county, georgia",ATL
+13085,13,085,"dawson county, georgia",ATL
+13087,13,087,"decatur county, georgia",ATL
+13089,13,089,"dekalb county, georgia",ATL
+13091,13,091,"dodge county, georgia",ATL
+13093,13,093,"dooly county, georgia",ATL
+13095,13,095,"dougherty county, georgia",ATL
+13097,13,097,"douglas county, georgia",ATL
+13099,13,099,"early county, georgia",ATL
+13101,13,101,"echols county, georgia",ATL
+13103,13,103,"effingham county, georgia",ATL
+13105,13,105,"elbert county, georgia",ATL
+13107,13,107,"emanuel county, georgia",ATL
+13109,13,109,"evans county, georgia",ATL
+13111,13,111,"fannin county, georgia",ATL
+13113,13,113,"fayette county, georgia",ATL
+13115,13,115,"floyd county, georgia",ATL
+13117,13,117,"forsyth county, georgia",ATL
+13119,13,119,"franklin county, georgia",ATL
+13121,13,121,"fulton county, georgia",ATL
+13123,13,123,"gilmer county, georgia",ATL
+13125,13,125,"glascock county, georgia",ATL
+13127,13,127,"glynn county, georgia",ATL
+13129,13,129,"gordon county, georgia",ATL
+13131,13,131,"grady county, georgia",ATL
+13133,13,133,"greene county, georgia",ATL
+13135,13,135,"gwinnett county, georgia",ATL
+13137,13,137,"habersham county, georgia",ATL
+13139,13,139,"hall county, georgia",ATL
+13141,13,141,"hancock county, georgia",ATL
+13143,13,143,"haralson county, georgia",ATL
+13145,13,145,"harris county, georgia",ATL
+13147,13,147,"hart county, georgia",ATL
+13149,13,149,"heard county, georgia",ATL
+13151,13,151,"henry county, georgia",ATL
+13153,13,153,"houston county, georgia",ATL
+13155,13,155,"irwin county, georgia",ATL
+13157,13,157,"jackson county, georgia",ATL
+13159,13,159,"jasper county, georgia",ATL
+13161,13,161,"jeff davis county, georgia",ATL
+13163,13,163,"jefferson county, georgia",ATL
+13165,13,165,"jenkins county, georgia",ATL
+13167,13,167,"johnson county, georgia",ATL
+13169,13,169,"jones county, georgia",ATL
+13171,13,171,"lamar county, georgia",ATL
+13173,13,173,"lanier county, georgia",ATL
+13175,13,175,"laurens county, georgia",ATL
+13177,13,177,"lee county, georgia",ATL
+13179,13,179,"liberty county, georgia",ATL
+13181,13,181,"lincoln county, georgia",ATL
+13183,13,183,"long county, georgia",ATL
+13185,13,185,"lowndes county, georgia",ATL
+13187,13,187,"lumpkin county, georgia",ATL
+13189,13,189,"mcduffie county, georgia",ATL
+13191,13,191,"mcintosh county, georgia",ATL
+13193,13,193,"macon county, georgia",ATL
+13195,13,195,"madison county, georgia",ATL
+13197,13,197,"marion county, georgia",ATL
+13199,13,199,"meriwether county, georgia",ATL
+13201,13,201,"miller county, georgia",ATL
+13205,13,205,"mitchell county, georgia",ATL
+13207,13,207,"monroe county, georgia",ATL
+13209,13,209,"montgomery county, georgia",ATL
+13211,13,211,"morgan county, georgia",ATL
+13213,13,213,"murray county, georgia",ATL
+13215,13,215,"muscogee county, georgia",ATL
+13217,13,217,"newton county, georgia",ATL
+13219,13,219,"oconee county, georgia",ATL
+13221,13,221,"oglethorpe county, georgia",ATL
+13223,13,223,"paulding county, georgia",ATL
+13225,13,225,"peach county, georgia",ATL
+13227,13,227,"pickens county, georgia",ATL
+13229,13,229,"pierce county, georgia",ATL
+13231,13,231,"pike county, georgia",ATL
+13233,13,233,"polk county, georgia",ATL
+13235,13,235,"pulaski county, georgia",ATL
+13237,13,237,"putnam county, georgia",ATL
+13239,13,239,"quitman county, georgia",ATL
+13241,13,241,"rabun county, georgia",ATL
+13243,13,243,"randolph county, georgia",ATL
+13245,13,245,"richmond county, georgia",ATL
+13247,13,247,"rockdale county, georgia",ATL
+13249,13,249,"schley county, georgia",ATL
+13251,13,251,"screven county, georgia",ATL
+13253,13,253,"seminole county, georgia",ATL
+13255,13,255,"spalding county, georgia",ATL
+13257,13,257,"stephens county, georgia",ATL
+13259,13,259,"stewart county, georgia",ATL
+13261,13,261,"sumter county, georgia",ATL
+13263,13,263,"talbot county, georgia",ATL
+13265,13,265,"taliaferro county, georgia",ATL
+13267,13,267,"tattnall county, georgia",ATL
+13269,13,269,"taylor county, georgia",ATL
+13271,13,271,"telfair county, georgia",ATL
+13273,13,273,"terrell county, georgia",ATL
+13275,13,275,"thomas county, georgia",ATL
+13277,13,277,"tift county, georgia",ATL
+13279,13,279,"toombs county, georgia",ATL
+13281,13,281,"towns county, georgia",ATL
+13283,13,283,"treutlen county, georgia",ATL
+13285,13,285,"troup county, georgia",ATL
+13287,13,287,"turner county, georgia",ATL
+13289,13,289,"twiggs county, georgia",ATL
+13291,13,291,"union county, georgia",ATL
+13293,13,293,"upson county, georgia",ATL
+13295,13,295,"walker county, georgia",ATL
+13297,13,297,"walton county, georgia",ATL
+13299,13,299,"ware county, georgia",ATL
+13301,13,301,"warren county, georgia",ATL
+13303,13,303,"washington county, georgia",ATL
+13305,13,305,"wayne county, georgia",ATL
+13307,13,307,"webster county, georgia",ATL
+13309,13,309,"wheeler county, georgia",ATL
+13311,13,311,"white county, georgia",ATL
+13313,13,313,"whitfield county, georgia",ATL
+13315,13,315,"wilcox county, georgia",ATL
+13317,13,317,"wilkes county, georgia",ATL
+13319,13,319,"wilkinson county, georgia",ATL
+13321,13,321,"worth county, georgia",ATL
+15001,15,001,"hawaii county, hawaii",SFR
+15003,15,003,"honolulu county, hawaii",SFR
+15005,15,005,"kalawao county, hawaii",SFR
+15007,15,007,"kauai county, hawaii",SFR
+15009,15,009,"maui county, hawaii",SFR
+16001,16,001,"ada county, idaho",SLC
+16003,16,003,"adams county, idaho",SLC
+16005,16,005,"bannock county, idaho",SLC
+16007,16,007,"bear lake county, idaho",SLC
+16009,16,009,"benewah county, idaho",SLC
+16011,16,011,"bingham county, idaho",SLC
+16013,16,013,"blaine county, idaho",SLC
+16015,16,015,"boise county, idaho",SLC
+16017,16,017,"bonner county, idaho",SLC
+16019,16,019,"bonneville county, idaho",SLC
+16021,16,021,"boundary county, idaho",SLC
+16023,16,023,"butte county, idaho",SLC
+16025,16,025,"camas county, idaho",SLC
+16027,16,027,"canyon county, idaho",SLC
+16029,16,029,"caribou county, idaho",SLC
+16031,16,031,"cassia county, idaho",SLC
+16033,16,033,"clark county, idaho",SLC
+16035,16,035,"clearwater county, idaho",SLC
+16037,16,037,"custer county, idaho",SLC
+16039,16,039,"elmore county, idaho",SLC
+16041,16,041,"franklin county, idaho",SLC
+16043,16,043,"fremont county, idaho",SLC
+16045,16,045,"gem county, idaho",SLC
+16047,16,047,"gooding county, idaho",SLC
+16049,16,049,"idaho county, idaho",SLC
+16051,16,051,"jefferson county, idaho",SLC
+16053,16,053,"jerome county, idaho",SLC
+16055,16,055,"kootenai county, idaho",SLC
+16057,16,057,"latah county, idaho",SLC
+16059,16,059,"lemhi county, idaho",SLC
+16061,16,061,"lewis county, idaho",SLC
+16063,16,063,"lincoln county, idaho",SLC
+16065,16,065,"madison county, idaho",SLC
+16067,16,067,"minidoka county, idaho",SLC
+16069,16,069,"nez perce county, idaho",SLC
+16071,16,071,"oneida county, idaho",SLC
+16073,16,073,"owyhee county, idaho",SLC
+16075,16,075,"payette county, idaho",SLC
+16077,16,077,"power county, idaho",SLC
+16079,16,079,"shoshone county, idaho",SLC
+16081,16,081,"teton county, idaho",SLC
+16083,16,083,"twin falls county, idaho",SLC
+16085,16,085,"valley county, idaho",SLC
+16087,16,087,"washington county, idaho",SLC
+17001,17,001,"adams county, illinois",CHI
+17003,17,003,"alexander county, illinois",CHI
+17005,17,005,"bond county, illinois",CHI
+17007,17,007,"boone county, illinois",CHI
+17009,17,009,"brown county, illinois",CHI
+17011,17,011,"bureau county, illinois",CHI
+17013,17,013,"calhoun county, illinois",CHI
+17015,17,015,"carroll county, illinois",CHI
+17017,17,017,"cass county, illinois",CHI
+17019,17,019,"champaign county, illinois",CHI
+17021,17,021,"christian county, illinois",CHI
+17023,17,023,"clark county, illinois",CHI
+17025,17,025,"clay county, illinois",CHI
+17027,17,027,"clinton county, illinois",CHI
+17029,17,029,"coles county, illinois",CHI
+17031,17,031,"cook county, illinois",CHI
+17033,17,033,"crawford county, illinois",CHI
+17035,17,035,"cumberland county, illinois",CHI
+17037,17,037,"dekalb county, illinois",CHI
+17039,17,039,"de witt county, illinois",CHI
+17041,17,041,"douglas county, illinois",CHI
+17043,17,043,"dupage county, illinois",CHI
+17045,17,045,"edgar county, illinois",CHI
+17047,17,047,"edwards county, illinois",CHI
+17049,17,049,"effingham county, illinois",CHI
+17051,17,051,"fayette county, illinois",CHI
+17053,17,053,"ford county, illinois",CHI
+17055,17,055,"franklin county, illinois",CHI
+17057,17,057,"fulton county, illinois",CHI
+17059,17,059,"gallatin county, illinois",CHI
+17061,17,061,"greene county, illinois",CHI
+17063,17,063,"grundy county, illinois",CHI
+17065,17,065,"hamilton county, illinois",CHI
+17067,17,067,"hancock county, illinois",CHI
+17069,17,069,"hardin county, illinois",CHI
+17071,17,071,"henderson county, illinois",CHI
+17073,17,073,"henry county, illinois",CHI
+17075,17,075,"iroquois county, illinois",CHI
+17077,17,077,"jackson county, illinois",CHI
+17079,17,079,"jasper county, illinois",CHI
+17081,17,081,"jefferson county, illinois",CHI
+17083,17,083,"jersey county, illinois",CHI
+17085,17,085,"jo daviess county, illinois",CHI
+17087,17,087,"johnson county, illinois",CHI
+17089,17,089,"kane county, illinois",CHI
+17091,17,091,"kankakee county, illinois",CHI
+17093,17,093,"kendall county, illinois",CHI
+17095,17,095,"knox county, illinois",CHI
+17097,17,097,"lake county, illinois",CHI
+17099,17,099,"lasalle county, illinois",CHI
+17101,17,101,"lawrence county, illinois",CHI
+17103,17,103,"lee county, illinois",CHI
+17105,17,105,"livingston county, illinois",CHI
+17107,17,107,"logan county, illinois",CHI
+17109,17,109,"mcdonough county, illinois",CHI
+17111,17,111,"mchenry county, illinois",CHI
+17113,17,113,"mclean county, illinois",CHI
+17115,17,115,"macon county, illinois",CHI
+17117,17,117,"macoupin county, illinois",CHI
+17119,17,119,"madison county, illinois",CHI
+17121,17,121,"marion county, illinois",CHI
+17123,17,123,"marshall county, illinois",CHI
+17125,17,125,"mason county, illinois",CHI
+17127,17,127,"massac county, illinois",CHI
+17129,17,129,"menard county, illinois",CHI
+17131,17,131,"mercer county, illinois",CHI
+17133,17,133,"monroe county, illinois",CHI
+17135,17,135,"montgomery county, illinois",CHI
+17137,17,137,"morgan county, illinois",CHI
+17139,17,139,"moultrie county, illinois",CHI
+17141,17,141,"ogle county, illinois",CHI
+17143,17,143,"peoria county, illinois",CHI
+17145,17,145,"perry county, illinois",CHI
+17147,17,147,"piatt county, illinois",CHI
+17149,17,149,"pike county, illinois",CHI
+17151,17,151,"pope county, illinois",CHI
+17153,17,153,"pulaski county, illinois",CHI
+17155,17,155,"putnam county, illinois",CHI
+17157,17,157,"randolph county, illinois",CHI
+17159,17,159,"richland county, illinois",CHI
+17161,17,161,"rock island county, illinois",CHI
+17163,17,163,"st. clair county, illinois",CHI
+17165,17,165,"saline county, illinois",CHI
+17167,17,167,"sangamon county, illinois",CHI
+17169,17,169,"schuyler county, illinois",CHI
+17171,17,171,"scott county, illinois",CHI
+17173,17,173,"shelby county, illinois",CHI
+17175,17,175,"stark county, illinois",CHI
+17177,17,177,"stephenson county, illinois",CHI
+17179,17,179,"tazewell county, illinois",CHI
+17181,17,181,"union county, illinois",CHI
+17183,17,183,"vermilion county, illinois",CHI
+17185,17,185,"wabash county, illinois",CHI
+17187,17,187,"warren county, illinois",CHI
+17189,17,189,"washington county, illinois",CHI
+17191,17,191,"wayne county, illinois",CHI
+17193,17,193,"white county, illinois",CHI
+17195,17,195,"whiteside county, illinois",CHI
+17197,17,197,"will county, illinois",CHI
+17199,17,199,"williamson county, illinois",CHI
+17201,17,201,"winnebago county, illinois",CHI
+17203,17,203,"woodford county, illinois",CHI
+18001,18,001,"adams county, indiana",CHI
+18003,18,003,"allen county, indiana",CHI
+18005,18,005,"bartholomew county, indiana",CHI
+18007,18,007,"benton county, indiana",CHI
+18009,18,009,"blackford county, indiana",CHI
+18011,18,011,"boone county, indiana",CHI
+18013,18,013,"brown county, indiana",CHI
+18015,18,015,"carroll county, indiana",CHI
+18017,18,017,"cass county, indiana",CHI
+18019,18,019,"clark county, indiana",CHI
+18021,18,021,"clay county, indiana",CHI
+18023,18,023,"clinton county, indiana",CHI
+18025,18,025,"crawford county, indiana",CHI
+18027,18,027,"daviess county, indiana",CHI
+18029,18,029,"dearborn county, indiana",CHI
+18031,18,031,"decatur county, indiana",CHI
+18033,18,033,"dekalb county, indiana",CHI
+18035,18,035,"delaware county, indiana",CHI
+18037,18,037,"dubois county, indiana",CHI
+18039,18,039,"elkhart county, indiana",CHI
+18041,18,041,"fayette county, indiana",CHI
+18043,18,043,"floyd county, indiana",CHI
+18045,18,045,"fountain county, indiana",CHI
+18047,18,047,"franklin county, indiana",CHI
+18049,18,049,"fulton county, indiana",CHI
+18051,18,051,"gibson county, indiana",CHI
+18053,18,053,"grant county, indiana",CHI
+18055,18,055,"greene county, indiana",CHI
+18057,18,057,"hamilton county, indiana",CHI
+18059,18,059,"hancock county, indiana",CHI
+18061,18,061,"harrison county, indiana",CHI
+18063,18,063,"hendricks county, indiana",CHI
+18065,18,065,"henry county, indiana",CHI
+18067,18,067,"howard county, indiana",CHI
+18069,18,069,"huntington county, indiana",CHI
+18071,18,071,"jackson county, indiana",CHI
+18073,18,073,"jasper county, indiana",CHI
+18075,18,075,"jay county, indiana",CHI
+18077,18,077,"jefferson county, indiana",CHI
+18079,18,079,"jennings county, indiana",CHI
+18081,18,081,"johnson county, indiana",CHI
+18083,18,083,"knox county, indiana",CHI
+18085,18,085,"kosciusko county, indiana",CHI
+18087,18,087,"lagrange county, indiana",CHI
+18089,18,089,"lake county, indiana",CHI
+18091,18,091,"laporte county, indiana",CHI
+18093,18,093,"lawrence county, indiana",CHI
+18095,18,095,"madison county, indiana",CHI
+18097,18,097,"marion county, indiana",CHI
+18099,18,099,"marshall county, indiana",CHI
+18101,18,101,"martin county, indiana",CHI
+18103,18,103,"miami county, indiana",CHI
+18105,18,105,"monroe county, indiana",CHI
+18107,18,107,"montgomery county, indiana",CHI
+18109,18,109,"morgan county, indiana",CHI
+18111,18,111,"newton county, indiana",CHI
+18113,18,113,"noble county, indiana",CHI
+18115,18,115,"ohio county, indiana",CHI
+18117,18,117,"orange county, indiana",CHI
+18119,18,119,"owen county, indiana",CHI
+18121,18,121,"parke county, indiana",CHI
+18123,18,123,"perry county, indiana",CHI
+18125,18,125,"pike county, indiana",CHI
+18127,18,127,"porter county, indiana",CHI
+18129,18,129,"posey county, indiana",CHI
+18131,18,131,"pulaski county, indiana",CHI
+18133,18,133,"putnam county, indiana",CHI
+18135,18,135,"randolph county, indiana",CHI
+18137,18,137,"ripley county, indiana",CHI
+18139,18,139,"rush county, indiana",CHI
+18141,18,141,"st. joseph county, indiana",CHI
+18143,18,143,"scott county, indiana",CHI
+18145,18,145,"shelby county, indiana",CHI
+18147,18,147,"spencer county, indiana",CHI
+18149,18,149,"starke county, indiana",CHI
+18151,18,151,"steuben county, indiana",CHI
+18153,18,153,"sullivan county, indiana",CHI
+18155,18,155,"switzerland county, indiana",CHI
+18157,18,157,"tippecanoe county, indiana",CHI
+18159,18,159,"tipton county, indiana",CHI
+18161,18,161,"union county, indiana",CHI
+18163,18,163,"vanderburgh county, indiana",CHI
+18165,18,165,"vermillion county, indiana",CHI
+18167,18,167,"vigo county, indiana",CHI
+18169,18,169,"wabash county, indiana",CHI
+18171,18,171,"warren county, indiana",CHI
+18173,18,173,"warrick county, indiana",CHI
+18175,18,175,"washington county, indiana",CHI
+18177,18,177,"wayne county, indiana",CHI
+18179,18,179,"wells county, indiana",CHI
+18181,18,181,"white county, indiana",CHI
+18183,18,183,"whitley county, indiana",CHI
+19001,19,001,"adair county, iowa",SPM
+19003,19,003,"adams county, iowa",SPM
+19005,19,005,"allamakee county, iowa",SPM
+19007,19,007,"appanoose county, iowa",SPM
+19009,19,009,"audubon county, iowa",SPM
+19011,19,011,"benton county, iowa",SPM
+19013,19,013,"black hawk county, iowa",SPM
+19015,19,015,"boone county, iowa",SPM
+19017,19,017,"bremer county, iowa",SPM
+19019,19,019,"buchanan county, iowa",SPM
+19021,19,021,"buena vista county, iowa",SPM
+19023,19,023,"butler county, iowa",SPM
+19025,19,025,"calhoun county, iowa",SPM
+19027,19,027,"carroll county, iowa",SPM
+19029,19,029,"cass county, iowa",SPM
+19031,19,031,"cedar county, iowa",SPM
+19033,19,033,"cerro gordo county, iowa",SPM
+19035,19,035,"cherokee county, iowa",SPM
+19037,19,037,"chickasaw county, iowa",SPM
+19039,19,039,"clarke county, iowa",SPM
+19041,19,041,"clay county, iowa",SPM
+19043,19,043,"clayton county, iowa",SPM
+19045,19,045,"clinton county, iowa",SPM
+19047,19,047,"crawford county, iowa",SPM
+19049,19,049,"dallas county, iowa",SPM
+19051,19,051,"davis county, iowa",SPM
+19053,19,053,"decatur county, iowa",SPM
+19055,19,055,"delaware county, iowa",SPM
+19057,19,057,"des moines county, iowa",SPM
+19059,19,059,"dickinson county, iowa",SPM
+19061,19,061,"dubuque county, iowa",SPM
+19063,19,063,"emmet county, iowa",SPM
+19065,19,065,"fayette county, iowa",SPM
+19067,19,067,"floyd county, iowa",SPM
+19069,19,069,"franklin county, iowa",SPM
+19071,19,071,"fremont county, iowa",SPM
+19073,19,073,"greene county, iowa",SPM
+19075,19,075,"grundy county, iowa",SPM
+19077,19,077,"guthrie county, iowa",SPM
+19079,19,079,"hamilton county, iowa",SPM
+19081,19,081,"hancock county, iowa",SPM
+19083,19,083,"hardin county, iowa",SPM
+19085,19,085,"harrison county, iowa",SPM
+19087,19,087,"henry county, iowa",SPM
+19089,19,089,"howard county, iowa",SPM
+19091,19,091,"humboldt county, iowa",SPM
+19093,19,093,"ida county, iowa",SPM
+19095,19,095,"iowa county, iowa",SPM
+19097,19,097,"jackson county, iowa",SPM
+19099,19,099,"jasper county, iowa",SPM
+19101,19,101,"jefferson county, iowa",SPM
+19103,19,103,"johnson county, iowa",SPM
+19105,19,105,"jones county, iowa",SPM
+19107,19,107,"keokuk county, iowa",SPM
+19109,19,109,"kossuth county, iowa",SPM
+19111,19,111,"lee county, iowa",SPM
+19113,19,113,"linn county, iowa",SPM
+19115,19,115,"louisa county, iowa",SPM
+19117,19,117,"lucas county, iowa",SPM
+19119,19,119,"lyon county, iowa",SPM
+19121,19,121,"madison county, iowa",SPM
+19123,19,123,"mahaska county, iowa",SPM
+19125,19,125,"marion county, iowa",SPM
+19127,19,127,"marshall county, iowa",SPM
+19129,19,129,"mills county, iowa",SPM
+19131,19,131,"mitchell county, iowa",SPM
+19133,19,133,"monona county, iowa",SPM
+19135,19,135,"monroe county, iowa",SPM
+19137,19,137,"montgomery county, iowa",SPM
+19139,19,139,"muscatine county, iowa",SPM
+19141,19,141,"o'brien county, iowa",SPM
+19143,19,143,"osceola county, iowa",SPM
+19145,19,145,"page county, iowa",SPM
+19147,19,147,"palo alto county, iowa",SPM
+19149,19,149,"plymouth county, iowa",SPM
+19151,19,151,"pocahontas county, iowa",SPM
+19153,19,153,"polk county, iowa",SPM
+19155,19,155,"pottawattamie county, iowa",SPM
+19157,19,157,"poweshiek county, iowa",SPM
+19159,19,159,"ringgold county, iowa",SPM
+19161,19,161,"sac county, iowa",SPM
+19163,19,163,"scott county, iowa",SPM
+19165,19,165,"shelby county, iowa",SPM
+19167,19,167,"sioux county, iowa",SPM
+19169,19,169,"story county, iowa",SPM
+19171,19,171,"tama county, iowa",SPM
+19173,19,173,"taylor county, iowa",SPM
+19175,19,175,"union county, iowa",SPM
+19177,19,177,"van buren county, iowa",SPM
+19179,19,179,"wapello county, iowa",SPM
+19181,19,181,"warren county, iowa",SPM
+19183,19,183,"washington county, iowa",SPM
+19185,19,185,"wayne county, iowa",SPM
+19187,19,187,"webster county, iowa",SPM
+19189,19,189,"winnebago county, iowa",SPM
+19191,19,191,"winneshiek county, iowa",SPM
+19193,19,193,"woodbury county, iowa",SPM
+19195,19,195,"worth county, iowa",SPM
+19197,19,197,"wright county, iowa",SPM
+20001,20,001,"allen county, kansas",CHI
+20003,20,003,"anderson county, kansas",CHI
+20005,20,005,"atchison county, kansas",CHI
+20007,20,007,"barber county, kansas",CHI
+20009,20,009,"barton county, kansas",CHI
+20011,20,011,"bourbon county, kansas",CHI
+20013,20,013,"brown county, kansas",CHI
+20015,20,015,"butler county, kansas",CHI
+20017,20,017,"chase county, kansas",CHI
+20019,20,019,"chautauqua county, kansas",CHI
+20021,20,021,"cherokee county, kansas",CHI
+20023,20,023,"cheyenne county, kansas",CHI
+20025,20,025,"clark county, kansas",CHI
+20027,20,027,"clay county, kansas",CHI
+20029,20,029,"cloud county, kansas",CHI
+20031,20,031,"coffey county, kansas",CHI
+20033,20,033,"comanche county, kansas",CHI
+20035,20,035,"cowley county, kansas",CHI
+20037,20,037,"crawford county, kansas",CHI
+20039,20,039,"decatur county, kansas",CHI
+20041,20,041,"dickinson county, kansas",CHI
+20043,20,043,"doniphan county, kansas",CHI
+20045,20,045,"douglas county, kansas",CHI
+20047,20,047,"edwards county, kansas",CHI
+20049,20,049,"elk county, kansas",CHI
+20051,20,051,"ellis county, kansas",CHI
+20053,20,053,"ellsworth county, kansas",CHI
+20055,20,055,"finney county, kansas",CHI
+20057,20,057,"ford county, kansas",CHI
+20059,20,059,"franklin county, kansas",CHI
+20061,20,061,"geary county, kansas",CHI
+20063,20,063,"gove county, kansas",CHI
+20065,20,065,"graham county, kansas",CHI
+20067,20,067,"grant county, kansas",CHI
+20069,20,069,"gray county, kansas",CHI
+20071,20,071,"greeley county, kansas",CHI
+20073,20,073,"greenwood county, kansas",CHI
+20075,20,075,"hamilton county, kansas",CHI
+20077,20,077,"harper county, kansas",CHI
+20079,20,079,"harvey county, kansas",CHI
+20081,20,081,"haskell county, kansas",CHI
+20083,20,083,"hodgeman county, kansas",CHI
+20085,20,085,"jackson county, kansas",CHI
+20087,20,087,"jefferson county, kansas",CHI
+20089,20,089,"jewell county, kansas",CHI
+20091,20,091,"johnson county, kansas",CHI
+20093,20,093,"kearny county, kansas",CHI
+20095,20,095,"kingman county, kansas",CHI
+20097,20,097,"kiowa county, kansas",CHI
+20099,20,099,"labette county, kansas",CHI
+20101,20,101,"lane county, kansas",CHI
+20103,20,103,"leavenworth county, kansas",CHI
+20105,20,105,"lincoln county, kansas",CHI
+20107,20,107,"linn county, kansas",CHI
+20109,20,109,"logan county, kansas",CHI
+20111,20,111,"lyon county, kansas",CHI
+20113,20,113,"mcpherson county, kansas",CHI
+20115,20,115,"marion county, kansas",CHI
+20117,20,117,"marshall county, kansas",CHI
+20119,20,119,"meade county, kansas",CHI
+20121,20,121,"miami county, kansas",CHI
+20123,20,123,"mitchell county, kansas",CHI
+20125,20,125,"montgomery county, kansas",CHI
+20127,20,127,"morris county, kansas",CHI
+20129,20,129,"morton county, kansas",CHI
+20131,20,131,"nemaha county, kansas",CHI
+20133,20,133,"neosho county, kansas",CHI
+20135,20,135,"ness county, kansas",CHI
+20137,20,137,"norton county, kansas",CHI
+20139,20,139,"osage county, kansas",CHI
+20141,20,141,"osborne county, kansas",CHI
+20143,20,143,"ottawa county, kansas",CHI
+20145,20,145,"pawnee county, kansas",CHI
+20147,20,147,"phillips county, kansas",CHI
+20149,20,149,"pottawatomie county, kansas",CHI
+20151,20,151,"pratt county, kansas",CHI
+20153,20,153,"rawlins county, kansas",CHI
+20155,20,155,"reno county, kansas",CHI
+20157,20,157,"republic county, kansas",CHI
+20159,20,159,"rice county, kansas",CHI
+20161,20,161,"riley county, kansas",CHI
+20163,20,163,"rooks county, kansas",CHI
+20165,20,165,"rush county, kansas",CHI
+20167,20,167,"russell county, kansas",CHI
+20169,20,169,"saline county, kansas",CHI
+20171,20,171,"scott county, kansas",CHI
+20173,20,173,"sedgwick county, kansas",CHI
+20175,20,175,"seward county, kansas",CHI
+20177,20,177,"shawnee county, kansas",CHI
+20179,20,179,"sheridan county, kansas",CHI
+20181,20,181,"sherman county, kansas",CHI
+20183,20,183,"smith county, kansas",CHI
+20185,20,185,"stafford county, kansas",CHI
+20187,20,187,"stanton county, kansas",CHI
+20189,20,189,"stevens county, kansas",CHI
+20191,20,191,"sumner county, kansas",CHI
+20193,20,193,"thomas county, kansas",CHI
+20195,20,195,"trego county, kansas",CHI
+20197,20,197,"wabaunsee county, kansas",CHI
+20199,20,199,"wallace county, kansas",CHI
+20201,20,201,"washington county, kansas",CHI
+20203,20,203,"wichita county, kansas",CHI
+20205,20,205,"wilson county, kansas",CHI
+20207,20,207,"woodson county, kansas",CHI
+20209,20,209,"wyandotte county, kansas",CHI
+21001,21,001,"adair county, kentucky",CHI
+21003,21,003,"allen county, kentucky",CHI
+21005,21,005,"anderson county, kentucky",CHI
+21007,21,007,"ballard county, kentucky",CHI
+21009,21,009,"barren county, kentucky",CHI
+21011,21,011,"bath county, kentucky",CHI
+21013,21,013,"bell county, kentucky",CHI
+21015,21,015,"boone county, kentucky",CHI
+21017,21,017,"bourbon county, kentucky",CHI
+21019,21,019,"boyd county, kentucky",CHI
+21021,21,021,"boyle county, kentucky",CHI
+21023,21,023,"bracken county, kentucky",CHI
+21025,21,025,"breathitt county, kentucky",CHI
+21027,21,027,"breckinridge county, kentucky",CHI
+21029,21,029,"bullitt county, kentucky",CHI
+21031,21,031,"butler county, kentucky",CHI
+21033,21,033,"caldwell county, kentucky",CHI
+21035,21,035,"calloway county, kentucky",CHI
+21037,21,037,"campbell county, kentucky",CHI
+21039,21,039,"carlisle county, kentucky",CHI
+21041,21,041,"carroll county, kentucky",CHI
+21043,21,043,"carter county, kentucky",CHI
+21045,21,045,"casey county, kentucky",CHI
+21047,21,047,"christian county, kentucky",CHI
+21049,21,049,"clark county, kentucky",CHI
+21051,21,051,"clay county, kentucky",CHI
+21053,21,053,"clinton county, kentucky",CHI
+21055,21,055,"crittenden county, kentucky",CHI
+21057,21,057,"cumberland county, kentucky",CHI
+21059,21,059,"daviess county, kentucky",CHI
+21061,21,061,"edmonson county, kentucky",CHI
+21063,21,063,"elliott county, kentucky",CHI
+21065,21,065,"estill county, kentucky",CHI
+21067,21,067,"fayette county, kentucky",CHI
+21069,21,069,"fleming county, kentucky",CHI
+21071,21,071,"floyd county, kentucky",CHI
+21073,21,073,"franklin county, kentucky",CHI
+21075,21,075,"fulton county, kentucky",CHI
+21077,21,077,"gallatin county, kentucky",CHI
+21079,21,079,"garrard county, kentucky",CHI
+21081,21,081,"grant county, kentucky",CHI
+21083,21,083,"graves county, kentucky",CHI
+21085,21,085,"grayson county, kentucky",CHI
+21087,21,087,"green county, kentucky",CHI
+21089,21,089,"greenup county, kentucky",CHI
+21091,21,091,"hancock county, kentucky",CHI
+21093,21,093,"hardin county, kentucky",CHI
+21095,21,095,"harlan county, kentucky",CHI
+21097,21,097,"harrison county, kentucky",CHI
+21099,21,099,"hart county, kentucky",CHI
+21101,21,101,"henderson county, kentucky",CHI
+21103,21,103,"henry county, kentucky",CHI
+21105,21,105,"hickman county, kentucky",CHI
+21107,21,107,"hopkins county, kentucky",CHI
+21109,21,109,"jackson county, kentucky",CHI
+21111,21,111,"jefferson county, kentucky",CHI
+21113,21,113,"jessamine county, kentucky",CHI
+21115,21,115,"johnson county, kentucky",CHI
+21117,21,117,"kenton county, kentucky",CHI
+21119,21,119,"knott county, kentucky",CHI
+21121,21,121,"knox county, kentucky",CHI
+21123,21,123,"larue county, kentucky",CHI
+21125,21,125,"laurel county, kentucky",CHI
+21127,21,127,"lawrence county, kentucky",CHI
+21129,21,129,"lee county, kentucky",CHI
+21131,21,131,"leslie county, kentucky",CHI
+21133,21,133,"letcher county, kentucky",CHI
+21135,21,135,"lewis county, kentucky",CHI
+21137,21,137,"lincoln county, kentucky",CHI
+21139,21,139,"livingston county, kentucky",CHI
+21141,21,141,"logan county, kentucky",CHI
+21143,21,143,"lyon county, kentucky",CHI
+21145,21,145,"mccracken county, kentucky",CHI
+21147,21,147,"mccreary county, kentucky",CHI
+21149,21,149,"mclean county, kentucky",CHI
+21151,21,151,"madison county, kentucky",CHI
+21153,21,153,"magoffin county, kentucky",CHI
+21155,21,155,"marion county, kentucky",CHI
+21157,21,157,"marshall county, kentucky",CHI
+21159,21,159,"martin county, kentucky",CHI
+21161,21,161,"mason county, kentucky",CHI
+21163,21,163,"meade county, kentucky",CHI
+21165,21,165,"menifee county, kentucky",CHI
+21167,21,167,"mercer county, kentucky",CHI
+21169,21,169,"metcalfe county, kentucky",CHI
+21171,21,171,"monroe county, kentucky",CHI
+21173,21,173,"montgomery county, kentucky",CHI
+21175,21,175,"morgan county, kentucky",CHI
+21177,21,177,"muhlenberg county, kentucky",CHI
+21179,21,179,"nelson county, kentucky",CHI
+21181,21,181,"nicholas county, kentucky",CHI
+21183,21,183,"ohio county, kentucky",CHI
+21185,21,185,"oldham county, kentucky",CHI
+21187,21,187,"owen county, kentucky",CHI
+21189,21,189,"owsley county, kentucky",CHI
+21191,21,191,"pendleton county, kentucky",CHI
+21193,21,193,"perry county, kentucky",CHI
+21195,21,195,"pike county, kentucky",CHI
+21197,21,197,"powell county, kentucky",CHI
+21199,21,199,"pulaski county, kentucky",CHI
+21201,21,201,"robertson county, kentucky",CHI
+21203,21,203,"rockcastle county, kentucky",CHI
+21205,21,205,"rowan county, kentucky",CHI
+21207,21,207,"russell county, kentucky",CHI
+21209,21,209,"scott county, kentucky",CHI
+21211,21,211,"shelby county, kentucky",CHI
+21213,21,213,"simpson county, kentucky",CHI
+21215,21,215,"spencer county, kentucky",CHI
+21217,21,217,"taylor county, kentucky",CHI
+21219,21,219,"todd county, kentucky",CHI
+21221,21,221,"trigg county, kentucky",CHI
+21223,21,223,"trimble county, kentucky",CHI
+21225,21,225,"union county, kentucky",CHI
+21227,21,227,"warren county, kentucky",CHI
+21229,21,229,"washington county, kentucky",CHI
+21231,21,231,"wayne county, kentucky",CHI
+21233,21,233,"webster county, kentucky",CHI
+21235,21,235,"whitley county, kentucky",CHI
+21237,21,237,"wolfe county, kentucky",CHI
+21239,21,239,"woodford county, kentucky",CHI
+22001,22,001,"acadia parish, louisiana",NOL
+22003,22,003,"allen parish, louisiana",NOL
+22005,22,005,"ascension parish, louisiana",NOL
+22007,22,007,"assumption parish, louisiana",NOL
+22009,22,009,"avoyelles parish, louisiana",NOL
+22011,22,011,"beauregard parish, louisiana",NOL
+22013,22,013,"bienville parish, louisiana",NOL
+22015,22,015,"bossier parish, louisiana",NOL
+22017,22,017,"caddo parish, louisiana",NOL
+22019,22,019,"calcasieu parish, louisiana",NOL
+22021,22,021,"caldwell parish, louisiana",NOL
+22023,22,023,"cameron parish, louisiana",NOL
+22025,22,025,"catahoula parish, louisiana",NOL
+22027,22,027,"claiborne parish, louisiana",NOL
+22029,22,029,"concordia parish, louisiana",NOL
+22031,22,031,"de soto parish, louisiana",NOL
+22033,22,033,"east baton rouge parish, louisiana",NOL
+22035,22,035,"east carroll parish, louisiana",NOL
+22037,22,037,"east feliciana parish, louisiana",NOL
+22039,22,039,"evangeline parish, louisiana",NOL
+22041,22,041,"franklin parish, louisiana",NOL
+22043,22,043,"grant parish, louisiana",NOL
+22045,22,045,"iberia parish, louisiana",NOL
+22047,22,047,"iberville parish, louisiana",NOL
+22049,22,049,"jackson parish, louisiana",NOL
+22051,22,051,"jefferson parish, louisiana",NOL
+22053,22,053,"jefferson davis parish, louisiana",NOL
+22055,22,055,"lafayette parish, louisiana",NOL
+22057,22,057,"lafourche parish, louisiana",NOL
+22059,22,059,"lasalle parish, louisiana",NOL
+22061,22,061,"lincoln parish, louisiana",NOL
+22063,22,063,"livingston parish, louisiana",NOL
+22065,22,065,"madison parish, louisiana",NOL
+22067,22,067,"morehouse parish, louisiana",NOL
+22069,22,069,"natchitoches parish, louisiana",NOL
+22071,22,071,"orleans parish, louisiana",NOL
+22073,22,073,"ouachita parish, louisiana",NOL
+22075,22,075,"plaquemines parish, louisiana",NOL
+22077,22,077,"pointe coupee parish, louisiana",NOL
+22079,22,079,"rapides parish, louisiana",NOL
+22081,22,081,"red river parish, louisiana",NOL
+22083,22,083,"richland parish, louisiana",NOL
+22085,22,085,"sabine parish, louisiana",NOL
+22087,22,087,"st. bernard parish, louisiana",NOL
+22089,22,089,"st. charles parish, louisiana",NOL
+22091,22,091,"st. helena parish, louisiana",NOL
+22093,22,093,"st. james parish, louisiana",NOL
+22095,22,095,"st. john the baptist parish, louisiana",NOL
+22097,22,097,"st. landry parish, louisiana",NOL
+22099,22,099,"st. martin parish, louisiana",NOL
+22101,22,101,"st. mary parish, louisiana",NOL
+22103,22,103,"st. tammany parish, louisiana",NOL
+22105,22,105,"tangipahoa parish, louisiana",NOL
+22107,22,107,"tensas parish, louisiana",NOL
+22109,22,109,"terrebonne parish, louisiana",NOL
+22111,22,111,"union parish, louisiana",NOL
+22113,22,113,"vermilion parish, louisiana",NOL
+22115,22,115,"vernon parish, louisiana",NOL
+22117,22,117,"washington parish, louisiana",NOL
+22119,22,119,"webster parish, louisiana",NOL
+22121,22,121,"west baton rouge parish, louisiana",NOL
+22123,22,123,"west carroll parish, louisiana",NOL
+22125,22,125,"west feliciana parish, louisiana",NOL
+22127,22,127,"winn parish, louisiana",NOL
+23001,23,001,"androscoggin county, maine",BOS
+23003,23,003,"aroostook county, maine",BOS
+23005,23,005,"cumberland county, maine",BOS
+23007,23,007,"franklin county, maine",BOS
+23009,23,009,"hancock county, maine",BOS
+23011,23,011,"kennebec county, maine",BOS
+23013,23,013,"knox county, maine",BOS
+23015,23,015,"lincoln county, maine",BOS
+23017,23,017,"oxford county, maine",BOS
+23019,23,019,"penobscot county, maine",BOS
+23021,23,021,"piscataquis county, maine",BOS
+23023,23,023,"sagadahoc county, maine",BOS
+23025,23,025,"somerset county, maine",BOS
+23027,23,027,"waldo county, maine",BOS
+23029,23,029,"washington county, maine",BOS
+23031,23,031,"york county, maine",BOS
+24001,24,001,"allegany county, maryland",BAL
+24003,24,003,"anne arundel county, maryland",BAL
+24005,24,005,"baltimore county, maryland",BAL
+24009,24,009,"calvert county, maryland",BAL
+24011,24,011,"caroline county, maryland",BAL
+24013,24,013,"carroll county, maryland",BAL
+24015,24,015,"cecil county, maryland",BAL
+24017,24,017,"charles county, maryland",BAL
+24019,24,019,"dorchester county, maryland",BAL
+24021,24,021,"frederick county, maryland",BAL
+24023,24,023,"garrett county, maryland",BAL
+24025,24,025,"harford county, maryland",BAL
+24027,24,027,"howard county, maryland",BAL
+24029,24,029,"kent county, maryland",BAL
+24031,24,031,"montgomery county, maryland",BAL
+24033,24,033,"prince george's county, maryland",BAL
+24035,24,035,"queen anne's county, maryland",BAL
+24037,24,037,"st. mary's county, maryland",BAL
+24039,24,039,"somerset county, maryland",BAL
+24041,24,041,"talbot county, maryland",BAL
+24043,24,043,"washington county, maryland",BAL
+24045,24,045,"wicomico county, maryland",BAL
+24047,24,047,"worcester county, maryland",BAL
+24510,24,510,"baltimore city, maryland",BAL
+25001,25,001,"barnstable county, massachusetts",BOS
+25003,25,003,"berkshire county, massachusetts",BOS
+25005,25,005,"bristol county, massachusetts",BOS
+25007,25,007,"dukes county, massachusetts",BOS
+25009,25,009,"essex county, massachusetts",BOS
+25011,25,011,"franklin county, massachusetts",BOS
+25013,25,013,"hampden county, massachusetts",BOS
+25015,25,015,"hampshire county, massachusetts",BOS
+25017,25,017,"middlesex county, massachusetts",BOS
+25019,25,019,"nantucket county, massachusetts",BOS
+25021,25,021,"norfolk county, massachusetts",BOS
+25023,25,023,"plymouth county, massachusetts",BOS
+25025,25,025,"suffolk county, massachusetts",BOS
+25027,25,027,"worcester county, massachusetts",BOS
+26001,26,001,"alcona county, michigan",DET
+26003,26,003,"alger county, michigan",DET
+26005,26,005,"allegan county, michigan",DET
+26007,26,007,"alpena county, michigan",DET
+26009,26,009,"antrim county, michigan",DET
+26011,26,011,"arenac county, michigan",DET
+26013,26,013,"baraga county, michigan",DET
+26015,26,015,"barry county, michigan",DET
+26017,26,017,"bay county, michigan",DET
+26019,26,019,"benzie county, michigan",DET
+26021,26,021,"berrien county, michigan",DET
+26023,26,023,"branch county, michigan",DET
+26025,26,025,"calhoun county, michigan",DET
+26027,26,027,"cass county, michigan",DET
+26029,26,029,"charlevoix county, michigan",DET
+26031,26,031,"cheboygan county, michigan",DET
+26033,26,033,"chippewa county, michigan",DET
+26035,26,035,"clare county, michigan",DET
+26037,26,037,"clinton county, michigan",DET
+26039,26,039,"crawford county, michigan",DET
+26041,26,041,"delta county, michigan",DET
+26043,26,043,"dickinson county, michigan",DET
+26045,26,045,"eaton county, michigan",DET
+26047,26,047,"emmet county, michigan",DET
+26049,26,049,"genesee county, michigan",DET
+26051,26,051,"gladwin county, michigan",DET
+26053,26,053,"gogebic county, michigan",DET
+26055,26,055,"grand traverse county, michigan",DET
+26057,26,057,"gratiot county, michigan",DET
+26059,26,059,"hillsdale county, michigan",DET
+26061,26,061,"houghton county, michigan",DET
+26063,26,063,"huron county, michigan",DET
+26065,26,065,"ingham county, michigan",DET
+26067,26,067,"ionia county, michigan",DET
+26069,26,069,"iosco county, michigan",DET
+26071,26,071,"iron county, michigan",DET
+26073,26,073,"isabella county, michigan",DET
+26075,26,075,"jackson county, michigan",DET
+26077,26,077,"kalamazoo county, michigan",DET
+26079,26,079,"kalkaska county, michigan",DET
+26081,26,081,"kent county, michigan",DET
+26083,26,083,"keweenaw county, michigan",DET
+26085,26,085,"lake county, michigan",DET
+26087,26,087,"lapeer county, michigan",DET
+26089,26,089,"leelanau county, michigan",DET
+26091,26,091,"lenawee county, michigan",DET
+26093,26,093,"livingston county, michigan",DET
+26095,26,095,"luce county, michigan",DET
+26097,26,097,"mackinac county, michigan",DET
+26099,26,099,"macomb county, michigan",DET
+26101,26,101,"manistee county, michigan",DET
+26103,26,103,"marquette county, michigan",DET
+26105,26,105,"mason county, michigan",DET
+26107,26,107,"mecosta county, michigan",DET
+26109,26,109,"menominee county, michigan",DET
+26111,26,111,"midland county, michigan",DET
+26113,26,113,"missaukee county, michigan",DET
+26115,26,115,"monroe county, michigan",DET
+26117,26,117,"montcalm county, michigan",DET
+26119,26,119,"montmorency county, michigan",DET
+26121,26,121,"muskegon county, michigan",DET
+26123,26,123,"newaygo county, michigan",DET
+26125,26,125,"oakland county, michigan",DET
+26127,26,127,"oceana county, michigan",DET
+26129,26,129,"ogemaw county, michigan",DET
+26131,26,131,"ontonagon county, michigan",DET
+26133,26,133,"osceola county, michigan",DET
+26135,26,135,"oscoda county, michigan",DET
+26137,26,137,"otsego county, michigan",DET
+26139,26,139,"ottawa county, michigan",DET
+26141,26,141,"presque isle county, michigan",DET
+26143,26,143,"roscommon county, michigan",DET
+26145,26,145,"saginaw county, michigan",DET
+26147,26,147,"st. clair county, michigan",DET
+26149,26,149,"st. joseph county, michigan",DET
+26151,26,151,"sanilac county, michigan",DET
+26153,26,153,"schoolcraft county, michigan",DET
+26155,26,155,"shiawassee county, michigan",DET
+26157,26,157,"tuscola county, michigan",DET
+26159,26,159,"van buren county, michigan",DET
+26161,26,161,"washtenaw county, michigan",DET
+26163,26,163,"wayne county, michigan",DET
+26165,26,165,"wexford county, michigan",DET
+27001,27,001,"aitkin county, minnesota",SPM
+27003,27,003,"anoka county, minnesota",SPM
+27005,27,005,"becker county, minnesota",SPM
+27007,27,007,"beltrami county, minnesota",SPM
+27009,27,009,"benton county, minnesota",SPM
+27011,27,011,"big stone county, minnesota",SPM
+27013,27,013,"blue earth county, minnesota",SPM
+27015,27,015,"brown county, minnesota",SPM
+27017,27,017,"carlton county, minnesota",SPM
+27019,27,019,"carver county, minnesota",SPM
+27021,27,021,"cass county, minnesota",SPM
+27023,27,023,"chippewa county, minnesota",SPM
+27025,27,025,"chisago county, minnesota",SPM
+27027,27,027,"clay county, minnesota",SPM
+27029,27,029,"clearwater county, minnesota",SPM
+27031,27,031,"cook county, minnesota",SPM
+27033,27,033,"cottonwood county, minnesota",SPM
+27035,27,035,"crow wing county, minnesota",SPM
+27037,27,037,"dakota county, minnesota",SPM
+27039,27,039,"dodge county, minnesota",SPM
+27041,27,041,"douglas county, minnesota",SPM
+27043,27,043,"faribault county, minnesota",SPM
+27045,27,045,"fillmore county, minnesota",SPM
+27047,27,047,"freeborn county, minnesota",SPM
+27049,27,049,"goodhue county, minnesota",SPM
+27051,27,051,"grant county, minnesota",SPM
+27053,27,053,"hennepin county, minnesota",SPM
+27055,27,055,"houston county, minnesota",SPM
+27057,27,057,"hubbard county, minnesota",SPM
+27059,27,059,"isanti county, minnesota",SPM
+27061,27,061,"itasca county, minnesota",SPM
+27063,27,063,"jackson county, minnesota",SPM
+27065,27,065,"kanabec county, minnesota",SPM
+27067,27,067,"kandiyohi county, minnesota",SPM
+27069,27,069,"kittson county, minnesota",SPM
+27071,27,071,"koochiching county, minnesota",SPM
+27073,27,073,"lac qui parle county, minnesota",SPM
+27075,27,075,"lake county, minnesota",SPM
+27077,27,077,"lake of the woods county, minnesota",SPM
+27079,27,079,"le sueur county, minnesota",SPM
+27081,27,081,"lincoln county, minnesota",SPM
+27083,27,083,"lyon county, minnesota",SPM
+27085,27,085,"mcleod county, minnesota",SPM
+27087,27,087,"mahnomen county, minnesota",SPM
+27089,27,089,"marshall county, minnesota",SPM
+27091,27,091,"martin county, minnesota",SPM
+27093,27,093,"meeker county, minnesota",SPM
+27095,27,095,"mille lacs county, minnesota",SPM
+27097,27,097,"morrison county, minnesota",SPM
+27099,27,099,"mower county, minnesota",SPM
+27101,27,101,"murray county, minnesota",SPM
+27103,27,103,"nicollet county, minnesota",SPM
+27105,27,105,"nobles county, minnesota",SPM
+27107,27,107,"norman county, minnesota",SPM
+27109,27,109,"olmsted county, minnesota",SPM
+27111,27,111,"otter tail county, minnesota",SPM
+27113,27,113,"pennington county, minnesota",SPM
+27115,27,115,"pine county, minnesota",SPM
+27117,27,117,"pipestone county, minnesota",SPM
+27119,27,119,"polk county, minnesota",SPM
+27121,27,121,"pope county, minnesota",SPM
+27123,27,123,"ramsey county, minnesota",SPM
+27125,27,125,"red lake county, minnesota",SPM
+27127,27,127,"redwood county, minnesota",SPM
+27129,27,129,"renville county, minnesota",SPM
+27131,27,131,"rice county, minnesota",SPM
+27133,27,133,"rock county, minnesota",SPM
+27135,27,135,"roseau county, minnesota",SPM
+27137,27,137,"st. louis county, minnesota",SPM
+27139,27,139,"scott county, minnesota",SPM
+27141,27,141,"sherburne county, minnesota",SPM
+27143,27,143,"sibley county, minnesota",SPM
+27145,27,145,"stearns county, minnesota",SPM
+27147,27,147,"steele county, minnesota",SPM
+27149,27,149,"stevens county, minnesota",SPM
+27151,27,151,"swift county, minnesota",SPM
+27153,27,153,"todd county, minnesota",SPM
+27155,27,155,"traverse county, minnesota",SPM
+27157,27,157,"wabasha county, minnesota",SPM
+27159,27,159,"wadena county, minnesota",SPM
+27161,27,161,"waseca county, minnesota",SPM
+27163,27,163,"washington county, minnesota",SPM
+27165,27,165,"watonwan county, minnesota",SPM
+27167,27,167,"wilkin county, minnesota",SPM
+27169,27,169,"winona county, minnesota",SPM
+27171,27,171,"wright county, minnesota",SPM
+27173,27,173,"yellow medicine county, minnesota",SPM
+28001,28,001,"adams county, mississippi",NOL
+28003,28,003,"alcorn county, mississippi",NOL
+28005,28,005,"amite county, mississippi",NOL
+28007,28,007,"attala county, mississippi",NOL
+28009,28,009,"benton county, mississippi",NOL
+28011,28,011,"bolivar county, mississippi",NOL
+28013,28,013,"calhoun county, mississippi",NOL
+28015,28,015,"carroll county, mississippi",NOL
+28017,28,017,"chickasaw county, mississippi",NOL
+28019,28,019,"choctaw county, mississippi",NOL
+28021,28,021,"claiborne county, mississippi",NOL
+28023,28,023,"clarke county, mississippi",NOL
+28025,28,025,"clay county, mississippi",NOL
+28027,28,027,"coahoma county, mississippi",NOL
+28029,28,029,"copiah county, mississippi",NOL
+28031,28,031,"covington county, mississippi",NOL
+28033,28,033,"desoto county, mississippi",NOL
+28035,28,035,"forrest county, mississippi",NOL
+28037,28,037,"franklin county, mississippi",NOL
+28039,28,039,"george county, mississippi",NOL
+28041,28,041,"greene county, mississippi",NOL
+28043,28,043,"grenada county, mississippi",NOL
+28045,28,045,"hancock county, mississippi",NOL
+28047,28,047,"harrison county, mississippi",NOL
+28049,28,049,"hinds county, mississippi",NOL
+28051,28,051,"holmes county, mississippi",NOL
+28053,28,053,"humphreys county, mississippi",NOL
+28055,28,055,"issaquena county, mississippi",NOL
+28057,28,057,"itawamba county, mississippi",NOL
+28059,28,059,"jackson county, mississippi",NOL
+28061,28,061,"jasper county, mississippi",NOL
+28063,28,063,"jefferson county, mississippi",NOL
+28065,28,065,"jefferson davis county, mississippi",NOL
+28067,28,067,"jones county, mississippi",NOL
+28069,28,069,"kemper county, mississippi",NOL
+28071,28,071,"lafayette county, mississippi",NOL
+28073,28,073,"lamar county, mississippi",NOL
+28075,28,075,"lauderdale county, mississippi",NOL
+28077,28,077,"lawrence county, mississippi",NOL
+28079,28,079,"leake county, mississippi",NOL
+28081,28,081,"lee county, mississippi",NOL
+28083,28,083,"leflore county, mississippi",NOL
+28085,28,085,"lincoln county, mississippi",NOL
+28087,28,087,"lowndes county, mississippi",NOL
+28089,28,089,"madison county, mississippi",NOL
+28091,28,091,"marion county, mississippi",NOL
+28093,28,093,"marshall county, mississippi",NOL
+28095,28,095,"monroe county, mississippi",NOL
+28097,28,097,"montgomery county, mississippi",NOL
+28099,28,099,"neshoba county, mississippi",NOL
+28101,28,101,"newton county, mississippi",NOL
+28103,28,103,"noxubee county, mississippi",NOL
+28105,28,105,"oktibbeha county, mississippi",NOL
+28107,28,107,"panola county, mississippi",NOL
+28109,28,109,"pearl river county, mississippi",NOL
+28111,28,111,"perry county, mississippi",NOL
+28113,28,113,"pike county, mississippi",NOL
+28115,28,115,"pontotoc county, mississippi",NOL
+28117,28,117,"prentiss county, mississippi",NOL
+28119,28,119,"quitman county, mississippi",NOL
+28121,28,121,"rankin county, mississippi",NOL
+28123,28,123,"scott county, mississippi",NOL
+28125,28,125,"sharkey county, mississippi",NOL
+28127,28,127,"simpson county, mississippi",NOL
+28129,28,129,"smith county, mississippi",NOL
+28131,28,131,"stone county, mississippi",NOL
+28133,28,133,"sunflower county, mississippi",NOL
+28135,28,135,"tallahatchie county, mississippi",NOL
+28137,28,137,"tate county, mississippi",NOL
+28139,28,139,"tippah county, mississippi",NOL
+28141,28,141,"tishomingo county, mississippi",NOL
+28143,28,143,"tunica county, mississippi",NOL
+28145,28,145,"union county, mississippi",NOL
+28147,28,147,"walthall county, mississippi",NOL
+28149,28,149,"warren county, mississippi",NOL
+28151,28,151,"washington county, mississippi",NOL
+28153,28,153,"wayne county, mississippi",NOL
+28155,28,155,"webster county, mississippi",NOL
+28157,28,157,"wilkinson county, mississippi",NOL
+28159,28,159,"winston county, mississippi",NOL
+28161,28,161,"yalobusha county, mississippi",NOL
+28163,28,163,"yazoo county, mississippi",NOL
+29001,29,001,"adair county, missouri",CHI
+29003,29,003,"andrew county, missouri",CHI
+29005,29,005,"atchison county, missouri",CHI
+29007,29,007,"audrain county, missouri",CHI
+29009,29,009,"barry county, missouri",CHI
+29011,29,011,"barton county, missouri",CHI
+29013,29,013,"bates county, missouri",CHI
+29015,29,015,"benton county, missouri",CHI
+29017,29,017,"bollinger county, missouri",CHI
+29019,29,019,"boone county, missouri",CHI
+29021,29,021,"buchanan county, missouri",CHI
+29023,29,023,"butler county, missouri",CHI
+29025,29,025,"caldwell county, missouri",CHI
+29027,29,027,"callaway county, missouri",CHI
+29029,29,029,"camden county, missouri",CHI
+29031,29,031,"cape girardeau county, missouri",CHI
+29033,29,033,"carroll county, missouri",CHI
+29035,29,035,"carter county, missouri",CHI
+29037,29,037,"cass county, missouri",CHI
+29039,29,039,"cedar county, missouri",CHI
+29041,29,041,"chariton county, missouri",CHI
+29043,29,043,"christian county, missouri",CHI
+29045,29,045,"clark county, missouri",CHI
+29047,29,047,"clay county, missouri",CHI
+29049,29,049,"clinton county, missouri",CHI
+29051,29,051,"cole county, missouri",CHI
+29053,29,053,"cooper county, missouri",CHI
+29055,29,055,"crawford county, missouri",CHI
+29057,29,057,"dade county, missouri",CHI
+29059,29,059,"dallas county, missouri",CHI
+29061,29,061,"daviess county, missouri",CHI
+29063,29,063,"dekalb county, missouri",CHI
+29065,29,065,"dent county, missouri",CHI
+29067,29,067,"douglas county, missouri",CHI
+29069,29,069,"dunklin county, missouri",CHI
+29071,29,071,"franklin county, missouri",CHI
+29073,29,073,"gasconade county, missouri",CHI
+29075,29,075,"gentry county, missouri",CHI
+29077,29,077,"greene county, missouri",CHI
+29079,29,079,"grundy county, missouri",CHI
+29081,29,081,"harrison county, missouri",CHI
+29083,29,083,"henry county, missouri",CHI
+29085,29,085,"hickory county, missouri",CHI
+29087,29,087,"holt county, missouri",CHI
+29089,29,089,"howard county, missouri",CHI
+29091,29,091,"howell county, missouri",CHI
+29093,29,093,"iron county, missouri",CHI
+29095,29,095,"jackson county, missouri",CHI
+29097,29,097,"jasper county, missouri",CHI
+29099,29,099,"jefferson county, missouri",CHI
+29101,29,101,"johnson county, missouri",CHI
+29103,29,103,"knox county, missouri",CHI
+29105,29,105,"laclede county, missouri",CHI
+29107,29,107,"lafayette county, missouri",CHI
+29109,29,109,"lawrence county, missouri",CHI
+29111,29,111,"lewis county, missouri",CHI
+29113,29,113,"lincoln county, missouri",CHI
+29115,29,115,"linn county, missouri",CHI
+29117,29,117,"livingston county, missouri",CHI
+29119,29,119,"mcdonald county, missouri",CHI
+29121,29,121,"macon county, missouri",CHI
+29123,29,123,"madison county, missouri",CHI
+29125,29,125,"maries county, missouri",CHI
+29127,29,127,"marion county, missouri",CHI
+29129,29,129,"mercer county, missouri",CHI
+29131,29,131,"miller county, missouri",CHI
+29133,29,133,"mississippi county, missouri",CHI
+29135,29,135,"moniteau county, missouri",CHI
+29137,29,137,"monroe county, missouri",CHI
+29139,29,139,"montgomery county, missouri",CHI
+29141,29,141,"morgan county, missouri",CHI
+29143,29,143,"new madrid county, missouri",CHI
+29145,29,145,"newton county, missouri",CHI
+29147,29,147,"nodaway county, missouri",CHI
+29149,29,149,"oregon county, missouri",CHI
+29151,29,151,"osage county, missouri",CHI
+29153,29,153,"ozark county, missouri",CHI
+29155,29,155,"pemiscot county, missouri",CHI
+29157,29,157,"perry county, missouri",CHI
+29159,29,159,"pettis county, missouri",CHI
+29161,29,161,"phelps county, missouri",CHI
+29163,29,163,"pike county, missouri",CHI
+29165,29,165,"platte county, missouri",CHI
+29167,29,167,"polk county, missouri",CHI
+29169,29,169,"pulaski county, missouri",CHI
+29171,29,171,"putnam county, missouri",CHI
+29173,29,173,"ralls county, missouri",CHI
+29175,29,175,"randolph county, missouri",CHI
+29177,29,177,"ray county, missouri",CHI
+29179,29,179,"reynolds county, missouri",CHI
+29181,29,181,"ripley county, missouri",CHI
+29183,29,183,"st. charles county, missouri",CHI
+29185,29,185,"st. clair county, missouri",CHI
+29186,29,186,"ste. genevieve county, missouri",CHI
+29187,29,187,"st. francois county, missouri",CHI
+29189,29,189,"st. louis county, missouri",CHI
+29195,29,195,"saline county, missouri",CHI
+29197,29,197,"schuyler county, missouri",CHI
+29199,29,199,"scotland county, missouri",CHI
+29201,29,201,"scott county, missouri",CHI
+29203,29,203,"shannon county, missouri",CHI
+29205,29,205,"shelby county, missouri",CHI
+29207,29,207,"stoddard county, missouri",CHI
+29209,29,209,"stone county, missouri",CHI
+29211,29,211,"sullivan county, missouri",CHI
+29213,29,213,"taney county, missouri",CHI
+29215,29,215,"texas county, missouri",CHI
+29217,29,217,"vernon county, missouri",CHI
+29219,29,219,"warren county, missouri",CHI
+29221,29,221,"washington county, missouri",CHI
+29223,29,223,"wayne county, missouri",CHI
+29225,29,225,"webster county, missouri",CHI
+29227,29,227,"worth county, missouri",CHI
+29229,29,229,"wright county, missouri",CHI
+29510,29,510,"st. louis city, missouri",CHI
+30001,30,001,"beaverhead county, montana",SLC
+30003,30,003,"big horn county, montana",SLC
+30005,30,005,"blaine county, montana",SLC
+30007,30,007,"broadwater county, montana",SLC
+30009,30,009,"carbon county, montana",SLC
+30011,30,011,"carter county, montana",SLC
+30013,30,013,"cascade county, montana",SLC
+30015,30,015,"chouteau county, montana",SLC
+30017,30,017,"custer county, montana",SLC
+30019,30,019,"daniels county, montana",SLC
+30021,30,021,"dawson county, montana",SLC
+30023,30,023,"deer lodge county, montana",SLC
+30025,30,025,"fallon county, montana",SLC
+30027,30,027,"fergus county, montana",SLC
+30029,30,029,"flathead county, montana",SLC
+30031,30,031,"gallatin county, montana",SLC
+30033,30,033,"garfield county, montana",SLC
+30035,30,035,"glacier county, montana",SLC
+30037,30,037,"golden valley county, montana",SLC
+30039,30,039,"granite county, montana",SLC
+30041,30,041,"hill county, montana",SLC
+30043,30,043,"jefferson county, montana",SLC
+30045,30,045,"judith basin county, montana",SLC
+30047,30,047,"lake county, montana",SLC
+30049,30,049,"lewis and clark county, montana",SLC
+30051,30,051,"liberty county, montana",SLC
+30053,30,053,"lincoln county, montana",SLC
+30055,30,055,"mccone county, montana",SLC
+30057,30,057,"madison county, montana",SLC
+30059,30,059,"meagher county, montana",SLC
+30061,30,061,"mineral county, montana",SLC
+30063,30,063,"missoula county, montana",SLC
+30065,30,065,"musselshell county, montana",SLC
+30067,30,067,"park county, montana",SLC
+30069,30,069,"petroleum county, montana",SLC
+30071,30,071,"phillips county, montana",SLC
+30073,30,073,"pondera county, montana",SLC
+30075,30,075,"powder river county, montana",SLC
+30077,30,077,"powell county, montana",SLC
+30079,30,079,"prairie county, montana",SLC
+30081,30,081,"ravalli county, montana",SLC
+30083,30,083,"richland county, montana",SLC
+30085,30,085,"roosevelt county, montana",SLC
+30087,30,087,"rosebud county, montana",SLC
+30089,30,089,"sanders county, montana",SLC
+30091,30,091,"sheridan county, montana",SLC
+30093,30,093,"silver bow county, montana",SLC
+30095,30,095,"stillwater county, montana",SLC
+30097,30,097,"sweet grass county, montana",SLC
+30099,30,099,"teton county, montana",SLC
+30101,30,101,"toole county, montana",SLC
+30103,30,103,"treasure county, montana",SLC
+30105,30,105,"valley county, montana",SLC
+30107,30,107,"wheatland county, montana",SLC
+30109,30,109,"wibaux county, montana",SLC
+30111,30,111,"yellowstone county, montana",SLC
+31001,31,001,"adams county, nebraska",SPM
+31003,31,003,"antelope county, nebraska",SPM
+31005,31,005,"arthur county, nebraska",SPM
+31007,31,007,"banner county, nebraska",SPM
+31009,31,009,"blaine county, nebraska",SPM
+31011,31,011,"boone county, nebraska",SPM
+31013,31,013,"box butte county, nebraska",SPM
+31015,31,015,"boyd county, nebraska",SPM
+31017,31,017,"brown county, nebraska",SPM
+31019,31,019,"buffalo county, nebraska",SPM
+31021,31,021,"burt county, nebraska",SPM
+31023,31,023,"butler county, nebraska",SPM
+31025,31,025,"cass county, nebraska",SPM
+31027,31,027,"cedar county, nebraska",SPM
+31029,31,029,"chase county, nebraska",SPM
+31031,31,031,"cherry county, nebraska",SPM
+31033,31,033,"cheyenne county, nebraska",SPM
+31035,31,035,"clay county, nebraska",SPM
+31037,31,037,"colfax county, nebraska",SPM
+31039,31,039,"cuming county, nebraska",SPM
+31041,31,041,"custer county, nebraska",SPM
+31043,31,043,"dakota county, nebraska",SPM
+31045,31,045,"dawes county, nebraska",SPM
+31047,31,047,"dawson county, nebraska",SPM
+31049,31,049,"deuel county, nebraska",SPM
+31051,31,051,"dixon county, nebraska",SPM
+31053,31,053,"dodge county, nebraska",SPM
+31055,31,055,"douglas county, nebraska",SPM
+31057,31,057,"dundy county, nebraska",SPM
+31059,31,059,"fillmore county, nebraska",SPM
+31061,31,061,"franklin county, nebraska",SPM
+31063,31,063,"frontier county, nebraska",SPM
+31065,31,065,"furnas county, nebraska",SPM
+31067,31,067,"gage county, nebraska",SPM
+31069,31,069,"garden county, nebraska",SPM
+31071,31,071,"garfield county, nebraska",SPM
+31073,31,073,"gosper county, nebraska",SPM
+31075,31,075,"grant county, nebraska",SPM
+31077,31,077,"greeley county, nebraska",SPM
+31079,31,079,"hall county, nebraska",SPM
+31081,31,081,"hamilton county, nebraska",SPM
+31083,31,083,"harlan county, nebraska",SPM
+31085,31,085,"hayes county, nebraska",SPM
+31087,31,087,"hitchcock county, nebraska",SPM
+31089,31,089,"holt county, nebraska",SPM
+31091,31,091,"hooker county, nebraska",SPM
+31093,31,093,"howard county, nebraska",SPM
+31095,31,095,"jefferson county, nebraska",SPM
+31097,31,097,"johnson county, nebraska",SPM
+31099,31,099,"kearney county, nebraska",SPM
+31101,31,101,"keith county, nebraska",SPM
+31103,31,103,"keya paha county, nebraska",SPM
+31105,31,105,"kimball county, nebraska",SPM
+31107,31,107,"knox county, nebraska",SPM
+31109,31,109,"lancaster county, nebraska",SPM
+31111,31,111,"lincoln county, nebraska",SPM
+31113,31,113,"logan county, nebraska",SPM
+31115,31,115,"loup county, nebraska",SPM
+31117,31,117,"mcpherson county, nebraska",SPM
+31119,31,119,"madison county, nebraska",SPM
+31121,31,121,"merrick county, nebraska",SPM
+31123,31,123,"morrill county, nebraska",SPM
+31125,31,125,"nance county, nebraska",SPM
+31127,31,127,"nemaha county, nebraska",SPM
+31129,31,129,"nuckolls county, nebraska",SPM
+31131,31,131,"otoe county, nebraska",SPM
+31133,31,133,"pawnee county, nebraska",SPM
+31135,31,135,"perkins county, nebraska",SPM
+31137,31,137,"phelps county, nebraska",SPM
+31139,31,139,"pierce county, nebraska",SPM
+31141,31,141,"platte county, nebraska",SPM
+31143,31,143,"polk county, nebraska",SPM
+31145,31,145,"red willow county, nebraska",SPM
+31147,31,147,"richardson county, nebraska",SPM
+31149,31,149,"rock county, nebraska",SPM
+31151,31,151,"saline county, nebraska",SPM
+31153,31,153,"sarpy county, nebraska",SPM
+31155,31,155,"saunders county, nebraska",SPM
+31157,31,157,"scotts bluff county, nebraska",SPM
+31159,31,159,"seward county, nebraska",SPM
+31161,31,161,"sheridan county, nebraska",SPM
+31163,31,163,"sherman county, nebraska",SPM
+31165,31,165,"sioux county, nebraska",SPM
+31167,31,167,"stanton county, nebraska",SPM
+31169,31,169,"thayer county, nebraska",SPM
+31171,31,171,"thomas county, nebraska",SPM
+31173,31,173,"thurston county, nebraska",SPM
+31175,31,175,"valley county, nebraska",SPM
+31177,31,177,"washington county, nebraska",SPM
+31179,31,179,"wayne county, nebraska",SPM
+31181,31,181,"webster county, nebraska",SPM
+31183,31,183,"wheeler county, nebraska",SPM
+31185,31,185,"york county, nebraska",SPM
+32001,32,001,"churchill county, nevada",SLC
+32003,32,003,"clark county, nevada",SLC
+32005,32,005,"douglas county, nevada",SLC
+32007,32,007,"elko county, nevada",SLC
+32009,32,009,"esmeralda county, nevada",SLC
+32011,32,011,"eureka county, nevada",SLC
+32013,32,013,"humboldt county, nevada",SLC
+32015,32,015,"lander county, nevada",SLC
+32017,32,017,"lincoln county, nevada",SLC
+32019,32,019,"lyon county, nevada",SLC
+32021,32,021,"mineral county, nevada",SLC
+32023,32,023,"nye county, nevada",SLC
+32027,32,027,"pershing county, nevada",SLC
+32029,32,029,"storey county, nevada",SLC
+32031,32,031,"washoe county, nevada",SLC
+32033,32,033,"white pine county, nevada",SLC
+32510,32,510,"carson city, nevada",SLC
+33001,33,001,"belknap county, new hampshire",BOS
+33003,33,003,"carroll county, new hampshire",BOS
+33005,33,005,"cheshire county, new hampshire",BOS
+33007,33,007,"coos county, new hampshire",BOS
+33009,33,009,"grafton county, new hampshire",BOS
+33011,33,011,"hillsborough county, new hampshire",BOS
+33013,33,013,"merrimack county, new hampshire",BOS
+33015,33,015,"rockingham county, new hampshire",BOS
+33017,33,017,"strafford county, new hampshire",BOS
+33019,33,019,"sullivan county, new hampshire",BOS
+34001,34,001,"atlantic county, new jersey",NEW
+34003,34,003,"bergen county, new jersey",NEW
+34005,34,005,"burlington county, new jersey",NEW
+34007,34,007,"camden county, new jersey",NEW
+34009,34,009,"cape may county, new jersey",NEW
+34011,34,011,"cumberland county, new jersey",NEW
+34013,34,013,"essex county, new jersey",NEW
+34015,34,015,"gloucester county, new jersey",NEW
+34017,34,017,"hudson county, new jersey",NEW
+34019,34,019,"hunterdon county, new jersey",NEW
+34021,34,021,"mercer county, new jersey",NEW
+34023,34,023,"middlesex county, new jersey",NEW
+34025,34,025,"monmouth county, new jersey",NEW
+34027,34,027,"morris county, new jersey",NEW
+34029,34,029,"ocean county, new jersey",NEW
+34031,34,031,"passaic county, new jersey",NEW
+34033,34,033,"salem county, new jersey",NEW
+34035,34,035,"somerset county, new jersey",NEW
+34037,34,037,"sussex county, new jersey",NEW
+34039,34,039,"union county, new jersey",NEW
+34041,34,041,"warren county, new jersey",NEW
+35001,35,001,"bernalillo county, new mexico",ELP
+35003,35,003,"catron county, new mexico",ELP
+35005,35,005,"chaves county, new mexico",ELP
+35006,35,006,"cibola county, new mexico",ELP
+35007,35,007,"colfax county, new mexico",ELP
+35009,35,009,"curry county, new mexico",ELP
+35011,35,011,"de baca county, new mexico",ELP
+35013,35,013,"doña ana county, new mexico",ELP
+35015,35,015,"eddy county, new mexico",ELP
+35017,35,017,"grant county, new mexico",ELP
+35019,35,019,"guadalupe county, new mexico",ELP
+35021,35,021,"harding county, new mexico",ELP
+35023,35,023,"hidalgo county, new mexico",ELP
+35025,35,025,"lea county, new mexico",ELP
+35027,35,027,"lincoln county, new mexico",ELP
+35028,35,028,"los alamos county, new mexico",ELP
+35029,35,029,"luna county, new mexico",ELP
+35031,35,031,"mckinley county, new mexico",ELP
+35033,35,033,"mora county, new mexico",ELP
+35035,35,035,"otero county, new mexico",ELP
+35037,35,037,"quay county, new mexico",ELP
+35039,35,039,"rio arriba county, new mexico",ELP
+35041,35,041,"roosevelt county, new mexico",ELP
+35043,35,043,"sandoval county, new mexico",ELP
+35045,35,045,"san juan county, new mexico",ELP
+35047,35,047,"san miguel county, new mexico",ELP
+35049,35,049,"santa fe county, new mexico",ELP
+35051,35,051,"sierra county, new mexico",ELP
+35053,35,053,"socorro county, new mexico",ELP
+35055,35,055,"taos county, new mexico",ELP
+35057,35,057,"torrance county, new mexico",ELP
+35059,35,059,"union county, new mexico",ELP
+35061,35,061,"valencia county, new mexico",ELP
+36001,36,001,"albany county, new york",BUF
+36003,36,003,"allegany county, new york",BUF
+36005,36,005,"bronx county, new york",NYC
+36007,36,007,"broome county, new york",BUF
+36009,36,009,"cattaraugus county, new york",BUF
+36011,36,011,"cayuga county, new york",BUF
+36013,36,013,"chautauqua county, new york",BUF
+36015,36,015,"chemung county, new york",BUF
+36017,36,017,"chenango county, new york",BUF
+36019,36,019,"clinton county, new york",BUF
+36021,36,021,"columbia county, new york",BUF
+36023,36,023,"cortland county, new york",BUF
+36025,36,025,"delaware county, new york",BUF
+36027,36,027,"dutchess county, new york",NYC
+36029,36,029,"erie county, new york",BUF
+36031,36,031,"essex county, new york",BUF
+36033,36,033,"franklin county, new york",BUF
+36035,36,035,"fulton county, new york",BUF
+36037,36,037,"genesee county, new york",BUF
+36039,36,039,"greene county, new york",BUF
+36041,36,041,"hamilton county, new york",BUF
+36043,36,043,"herkimer county, new york",BUF
+36045,36,045,"jefferson county, new york",BUF
+36047,36,047,"kings county, new york",NYC
+36049,36,049,"lewis county, new york",BUF
+36051,36,051,"livingston county, new york",BUF
+36053,36,053,"madison county, new york",BUF
+36055,36,055,"monroe county, new york",BUF
+36057,36,057,"montgomery county, new york",BUF
+36059,36,059,"nassau county, new york",NYC
+36061,36,061,"new york county, new york",NYC
+36063,36,063,"niagara county, new york",BUF
+36065,36,065,"oneida county, new york",BUF
+36067,36,067,"onondaga county, new york",BUF
+36069,36,069,"ontario county, new york",BUF
+36071,36,071,"orange county, new york",NYC
+36073,36,073,"orleans county, new york",BUF
+36075,36,075,"oswego county, new york",BUF
+36077,36,077,"otsego county, new york",BUF
+36079,36,079,"putnam county, new york",NYC
+36081,36,081,"queens county, new york",NYC
+36083,36,083,"rensselaer county, new york",BUF
+36085,36,085,"richmond county, new york",NYC
+36087,36,087,"rockland county, new york",NYC
+36089,36,089,"st. lawrence county, new york",BUF
+36091,36,091,"saratoga county, new york",BUF
+36093,36,093,"schenectady county, new york",BUF
+36095,36,095,"schoharie county, new york",BUF
+36097,36,097,"schuyler county, new york",BUF
+36099,36,099,"seneca county, new york",BUF
+36101,36,101,"steuben county, new york",BUF
+36103,36,103,"suffolk county, new york",NYC
+36105,36,105,"sullivan county, new york",NYC
+36107,36,107,"tioga county, new york",BUF
+36109,36,109,"tompkins county, new york",BUF
+36111,36,111,"ulster county, new york",NYC
+36113,36,113,"warren county, new york",BUF
+36115,36,115,"washington county, new york",BUF
+36117,36,117,"wayne county, new york",BUF
+36119,36,119,"westchester county, new york",NYC
+36121,36,121,"wyoming county, new york",BUF
+36123,36,123,"yates county, new york",BUF
+37001,37,001,"alamance county, north carolina",ATL
+37003,37,003,"alexander county, north carolina",ATL
+37005,37,005,"alleghany county, north carolina",ATL
+37007,37,007,"anson county, north carolina",ATL
+37009,37,009,"ashe county, north carolina",ATL
+37011,37,011,"avery county, north carolina",ATL
+37013,37,013,"beaufort county, north carolina",ATL
+37015,37,015,"bertie county, north carolina",ATL
+37017,37,017,"bladen county, north carolina",ATL
+37019,37,019,"brunswick county, north carolina",ATL
+37021,37,021,"buncombe county, north carolina",ATL
+37023,37,023,"burke county, north carolina",ATL
+37025,37,025,"cabarrus county, north carolina",ATL
+37027,37,027,"caldwell county, north carolina",ATL
+37029,37,029,"camden county, north carolina",ATL
+37031,37,031,"carteret county, north carolina",ATL
+37033,37,033,"caswell county, north carolina",ATL
+37035,37,035,"catawba county, north carolina",ATL
+37037,37,037,"chatham county, north carolina",ATL
+37039,37,039,"cherokee county, north carolina",ATL
+37041,37,041,"chowan county, north carolina",ATL
+37043,37,043,"clay county, north carolina",ATL
+37045,37,045,"cleveland county, north carolina",ATL
+37047,37,047,"columbus county, north carolina",ATL
+37049,37,049,"craven county, north carolina",ATL
+37051,37,051,"cumberland county, north carolina",ATL
+37053,37,053,"currituck county, north carolina",ATL
+37055,37,055,"dare county, north carolina",ATL
+37057,37,057,"davidson county, north carolina",ATL
+37059,37,059,"davie county, north carolina",ATL
+37061,37,061,"duplin county, north carolina",ATL
+37063,37,063,"durham county, north carolina",ATL
+37065,37,065,"edgecombe county, north carolina",ATL
+37067,37,067,"forsyth county, north carolina",ATL
+37069,37,069,"franklin county, north carolina",ATL
+37071,37,071,"gaston county, north carolina",ATL
+37073,37,073,"gates county, north carolina",ATL
+37075,37,075,"graham county, north carolina",ATL
+37077,37,077,"granville county, north carolina",ATL
+37079,37,079,"greene county, north carolina",ATL
+37081,37,081,"guilford county, north carolina",ATL
+37083,37,083,"halifax county, north carolina",ATL
+37085,37,085,"harnett county, north carolina",ATL
+37087,37,087,"haywood county, north carolina",ATL
+37089,37,089,"henderson county, north carolina",ATL
+37091,37,091,"hertford county, north carolina",ATL
+37093,37,093,"hoke county, north carolina",ATL
+37095,37,095,"hyde county, north carolina",ATL
+37097,37,097,"iredell county, north carolina",ATL
+37099,37,099,"jackson county, north carolina",ATL
+37101,37,101,"johnston county, north carolina",ATL
+37103,37,103,"jones county, north carolina",ATL
+37105,37,105,"lee county, north carolina",ATL
+37107,37,107,"lenoir county, north carolina",ATL
+37109,37,109,"lincoln county, north carolina",ATL
+37111,37,111,"mcdowell county, north carolina",ATL
+37113,37,113,"macon county, north carolina",ATL
+37115,37,115,"madison county, north carolina",ATL
+37117,37,117,"martin county, north carolina",ATL
+37119,37,119,"mecklenburg county, north carolina",ATL
+37121,37,121,"mitchell county, north carolina",ATL
+37123,37,123,"montgomery county, north carolina",ATL
+37125,37,125,"moore county, north carolina",ATL
+37127,37,127,"nash county, north carolina",ATL
+37129,37,129,"new hanover county, north carolina",ATL
+37131,37,131,"northampton county, north carolina",ATL
+37133,37,133,"onslow county, north carolina",ATL
+37135,37,135,"orange county, north carolina",ATL
+37137,37,137,"pamlico county, north carolina",ATL
+37139,37,139,"pasquotank county, north carolina",ATL
+37141,37,141,"pender county, north carolina",ATL
+37143,37,143,"perquimans county, north carolina",ATL
+37145,37,145,"person county, north carolina",ATL
+37147,37,147,"pitt county, north carolina",ATL
+37149,37,149,"polk county, north carolina",ATL
+37151,37,151,"randolph county, north carolina",ATL
+37153,37,153,"richmond county, north carolina",ATL
+37155,37,155,"robeson county, north carolina",ATL
+37157,37,157,"rockingham county, north carolina",ATL
+37159,37,159,"rowan county, north carolina",ATL
+37161,37,161,"rutherford county, north carolina",ATL
+37163,37,163,"sampson county, north carolina",ATL
+37165,37,165,"scotland county, north carolina",ATL
+37167,37,167,"stanly county, north carolina",ATL
+37169,37,169,"stokes county, north carolina",ATL
+37171,37,171,"surry county, north carolina",ATL
+37173,37,173,"swain county, north carolina",ATL
+37175,37,175,"transylvania county, north carolina",ATL
+37177,37,177,"tyrrell county, north carolina",ATL
+37179,37,179,"union county, north carolina",ATL
+37181,37,181,"vance county, north carolina",ATL
+37183,37,183,"wake county, north carolina",ATL
+37185,37,185,"warren county, north carolina",ATL
+37187,37,187,"washington county, north carolina",ATL
+37189,37,189,"watauga county, north carolina",ATL
+37191,37,191,"wayne county, north carolina",ATL
+37193,37,193,"wilkes county, north carolina",ATL
+37195,37,195,"wilson county, north carolina",ATL
+37197,37,197,"yadkin county, north carolina",ATL
+37199,37,199,"yancey county, north carolina",ATL
+38001,38,001,"adams county, north dakota",SPM
+38003,38,003,"barnes county, north dakota",SPM
+38005,38,005,"benson county, north dakota",SPM
+38007,38,007,"billings county, north dakota",SPM
+38009,38,009,"bottineau county, north dakota",SPM
+38011,38,011,"bowman county, north dakota",SPM
+38013,38,013,"burke county, north dakota",SPM
+38015,38,015,"burleigh county, north dakota",SPM
+38017,38,017,"cass county, north dakota",SPM
+38019,38,019,"cavalier county, north dakota",SPM
+38021,38,021,"dickey county, north dakota",SPM
+38023,38,023,"divide county, north dakota",SPM
+38025,38,025,"dunn county, north dakota",SPM
+38027,38,027,"eddy county, north dakota",SPM
+38029,38,029,"emmons county, north dakota",SPM
+38031,38,031,"foster county, north dakota",SPM
+38033,38,033,"golden valley county, north dakota",SPM
+38035,38,035,"grand forks county, north dakota",SPM
+38037,38,037,"grant county, north dakota",SPM
+38039,38,039,"griggs county, north dakota",SPM
+38041,38,041,"hettinger county, north dakota",SPM
+38043,38,043,"kidder county, north dakota",SPM
+38045,38,045,"lamoure county, north dakota",SPM
+38047,38,047,"logan county, north dakota",SPM
+38049,38,049,"mchenry county, north dakota",SPM
+38051,38,051,"mcintosh county, north dakota",SPM
+38053,38,053,"mckenzie county, north dakota",SPM
+38055,38,055,"mclean county, north dakota",SPM
+38057,38,057,"mercer county, north dakota",SPM
+38059,38,059,"morton county, north dakota",SPM
+38061,38,061,"mountrail county, north dakota",SPM
+38063,38,063,"nelson county, north dakota",SPM
+38065,38,065,"oliver county, north dakota",SPM
+38067,38,067,"pembina county, north dakota",SPM
+38069,38,069,"pierce county, north dakota",SPM
+38071,38,071,"ramsey county, north dakota",SPM
+38073,38,073,"ransom county, north dakota",SPM
+38075,38,075,"renville county, north dakota",SPM
+38077,38,077,"richland county, north dakota",SPM
+38079,38,079,"rolette county, north dakota",SPM
+38081,38,081,"sargent county, north dakota",SPM
+38083,38,083,"sheridan county, north dakota",SPM
+38085,38,085,"sioux county, north dakota",SPM
+38087,38,087,"slope county, north dakota",SPM
+38089,38,089,"stark county, north dakota",SPM
+38091,38,091,"steele county, north dakota",SPM
+38093,38,093,"stutsman county, north dakota",SPM
+38095,38,095,"towner county, north dakota",SPM
+38097,38,097,"traill county, north dakota",SPM
+38099,38,099,"walsh county, north dakota",SPM
+38101,38,101,"ward county, north dakota",SPM
+38103,38,103,"wells county, north dakota",SPM
+38105,38,105,"williams county, north dakota",SPM
+39001,39,001,"adams county, ohio",DET
+39003,39,003,"allen county, ohio",DET
+39005,39,005,"ashland county, ohio",DET
+39007,39,007,"ashtabula county, ohio",DET
+39009,39,009,"athens county, ohio",DET
+39011,39,011,"auglaize county, ohio",DET
+39013,39,013,"belmont county, ohio",DET
+39015,39,015,"brown county, ohio",DET
+39017,39,017,"butler county, ohio",DET
+39019,39,019,"carroll county, ohio",DET
+39021,39,021,"champaign county, ohio",DET
+39023,39,023,"clark county, ohio",DET
+39025,39,025,"clermont county, ohio",DET
+39027,39,027,"clinton county, ohio",DET
+39029,39,029,"columbiana county, ohio",DET
+39031,39,031,"coshocton county, ohio",DET
+39033,39,033,"crawford county, ohio",DET
+39035,39,035,"cuyahoga county, ohio",DET
+39037,39,037,"darke county, ohio",DET
+39039,39,039,"defiance county, ohio",DET
+39041,39,041,"delaware county, ohio",DET
+39043,39,043,"erie county, ohio",DET
+39045,39,045,"fairfield county, ohio",DET
+39047,39,047,"fayette county, ohio",DET
+39049,39,049,"franklin county, ohio",DET
+39051,39,051,"fulton county, ohio",DET
+39053,39,053,"gallia county, ohio",DET
+39055,39,055,"geauga county, ohio",DET
+39057,39,057,"greene county, ohio",DET
+39059,39,059,"guernsey county, ohio",DET
+39061,39,061,"hamilton county, ohio",DET
+39063,39,063,"hancock county, ohio",DET
+39065,39,065,"hardin county, ohio",DET
+39067,39,067,"harrison county, ohio",DET
+39069,39,069,"henry county, ohio",DET
+39071,39,071,"highland county, ohio",DET
+39073,39,073,"hocking county, ohio",DET
+39075,39,075,"holmes county, ohio",DET
+39077,39,077,"huron county, ohio",DET
+39079,39,079,"jackson county, ohio",DET
+39081,39,081,"jefferson county, ohio",DET
+39083,39,083,"knox county, ohio",DET
+39085,39,085,"lake county, ohio",DET
+39087,39,087,"lawrence county, ohio",DET
+39089,39,089,"licking county, ohio",DET
+39091,39,091,"logan county, ohio",DET
+39093,39,093,"lorain county, ohio",DET
+39095,39,095,"lucas county, ohio",DET
+39097,39,097,"madison county, ohio",DET
+39099,39,099,"mahoning county, ohio",DET
+39101,39,101,"marion county, ohio",DET
+39103,39,103,"medina county, ohio",DET
+39105,39,105,"meigs county, ohio",DET
+39107,39,107,"mercer county, ohio",DET
+39109,39,109,"miami county, ohio",DET
+39111,39,111,"monroe county, ohio",DET
+39113,39,113,"montgomery county, ohio",DET
+39115,39,115,"morgan county, ohio",DET
+39117,39,117,"morrow county, ohio",DET
+39119,39,119,"muskingum county, ohio",DET
+39121,39,121,"noble county, ohio",DET
+39123,39,123,"ottawa county, ohio",DET
+39125,39,125,"paulding county, ohio",DET
+39127,39,127,"perry county, ohio",DET
+39129,39,129,"pickaway county, ohio",DET
+39131,39,131,"pike county, ohio",DET
+39133,39,133,"portage county, ohio",DET
+39135,39,135,"preble county, ohio",DET
+39137,39,137,"putnam county, ohio",DET
+39139,39,139,"richland county, ohio",DET
+39141,39,141,"ross county, ohio",DET
+39143,39,143,"sandusky county, ohio",DET
+39145,39,145,"scioto county, ohio",DET
+39147,39,147,"seneca county, ohio",DET
+39149,39,149,"shelby county, ohio",DET
+39151,39,151,"stark county, ohio",DET
+39153,39,153,"summit county, ohio",DET
+39155,39,155,"trumbull county, ohio",DET
+39157,39,157,"tuscarawas county, ohio",DET
+39159,39,159,"union county, ohio",DET
+39161,39,161,"van wert county, ohio",DET
+39163,39,163,"vinton county, ohio",DET
+39165,39,165,"warren county, ohio",DET
+39167,39,167,"washington county, ohio",DET
+39169,39,169,"wayne county, ohio",DET
+39171,39,171,"williams county, ohio",DET
+39173,39,173,"wood county, ohio",DET
+39175,39,175,"wyandot county, ohio",DET
+40001,40,001,"adair county, oklahoma",DAL
+40003,40,003,"alfalfa county, oklahoma",DAL
+40005,40,005,"atoka county, oklahoma",DAL
+40007,40,007,"beaver county, oklahoma",DAL
+40009,40,009,"beckham county, oklahoma",DAL
+40011,40,011,"blaine county, oklahoma",DAL
+40013,40,013,"bryan county, oklahoma",DAL
+40015,40,015,"caddo county, oklahoma",DAL
+40017,40,017,"canadian county, oklahoma",DAL
+40019,40,019,"carter county, oklahoma",DAL
+40021,40,021,"cherokee county, oklahoma",DAL
+40023,40,023,"choctaw county, oklahoma",DAL
+40025,40,025,"cimarron county, oklahoma",DAL
+40027,40,027,"cleveland county, oklahoma",DAL
+40029,40,029,"coal county, oklahoma",DAL
+40031,40,031,"comanche county, oklahoma",DAL
+40033,40,033,"cotton county, oklahoma",DAL
+40035,40,035,"craig county, oklahoma",DAL
+40037,40,037,"creek county, oklahoma",DAL
+40039,40,039,"custer county, oklahoma",DAL
+40041,40,041,"delaware county, oklahoma",DAL
+40043,40,043,"dewey county, oklahoma",DAL
+40045,40,045,"ellis county, oklahoma",DAL
+40047,40,047,"garfield county, oklahoma",DAL
+40049,40,049,"garvin county, oklahoma",DAL
+40051,40,051,"grady county, oklahoma",DAL
+40053,40,053,"grant county, oklahoma",DAL
+40055,40,055,"greer county, oklahoma",DAL
+40057,40,057,"harmon county, oklahoma",DAL
+40059,40,059,"harper county, oklahoma",DAL
+40061,40,061,"haskell county, oklahoma",DAL
+40063,40,063,"hughes county, oklahoma",DAL
+40065,40,065,"jackson county, oklahoma",DAL
+40067,40,067,"jefferson county, oklahoma",DAL
+40069,40,069,"johnston county, oklahoma",DAL
+40071,40,071,"kay county, oklahoma",DAL
+40073,40,073,"kingfisher county, oklahoma",DAL
+40075,40,075,"kiowa county, oklahoma",DAL
+40077,40,077,"latimer county, oklahoma",DAL
+40079,40,079,"le flore county, oklahoma",DAL
+40081,40,081,"lincoln county, oklahoma",DAL
+40083,40,083,"logan county, oklahoma",DAL
+40085,40,085,"love county, oklahoma",DAL
+40087,40,087,"mcclain county, oklahoma",DAL
+40089,40,089,"mccurtain county, oklahoma",DAL
+40091,40,091,"mcintosh county, oklahoma",DAL
+40093,40,093,"major county, oklahoma",DAL
+40095,40,095,"marshall county, oklahoma",DAL
+40097,40,097,"mayes county, oklahoma",DAL
+40099,40,099,"murray county, oklahoma",DAL
+40101,40,101,"muskogee county, oklahoma",DAL
+40103,40,103,"noble county, oklahoma",DAL
+40105,40,105,"nowata county, oklahoma",DAL
+40107,40,107,"okfuskee county, oklahoma",DAL
+40109,40,109,"oklahoma county, oklahoma",DAL
+40111,40,111,"okmulgee county, oklahoma",DAL
+40113,40,113,"osage county, oklahoma",DAL
+40115,40,115,"ottawa county, oklahoma",DAL
+40117,40,117,"pawnee county, oklahoma",DAL
+40119,40,119,"payne county, oklahoma",DAL
+40121,40,121,"pittsburg county, oklahoma",DAL
+40123,40,123,"pontotoc county, oklahoma",DAL
+40125,40,125,"pottawatomie county, oklahoma",DAL
+40127,40,127,"pushmataha county, oklahoma",DAL
+40129,40,129,"roger mills county, oklahoma",DAL
+40131,40,131,"rogers county, oklahoma",DAL
+40133,40,133,"seminole county, oklahoma",DAL
+40135,40,135,"sequoyah county, oklahoma",DAL
+40137,40,137,"stephens county, oklahoma",DAL
+40139,40,139,"texas county, oklahoma",DAL
+40141,40,141,"tillman county, oklahoma",DAL
+40143,40,143,"tulsa county, oklahoma",DAL
+40145,40,145,"wagoner county, oklahoma",DAL
+40147,40,147,"washington county, oklahoma",DAL
+40149,40,149,"washita county, oklahoma",DAL
+40151,40,151,"woods county, oklahoma",DAL
+40153,40,153,"woodward county, oklahoma",DAL
+41001,41,001,"baker county, oregon",SEA
+41003,41,003,"benton county, oregon",SEA
+41005,41,005,"clackamas county, oregon",SEA
+41007,41,007,"clatsop county, oregon",SEA
+41009,41,009,"columbia county, oregon",SEA
+41011,41,011,"coos county, oregon",SEA
+41013,41,013,"crook county, oregon",SEA
+41015,41,015,"curry county, oregon",SEA
+41017,41,017,"deschutes county, oregon",SEA
+41019,41,019,"douglas county, oregon",SEA
+41021,41,021,"gilliam county, oregon",SEA
+41023,41,023,"grant county, oregon",SEA
+41025,41,025,"harney county, oregon",SEA
+41027,41,027,"hood river county, oregon",SEA
+41029,41,029,"jackson county, oregon",SEA
+41031,41,031,"jefferson county, oregon",SEA
+41033,41,033,"josephine county, oregon",SEA
+41035,41,035,"klamath county, oregon",SEA
+41037,41,037,"lake county, oregon",SEA
+41039,41,039,"lane county, oregon",SEA
+41041,41,041,"lincoln county, oregon",SEA
+41043,41,043,"linn county, oregon",SEA
+41045,41,045,"malheur county, oregon",SEA
+41047,41,047,"marion county, oregon",SEA
+41049,41,049,"morrow county, oregon",SEA
+41051,41,051,"multnomah county, oregon",SEA
+41053,41,053,"polk county, oregon",SEA
+41055,41,055,"sherman county, oregon",SEA
+41057,41,057,"tillamook county, oregon",SEA
+41059,41,059,"umatilla county, oregon",SEA
+41061,41,061,"union county, oregon",SEA
+41063,41,063,"wallowa county, oregon",SEA
+41065,41,065,"wasco county, oregon",SEA
+41067,41,067,"washington county, oregon",SEA
+41069,41,069,"wheeler county, oregon",SEA
+41071,41,071,"yamhill county, oregon",SEA
+42001,42,001,"adams county, pennsylvania",PHI
+42003,42,003,"allegheny county, pennsylvania",PHI
+42005,42,005,"armstrong county, pennsylvania",PHI
+42007,42,007,"beaver county, pennsylvania",PHI
+42009,42,009,"bedford county, pennsylvania",PHI
+42011,42,011,"berks county, pennsylvania",PHI
+42013,42,013,"blair county, pennsylvania",PHI
+42015,42,015,"bradford county, pennsylvania",PHI
+42017,42,017,"bucks county, pennsylvania",PHI
+42019,42,019,"butler county, pennsylvania",PHI
+42021,42,021,"cambria county, pennsylvania",PHI
+42023,42,023,"cameron county, pennsylvania",PHI
+42025,42,025,"carbon county, pennsylvania",PHI
+42027,42,027,"centre county, pennsylvania",PHI
+42029,42,029,"chester county, pennsylvania",PHI
+42031,42,031,"clarion county, pennsylvania",PHI
+42033,42,033,"clearfield county, pennsylvania",PHI
+42035,42,035,"clinton county, pennsylvania",PHI
+42037,42,037,"columbia county, pennsylvania",PHI
+42039,42,039,"crawford county, pennsylvania",PHI
+42041,42,041,"cumberland county, pennsylvania",PHI
+42043,42,043,"dauphin county, pennsylvania",PHI
+42045,42,045,"delaware county, pennsylvania",PHI
+42047,42,047,"elk county, pennsylvania",PHI
+42049,42,049,"erie county, pennsylvania",PHI
+42051,42,051,"fayette county, pennsylvania",PHI
+42053,42,053,"forest county, pennsylvania",PHI
+42055,42,055,"franklin county, pennsylvania",PHI
+42057,42,057,"fulton county, pennsylvania",PHI
+42059,42,059,"greene county, pennsylvania",PHI
+42061,42,061,"huntingdon county, pennsylvania",PHI
+42063,42,063,"indiana county, pennsylvania",PHI
+42065,42,065,"jefferson county, pennsylvania",PHI
+42067,42,067,"juniata county, pennsylvania",PHI
+42069,42,069,"lackawanna county, pennsylvania",PHI
+42071,42,071,"lancaster county, pennsylvania",PHI
+42073,42,073,"lawrence county, pennsylvania",PHI
+42075,42,075,"lebanon county, pennsylvania",PHI
+42077,42,077,"lehigh county, pennsylvania",PHI
+42079,42,079,"luzerne county, pennsylvania",PHI
+42081,42,081,"lycoming county, pennsylvania",PHI
+42083,42,083,"mckean county, pennsylvania",PHI
+42085,42,085,"mercer county, pennsylvania",PHI
+42087,42,087,"mifflin county, pennsylvania",PHI
+42089,42,089,"monroe county, pennsylvania",PHI
+42091,42,091,"montgomery county, pennsylvania",PHI
+42093,42,093,"montour county, pennsylvania",PHI
+42095,42,095,"northampton county, pennsylvania",PHI
+42097,42,097,"northumberland county, pennsylvania",PHI
+42099,42,099,"perry county, pennsylvania",PHI
+42101,42,101,"philadelphia county, pennsylvania",PHI
+42103,42,103,"pike county, pennsylvania",PHI
+42105,42,105,"potter county, pennsylvania",PHI
+42107,42,107,"schuylkill county, pennsylvania",PHI
+42109,42,109,"snyder county, pennsylvania",PHI
+42111,42,111,"somerset county, pennsylvania",PHI
+42113,42,113,"sullivan county, pennsylvania",PHI
+42115,42,115,"susquehanna county, pennsylvania",PHI
+42117,42,117,"tioga county, pennsylvania",PHI
+42119,42,119,"union county, pennsylvania",PHI
+42121,42,121,"venango county, pennsylvania",PHI
+42123,42,123,"warren county, pennsylvania",PHI
+42125,42,125,"washington county, pennsylvania",PHI
+42127,42,127,"wayne county, pennsylvania",PHI
+42129,42,129,"westmoreland county, pennsylvania",PHI
+42131,42,131,"wyoming county, pennsylvania",PHI
+42133,42,133,"york county, pennsylvania",PHI
+44001,44,001,"bristol county, rhode island",BOS
+44003,44,003,"kent county, rhode island",BOS
+44005,44,005,"newport county, rhode island",BOS
+44007,44,007,"providence county, rhode island",BOS
+44009,44,009,"washington county, rhode island",BOS
+45001,45,001,"abbeville county, south carolina",ATL
+45003,45,003,"aiken county, south carolina",ATL
+45005,45,005,"allendale county, south carolina",ATL
+45007,45,007,"anderson county, south carolina",ATL
+45009,45,009,"bamberg county, south carolina",ATL
+45011,45,011,"barnwell county, south carolina",ATL
+45013,45,013,"beaufort county, south carolina",ATL
+45015,45,015,"berkeley county, south carolina",ATL
+45017,45,017,"calhoun county, south carolina",ATL
+45019,45,019,"charleston county, south carolina",ATL
+45021,45,021,"cherokee county, south carolina",ATL
+45023,45,023,"chester county, south carolina",ATL
+45025,45,025,"chesterfield county, south carolina",ATL
+45027,45,027,"clarendon county, south carolina",ATL
+45029,45,029,"colleton county, south carolina",ATL
+45031,45,031,"darlington county, south carolina",ATL
+45033,45,033,"dillon county, south carolina",ATL
+45035,45,035,"dorchester county, south carolina",ATL
+45037,45,037,"edgefield county, south carolina",ATL
+45039,45,039,"fairfield county, south carolina",ATL
+45041,45,041,"florence county, south carolina",ATL
+45043,45,043,"georgetown county, south carolina",ATL
+45045,45,045,"greenville county, south carolina",ATL
+45047,45,047,"greenwood county, south carolina",ATL
+45049,45,049,"hampton county, south carolina",ATL
+45051,45,051,"horry county, south carolina",ATL
+45053,45,053,"jasper county, south carolina",ATL
+45055,45,055,"kershaw county, south carolina",ATL
+45057,45,057,"lancaster county, south carolina",ATL
+45059,45,059,"laurens county, south carolina",ATL
+45061,45,061,"lee county, south carolina",ATL
+45063,45,063,"lexington county, south carolina",ATL
+45065,45,065,"mccormick county, south carolina",ATL
+45067,45,067,"marion county, south carolina",ATL
+45069,45,069,"marlboro county, south carolina",ATL
+45071,45,071,"newberry county, south carolina",ATL
+45073,45,073,"oconee county, south carolina",ATL
+45075,45,075,"orangeburg county, south carolina",ATL
+45077,45,077,"pickens county, south carolina",ATL
+45079,45,079,"richland county, south carolina",ATL
+45081,45,081,"saluda county, south carolina",ATL
+45083,45,083,"spartanburg county, south carolina",ATL
+45085,45,085,"sumter county, south carolina",ATL
+45087,45,087,"union county, south carolina",ATL
+45089,45,089,"williamsburg county, south carolina",ATL
+45091,45,091,"york county, south carolina",ATL
+46003,46,003,"aurora county, south dakota",SPM
+46005,46,005,"beadle county, south dakota",SPM
+46007,46,007,"bennett county, south dakota",SPM
+46009,46,009,"bon homme county, south dakota",SPM
+46011,46,011,"brookings county, south dakota",SPM
+46013,46,013,"brown county, south dakota",SPM
+46015,46,015,"brule county, south dakota",SPM
+46017,46,017,"buffalo county, south dakota",SPM
+46019,46,019,"butte county, south dakota",SPM
+46021,46,021,"campbell county, south dakota",SPM
+46023,46,023,"charles mix county, south dakota",SPM
+46025,46,025,"clark county, south dakota",SPM
+46027,46,027,"clay county, south dakota",SPM
+46029,46,029,"codington county, south dakota",SPM
+46031,46,031,"corson county, south dakota",SPM
+46033,46,033,"custer county, south dakota",SPM
+46035,46,035,"davison county, south dakota",SPM
+46037,46,037,"day county, south dakota",SPM
+46039,46,039,"deuel county, south dakota",SPM
+46041,46,041,"dewey county, south dakota",SPM
+46043,46,043,"douglas county, south dakota",SPM
+46045,46,045,"edmunds county, south dakota",SPM
+46047,46,047,"fall river county, south dakota",SPM
+46049,46,049,"faulk county, south dakota",SPM
+46051,46,051,"grant county, south dakota",SPM
+46053,46,053,"gregory county, south dakota",SPM
+46055,46,055,"haakon county, south dakota",SPM
+46057,46,057,"hamlin county, south dakota",SPM
+46059,46,059,"hand county, south dakota",SPM
+46061,46,061,"hanson county, south dakota",SPM
+46063,46,063,"harding county, south dakota",SPM
+46065,46,065,"hughes county, south dakota",SPM
+46067,46,067,"hutchinson county, south dakota",SPM
+46069,46,069,"hyde county, south dakota",SPM
+46071,46,071,"jackson county, south dakota",SPM
+46073,46,073,"jerauld county, south dakota",SPM
+46075,46,075,"jones county, south dakota",SPM
+46077,46,077,"kingsbury county, south dakota",SPM
+46079,46,079,"lake county, south dakota",SPM
+46081,46,081,"lawrence county, south dakota",SPM
+46083,46,083,"lincoln county, south dakota",SPM
+46085,46,085,"lyman county, south dakota",SPM
+46087,46,087,"mccook county, south dakota",SPM
+46089,46,089,"mcpherson county, south dakota",SPM
+46091,46,091,"marshall county, south dakota",SPM
+46093,46,093,"meade county, south dakota",SPM
+46095,46,095,"mellette county, south dakota",SPM
+46097,46,097,"miner county, south dakota",SPM
+46099,46,099,"minnehaha county, south dakota",SPM
+46101,46,101,"moody county, south dakota",SPM
+46102,46,102,"oglala lakota county, south dakota",SPM
+46103,46,103,"pennington county, south dakota",SPM
+46105,46,105,"perkins county, south dakota",SPM
+46107,46,107,"potter county, south dakota",SPM
+46109,46,109,"roberts county, south dakota",SPM
+46111,46,111,"sanborn county, south dakota",SPM
+46115,46,115,"spink county, south dakota",SPM
+46117,46,117,"stanley county, south dakota",SPM
+46119,46,119,"sully county, south dakota",SPM
+46121,46,121,"todd county, south dakota",SPM
+46123,46,123,"tripp county, south dakota",SPM
+46125,46,125,"turner county, south dakota",SPM
+46127,46,127,"union county, south dakota",SPM
+46129,46,129,"walworth county, south dakota",SPM
+46135,46,135,"yankton county, south dakota",SPM
+46137,46,137,"ziebach county, south dakota",SPM
+47001,47,001,"anderson county, tennessee",NOL
+47003,47,003,"bedford county, tennessee",NOL
+47005,47,005,"benton county, tennessee",NOL
+47007,47,007,"bledsoe county, tennessee",NOL
+47009,47,009,"blount county, tennessee",NOL
+47011,47,011,"bradley county, tennessee",NOL
+47013,47,013,"campbell county, tennessee",NOL
+47015,47,015,"cannon county, tennessee",NOL
+47017,47,017,"carroll county, tennessee",NOL
+47019,47,019,"carter county, tennessee",NOL
+47021,47,021,"cheatham county, tennessee",NOL
+47023,47,023,"chester county, tennessee",NOL
+47025,47,025,"claiborne county, tennessee",NOL
+47027,47,027,"clay county, tennessee",NOL
+47029,47,029,"cocke county, tennessee",NOL
+47031,47,031,"coffee county, tennessee",NOL
+47033,47,033,"crockett county, tennessee",NOL
+47035,47,035,"cumberland county, tennessee",NOL
+47037,47,037,"davidson county, tennessee",NOL
+47039,47,039,"decatur county, tennessee",NOL
+47041,47,041,"dekalb county, tennessee",NOL
+47043,47,043,"dickson county, tennessee",NOL
+47045,47,045,"dyer county, tennessee",NOL
+47047,47,047,"fayette county, tennessee",NOL
+47049,47,049,"fentress county, tennessee",NOL
+47051,47,051,"franklin county, tennessee",NOL
+47053,47,053,"gibson county, tennessee",NOL
+47055,47,055,"giles county, tennessee",NOL
+47057,47,057,"grainger county, tennessee",NOL
+47059,47,059,"greene county, tennessee",NOL
+47061,47,061,"grundy county, tennessee",NOL
+47063,47,063,"hamblen county, tennessee",NOL
+47065,47,065,"hamilton county, tennessee",NOL
+47067,47,067,"hancock county, tennessee",NOL
+47069,47,069,"hardeman county, tennessee",NOL
+47071,47,071,"hardin county, tennessee",NOL
+47073,47,073,"hawkins county, tennessee",NOL
+47075,47,075,"haywood county, tennessee",NOL
+47077,47,077,"henderson county, tennessee",NOL
+47079,47,079,"henry county, tennessee",NOL
+47081,47,081,"hickman county, tennessee",NOL
+47083,47,083,"houston county, tennessee",NOL
+47085,47,085,"humphreys county, tennessee",NOL
+47087,47,087,"jackson county, tennessee",NOL
+47089,47,089,"jefferson county, tennessee",NOL
+47091,47,091,"johnson county, tennessee",NOL
+47093,47,093,"knox county, tennessee",NOL
+47095,47,095,"lake county, tennessee",NOL
+47097,47,097,"lauderdale county, tennessee",NOL
+47099,47,099,"lawrence county, tennessee",NOL
+47101,47,101,"lewis county, tennessee",NOL
+47103,47,103,"lincoln county, tennessee",NOL
+47105,47,105,"loudon county, tennessee",NOL
+47107,47,107,"mcminn county, tennessee",NOL
+47109,47,109,"mcnairy county, tennessee",NOL
+47111,47,111,"macon county, tennessee",NOL
+47113,47,113,"madison county, tennessee",NOL
+47115,47,115,"marion county, tennessee",NOL
+47117,47,117,"marshall county, tennessee",NOL
+47119,47,119,"maury county, tennessee",NOL
+47121,47,121,"meigs county, tennessee",NOL
+47123,47,123,"monroe county, tennessee",NOL
+47125,47,125,"montgomery county, tennessee",NOL
+47127,47,127,"moore county, tennessee",NOL
+47129,47,129,"morgan county, tennessee",NOL
+47131,47,131,"obion county, tennessee",NOL
+47133,47,133,"overton county, tennessee",NOL
+47135,47,135,"perry county, tennessee",NOL
+47137,47,137,"pickett county, tennessee",NOL
+47139,47,139,"polk county, tennessee",NOL
+47141,47,141,"putnam county, tennessee",NOL
+47143,47,143,"rhea county, tennessee",NOL
+47145,47,145,"roane county, tennessee",NOL
+47147,47,147,"robertson county, tennessee",NOL
+47149,47,149,"rutherford county, tennessee",NOL
+47151,47,151,"scott county, tennessee",NOL
+47153,47,153,"sequatchie county, tennessee",NOL
+47155,47,155,"sevier county, tennessee",NOL
+47157,47,157,"shelby county, tennessee",NOL
+47159,47,159,"smith county, tennessee",NOL
+47161,47,161,"stewart county, tennessee",NOL
+47163,47,163,"sullivan county, tennessee",NOL
+47165,47,165,"sumner county, tennessee",NOL
+47167,47,167,"tipton county, tennessee",NOL
+47169,47,169,"trousdale county, tennessee",NOL
+47171,47,171,"unicoi county, tennessee",NOL
+47173,47,173,"union county, tennessee",NOL
+47175,47,175,"van buren county, tennessee",NOL
+47177,47,177,"warren county, tennessee",NOL
+47179,47,179,"washington county, tennessee",NOL
+47181,47,181,"wayne county, tennessee",NOL
+47183,47,183,"weakley county, tennessee",NOL
+47185,47,185,"white county, tennessee",NOL
+47187,47,187,"williamson county, tennessee",NOL
+47189,47,189,"wilson county, tennessee",NOL
+48001,48,001,"anderson county, texas",DAL
+48003,48,003,"andrews county, texas",ELP
+48005,48,005,"angelina county, texas",HOU
+48007,48,007,"aransas county, texas",HAR
+48009,48,009,"archer county, texas",DAL
+48011,48,011,"armstrong county, texas",DAL
+48013,48,013,"atascosa county, texas",SNA
+48015,48,015,"austin county, texas",HOU
+48017,48,017,"bailey county, texas",DAL
+48019,48,019,"bandera county, texas",SNA
+48021,48,021,"bastrop county, texas",SNA
+48023,48,023,"baylor county, texas",DAL
+48025,48,025,"bee county, texas",HOU
+48027,48,027,"bell county, texas",SNA
+48029,48,029,"bexar county, texas",SNA
+48031,48,031,"blanco county, texas",SNA
+48033,48,033,"borden county, texas",DAL
+48035,48,035,"bosque county, texas",SNA
+48037,48,037,"bowie county, texas",DAL
+48039,48,039,"brazoria county, texas",HOU
+48041,48,041,"brazos county, texas",HOU
+48043,48,043,"brewster county, texas",ELP
+48045,48,045,"briscoe county, texas",DAL
+48047,48,047,"brooks county, texas",HAR
+48049,48,049,"brown county, texas",DAL
+48051,48,051,"burleson county, texas",HOU
+48053,48,053,"burnet county, texas",SNA
+48055,48,055,"caldwell county, texas",SNA
+48057,48,057,"calhoun county, texas",HOU
+48059,48,059,"callahan county, texas",DAL
+48061,48,061,"cameron county, texas",HAR
+48063,48,063,"camp county, texas",DAL
+48065,48,065,"carson county, texas",DAL
+48067,48,067,"cass county, texas",DAL
+48069,48,069,"castro county, texas",DAL
+48071,48,071,"chambers county, texas",HOU
+48073,48,073,"cherokee county, texas",DAL
+48075,48,075,"childress county, texas",DAL
+48077,48,077,"clay county, texas",DAL
+48079,48,079,"cochran county, texas",DAL
+48081,48,081,"coke county, texas",DAL
+48083,48,083,"coleman county, texas",DAL
+48085,48,085,"collin county, texas",DAL
+48087,48,087,"collingsworth county, texas",DAL
+48089,48,089,"colorado county, texas",HOU
+48091,48,091,"comal county, texas",SNA
+48093,48,093,"comanche county, texas",DAL
+48095,48,095,"concho county, texas",DAL
+48097,48,097,"cooke county, texas",DAL
+48099,48,099,"coryell county, texas",SNA
+48101,48,101,"cottle county, texas",DAL
+48103,48,103,"crane county, texas",ELP
+48105,48,105,"crockett county, texas",DAL
+48107,48,107,"crosby county, texas",DAL
+48109,48,109,"culberson county, texas",ELP
+48111,48,111,"dallam county, texas",DAL
+48113,48,113,"dallas county, texas",DAL
+48115,48,115,"dawson county, texas",DAL
+48117,48,117,"deaf smith county, texas",DAL
+48119,48,119,"delta county, texas",DAL
+48121,48,121,"denton county, texas",DAL
+48123,48,123,"dewitt county, texas",HOU
+48125,48,125,"dickens county, texas",DAL
+48127,48,127,"dimmit county, texas",SNA
+48129,48,129,"donley county, texas",DAL
+48131,48,131,"duval county, texas",HAR
+48133,48,133,"eastland county, texas",DAL
+48135,48,135,"ector county, texas",ELP
+48137,48,137,"edwards county, texas",SNA
+48139,48,139,"ellis county, texas",DAL
+48141,48,141,"el paso county, texas",ELP
+48143,48,143,"erath county, texas",DAL
+48145,48,145,"falls county, texas",SNA
+48147,48,147,"fannin county, texas",DAL
+48149,48,149,"fayette county, texas",HOU
+48151,48,151,"fisher county, texas",DAL
+48153,48,153,"floyd county, texas",DAL
+48155,48,155,"foard county, texas",DAL
+48157,48,157,"fort bend county, texas",HOU
+48159,48,159,"franklin county, texas",DAL
+48161,48,161,"freestone county, texas",SNA
+48163,48,163,"frio county, texas",SNA
+48165,48,165,"gaines county, texas",DAL
+48167,48,167,"galveston county, texas",HOU
+48169,48,169,"garza county, texas",DAL
+48171,48,171,"gillespie county, texas",SNA
+48173,48,173,"glasscock county, texas",DAL
+48175,48,175,"goliad county, texas",HOU
+48177,48,177,"gonzales county, texas",SNA
+48179,48,179,"gray county, texas",DAL
+48181,48,181,"grayson county, texas",DAL
+48183,48,183,"gregg county, texas",DAL
+48185,48,185,"grimes county, texas",HOU
+48187,48,187,"guadalupe county, texas",SNA
+48189,48,189,"hale county, texas",DAL
+48191,48,191,"hall county, texas",DAL
+48193,48,193,"hamilton county, texas",SNA
+48195,48,195,"hansford county, texas",DAL
+48197,48,197,"hardeman county, texas",DAL
+48199,48,199,"hardin county, texas",HOU
+48201,48,201,"harris county, texas",HOU
+48203,48,203,"harrison county, texas",DAL
+48205,48,205,"hartley county, texas",DAL
+48207,48,207,"haskell county, texas",DAL
+48209,48,209,"hays county, texas",SNA
+48211,48,211,"hemphill county, texas",DAL
+48213,48,213,"henderson county, texas",DAL
+48215,48,215,"hidalgo county, texas",HAR
+48217,48,217,"hill county, texas",SNA
+48219,48,219,"hockley county, texas",DAL
+48221,48,221,"hood county, texas",DAL
+48223,48,223,"hopkins county, texas",DAL
+48225,48,225,"houston county, texas",HOU
+48227,48,227,"howard county, texas",DAL
+48229,48,229,"hudspeth county, texas",ELP
+48231,48,231,"hunt county, texas",DAL
+48233,48,233,"hutchinson county, texas",DAL
+48235,48,235,"irion county, texas",DAL
+48237,48,237,"jack county, texas",DAL
+48239,48,239,"jackson county, texas",HOU
+48241,48,241,"jasper county, texas",HOU
+48243,48,243,"jeff davis county, texas",ELP
+48245,48,245,"jefferson county, texas",HOU
+48247,48,247,"jim hogg county, texas",HAR
+48249,48,249,"jim wells county, texas",HAR
+48251,48,251,"johnson county, texas",DAL
+48253,48,253,"jones county, texas",DAL
+48255,48,255,"karnes county, texas",SNA
+48257,48,257,"kaufman county, texas",DAL
+48259,48,259,"kendall county, texas",SNA
+48261,48,261,"kenedy county, texas",HAR
+48263,48,263,"kent county, texas",DAL
+48265,48,265,"kerr county, texas",SNA
+48267,48,267,"kimble county, texas",SNA
+48269,48,269,"king county, texas",DAL
+48271,48,271,"kinney county, texas",SNA
+48273,48,273,"kleberg county, texas",HAR
+48275,48,275,"knox county, texas",DAL
+48277,48,277,"lamar county, texas",DAL
+48279,48,279,"lamb county, texas",DAL
+48281,48,281,"lampasas county, texas",SNA
+48283,48,283,"la salle county, texas",SNA
+48285,48,285,"lavaca county, texas",HOU
+48287,48,287,"lee county, texas",HOU
+48289,48,289,"leon county, texas",HOU
+48291,48,291,"liberty county, texas",HOU
+48293,48,293,"limestone county, texas",SNA
+48295,48,295,"lipscomb county, texas",DAL
+48297,48,297,"live oak county, texas",HOU
+48299,48,299,"llano county, texas",SNA
+48301,48,301,"loving county, texas",ELP
+48303,48,303,"lubbock county, texas",DAL
+48305,48,305,"lynn county, texas",DAL
+48307,48,307,"mcculloch county, texas",SNA
+48309,48,309,"mclennan county, texas",SNA
+48311,48,311,"mcmullen county, texas",SNA
+48313,48,313,"madison county, texas",HOU
+48315,48,315,"marion county, texas",DAL
+48317,48,317,"martin county, texas",ELP
+48319,48,319,"mason county, texas",SNA
+48321,48,321,"matagorda county, texas",HOU
+48323,48,323,"maverick county, texas",SNA
+48325,48,325,"medina county, texas",SNA
+48327,48,327,"menard county, texas",DAL
+48329,48,329,"midland county, texas",ELP
+48331,48,331,"milam county, texas",HOU
+48333,48,333,"mills county, texas",DAL
+48335,48,335,"mitchell county, texas",DAL
+48337,48,337,"montague county, texas",DAL
+48339,48,339,"montgomery county, texas",HOU
+48341,48,341,"moore county, texas",DAL
+48343,48,343,"morris county, texas",DAL
+48345,48,345,"motley county, texas",DAL
+48347,48,347,"nacogdoches county, texas",HOU
+48349,48,349,"navarro county, texas",DAL
+48351,48,351,"newton county, texas",HOU
+48353,48,353,"nolan county, texas",DAL
+48355,48,355,"nueces county, texas",HAR
+48357,48,357,"ochiltree county, texas",DAL
+48359,48,359,"oldham county, texas",DAL
+48361,48,361,"orange county, texas",HOU
+48363,48,363,"palo pinto county, texas",DAL
+48365,48,365,"panola county, texas",DAL
+48367,48,367,"parker county, texas",DAL
+48369,48,369,"parmer county, texas",DAL
+48371,48,371,"pecos county, texas",ELP
+48373,48,373,"polk county, texas",HOU
+48375,48,375,"potter county, texas",DAL
+48377,48,377,"presidio county, texas",ELP
+48379,48,379,"rains county, texas",DAL
+48381,48,381,"randall county, texas",DAL
+48383,48,383,"reagan county, texas",DAL
+48385,48,385,"real county, texas",SNA
+48387,48,387,"red river county, texas",DAL
+48389,48,389,"reeves county, texas",ELP
+48391,48,391,"refugio county, texas",HOU
+48393,48,393,"roberts county, texas",DAL
+48395,48,395,"robertson county, texas",HOU
+48397,48,397,"rockwall county, texas",DAL
+48399,48,399,"runnels county, texas",DAL
+48401,48,401,"rusk county, texas",DAL
+48403,48,403,"sabine county, texas",HOU
+48405,48,405,"san augustine county, texas",HOU
+48407,48,407,"san jacinto county, texas",HOU
+48409,48,409,"san patricio county, texas",HAR
+48411,48,411,"san saba county, texas",SNA
+48413,48,413,"schleicher county, texas",DAL
+48415,48,415,"scurry county, texas",DAL
+48417,48,417,"shackelford county, texas",DAL
+48419,48,419,"shelby county, texas",HOU
+48421,48,421,"sherman county, texas",DAL
+48423,48,423,"smith county, texas",DAL
+48425,48,425,"somervell county, texas",SNA
+48427,48,427,"starr county, texas",HAR
+48429,48,429,"stephens county, texas",DAL
+48431,48,431,"sterling county, texas",DAL
+48433,48,433,"stonewall county, texas",DAL
+48435,48,435,"sutton county, texas",DAL
+48437,48,437,"swisher county, texas",DAL
+48439,48,439,"tarrant county, texas",DAL
+48441,48,441,"taylor county, texas",DAL
+48443,48,443,"terrell county, texas",ELP
+48445,48,445,"terry county, texas",DAL
+48447,48,447,"throckmorton county, texas",DAL
+48449,48,449,"titus county, texas",DAL
+48451,48,451,"tom green county, texas",DAL
+48453,48,453,"travis county, texas",SNA
+48455,48,455,"trinity county, texas",HOU
+48457,48,457,"tyler county, texas",HOU
+48459,48,459,"upshur county, texas",DAL
+48461,48,461,"upton county, texas",ELP
+48463,48,463,"uvalde county, texas",SNA
+48465,48,465,"val verde county, texas",SNA
+48467,48,467,"van zandt county, texas",DAL
+48469,48,469,"victoria county, texas",HOU
+48471,48,471,"walker county, texas",HOU
+48473,48,473,"waller county, texas",HOU
+48475,48,475,"ward county, texas",ELP
+48477,48,477,"washington county, texas",HOU
+48479,48,479,"webb county, texas",HAR
+48481,48,481,"wharton county, texas",HOU
+48483,48,483,"wheeler county, texas",DAL
+48485,48,485,"wichita county, texas",DAL
+48487,48,487,"wilbarger county, texas",DAL
+48489,48,489,"willacy county, texas",HAR
+48491,48,491,"williamson county, texas",SNA
+48493,48,493,"wilson county, texas",SNA
+48495,48,495,"winkler county, texas",ELP
+48497,48,497,"wise county, texas",DAL
+48499,48,499,"wood county, texas",DAL
+48501,48,501,"yoakum county, texas",DAL
+48503,48,503,"young county, texas",DAL
+48505,48,505,"zapata county, texas",HAR
+48507,48,507,"zavala county, texas",SNA
+49001,49,001,"beaver county, utah",SLC
+49003,49,003,"box elder county, utah",SLC
+49005,49,005,"cache county, utah",SLC
+49007,49,007,"carbon county, utah",SLC
+49009,49,009,"daggett county, utah",SLC
+49011,49,011,"davis county, utah",SLC
+49013,49,013,"duchesne county, utah",SLC
+49015,49,015,"emery county, utah",SLC
+49017,49,017,"garfield county, utah",SLC
+49019,49,019,"grand county, utah",SLC
+49021,49,021,"iron county, utah",SLC
+49023,49,023,"juab county, utah",SLC
+49025,49,025,"kane county, utah",SLC
+49027,49,027,"millard county, utah",SLC
+49029,49,029,"morgan county, utah",SLC
+49031,49,031,"piute county, utah",SLC
+49033,49,033,"rich county, utah",SLC
+49035,49,035,"salt lake county, utah",SLC
+49037,49,037,"san juan county, utah",SLC
+49039,49,039,"sanpete county, utah",SLC
+49041,49,041,"sevier county, utah",SLC
+49043,49,043,"summit county, utah",SLC
+49045,49,045,"tooele county, utah",SLC
+49047,49,047,"uintah county, utah",SLC
+49049,49,049,"utah county, utah",SLC
+49051,49,051,"wasatch county, utah",SLC
+49053,49,053,"washington county, utah",SLC
+49055,49,055,"wayne county, utah",SLC
+49057,49,057,"weber county, utah",SLC
+50001,50,001,"addison county, vermont",BOS
+50003,50,003,"bennington county, vermont",BOS
+50005,50,005,"caledonia county, vermont",BOS
+50007,50,007,"chittenden county, vermont",BOS
+50009,50,009,"essex county, vermont",BOS
+50011,50,011,"franklin county, vermont",BOS
+50013,50,013,"grand isle county, vermont",BOS
+50015,50,015,"lamoille county, vermont",BOS
+50017,50,017,"orange county, vermont",BOS
+50019,50,019,"orleans county, vermont",BOS
+50021,50,021,"rutland county, vermont",BOS
+50023,50,023,"washington county, vermont",BOS
+50025,50,025,"windham county, vermont",BOS
+50027,50,027,"windsor county, vermont",BOS
+51001,51,001,"accomack county, virginia",WAS
+51003,51,003,"albemarle county, virginia",WAS
+51005,51,005,"alleghany county, virginia",WAS
+51007,51,007,"amelia county, virginia",WAS
+51009,51,009,"amherst county, virginia",WAS
+51011,51,011,"appomattox county, virginia",WAS
+51013,51,013,"arlington county, virginia",WAS
+51015,51,015,"augusta county, virginia",WAS
+51017,51,017,"bath county, virginia",WAS
+51019,51,019,"bedford county, virginia",WAS
+51021,51,021,"bland county, virginia",WAS
+51023,51,023,"botetourt county, virginia",WAS
+51025,51,025,"brunswick county, virginia",WAS
+51027,51,027,"buchanan county, virginia",WAS
+51029,51,029,"buckingham county, virginia",WAS
+51031,51,031,"campbell county, virginia",WAS
+51033,51,033,"caroline county, virginia",WAS
+51035,51,035,"carroll county, virginia",WAS
+51036,51,036,"charles city county, virginia",WAS
+51037,51,037,"charlotte county, virginia",WAS
+51041,51,041,"chesterfield county, virginia",WAS
+51043,51,043,"clarke county, virginia",WAS
+51045,51,045,"craig county, virginia",WAS
+51047,51,047,"culpeper county, virginia",WAS
+51049,51,049,"cumberland county, virginia",WAS
+51051,51,051,"dickenson county, virginia",WAS
+51053,51,053,"dinwiddie county, virginia",WAS
+51057,51,057,"essex county, virginia",WAS
+51059,51,059,"fairfax county, virginia",WAS
+51061,51,061,"fauquier county, virginia",WAS
+51063,51,063,"floyd county, virginia",WAS
+51065,51,065,"fluvanna county, virginia",WAS
+51067,51,067,"franklin county, virginia",WAS
+51069,51,069,"frederick county, virginia",WAS
+51071,51,071,"giles county, virginia",WAS
+51073,51,073,"gloucester county, virginia",WAS
+51075,51,075,"goochland county, virginia",WAS
+51077,51,077,"grayson county, virginia",WAS
+51079,51,079,"greene county, virginia",WAS
+51081,51,081,"greensville county, virginia",WAS
+51083,51,083,"halifax county, virginia",WAS
+51085,51,085,"hanover county, virginia",WAS
+51087,51,087,"henrico county, virginia",WAS
+51089,51,089,"henry county, virginia",WAS
+51091,51,091,"highland county, virginia",WAS
+51093,51,093,"isle of wight county, virginia",WAS
+51095,51,095,"james city county, virginia",WAS
+51097,51,097,"king and queen county, virginia",WAS
+51099,51,099,"king george county, virginia",WAS
+51101,51,101,"king william county, virginia",WAS
+51103,51,103,"lancaster county, virginia",WAS
+51105,51,105,"lee county, virginia",WAS
+51107,51,107,"loudoun county, virginia",WAS
+51109,51,109,"louisa county, virginia",WAS
+51111,51,111,"lunenburg county, virginia",WAS
+51113,51,113,"madison county, virginia",WAS
+51115,51,115,"mathews county, virginia",WAS
+51117,51,117,"mecklenburg county, virginia",WAS
+51119,51,119,"middlesex county, virginia",WAS
+51121,51,121,"montgomery county, virginia",WAS
+51125,51,125,"nelson county, virginia",WAS
+51127,51,127,"new kent county, virginia",WAS
+51131,51,131,"northampton county, virginia",WAS
+51133,51,133,"northumberland county, virginia",WAS
+51135,51,135,"nottoway county, virginia",WAS
+51137,51,137,"orange county, virginia",WAS
+51139,51,139,"page county, virginia",WAS
+51141,51,141,"patrick county, virginia",WAS
+51143,51,143,"pittsylvania county, virginia",WAS
+51145,51,145,"powhatan county, virginia",WAS
+51147,51,147,"prince edward county, virginia",WAS
+51149,51,149,"prince george county, virginia",WAS
+51153,51,153,"prince william county, virginia",WAS
+51155,51,155,"pulaski county, virginia",WAS
+51157,51,157,"rappahannock county, virginia",WAS
+51159,51,159,"richmond county, virginia",WAS
+51161,51,161,"roanoke county, virginia",WAS
+51163,51,163,"rockbridge county, virginia",WAS
+51165,51,165,"rockingham county, virginia",WAS
+51167,51,167,"russell county, virginia",WAS
+51169,51,169,"scott county, virginia",WAS
+51171,51,171,"shenandoah county, virginia",WAS
+51173,51,173,"smyth county, virginia",WAS
+51175,51,175,"southampton county, virginia",WAS
+51177,51,177,"spotsylvania county, virginia",WAS
+51179,51,179,"stafford county, virginia",WAS
+51181,51,181,"surry county, virginia",WAS
+51183,51,183,"sussex county, virginia",WAS
+51185,51,185,"tazewell county, virginia",WAS
+51187,51,187,"warren county, virginia",WAS
+51191,51,191,"washington county, virginia",WAS
+51193,51,193,"westmoreland county, virginia",WAS
+51195,51,195,"wise county, virginia",WAS
+51197,51,197,"wythe county, virginia",WAS
+51199,51,199,"york county, virginia",WAS
+51510,51,510,"alexandria city, virginia",WAS
+51520,51,520,"bristol city, virginia",WAS
+51530,51,530,"buena vista city, virginia",WAS
+51540,51,540,"charlottesville city, virginia",WAS
+51550,51,550,"chesapeake city, virginia",WAS
+51570,51,570,"colonial heights city, virginia",WAS
+51580,51,580,"covington city, virginia",WAS
+51590,51,590,"danville city, virginia",WAS
+51595,51,595,"emporia city, virginia",WAS
+51600,51,600,"fairfax city, virginia",WAS
+51610,51,610,"falls church city, virginia",WAS
+51620,51,620,"franklin city, virginia",WAS
+51630,51,630,"fredericksburg city, virginia",WAS
+51640,51,640,"galax city, virginia",WAS
+51650,51,650,"hampton city, virginia",WAS
+51660,51,660,"harrisonburg city, virginia",WAS
+51670,51,670,"hopewell city, virginia",WAS
+51678,51,678,"lexington city, virginia",WAS
+51680,51,680,"lynchburg city, virginia",WAS
+51683,51,683,"manassas city, virginia",WAS
+51685,51,685,"manassas park city, virginia",WAS
+51690,51,690,"martinsville city, virginia",WAS
+51700,51,700,"newport news city, virginia",WAS
+51710,51,710,"norfolk city, virginia",WAS
+51720,51,720,"norton city, virginia",WAS
+51730,51,730,"petersburg city, virginia",WAS
+51735,51,735,"poquoson city, virginia",WAS
+51740,51,740,"portsmouth city, virginia",WAS
+51750,51,750,"radford city, virginia",WAS
+51760,51,760,"richmond city, virginia",WAS
+51770,51,770,"roanoke city, virginia",WAS
+51775,51,775,"salem city, virginia",WAS
+51790,51,790,"staunton city, virginia",WAS
+51800,51,800,"suffolk city, virginia",WAS
+51810,51,810,"virginia beach city, virginia",WAS
+51820,51,820,"waynesboro city, virginia",WAS
+51830,51,830,"williamsburg city, virginia",WAS
+51840,51,840,"winchester city, virginia",WAS
+53001,53,001,"adams county, washington",SEA
+53003,53,003,"asotin county, washington",SEA
+53005,53,005,"benton county, washington",SEA
+53007,53,007,"chelan county, washington",SEA
+53009,53,009,"clallam county, washington",SEA
+53011,53,011,"clark county, washington",SEA
+53013,53,013,"columbia county, washington",SEA
+53015,53,015,"cowlitz county, washington",SEA
+53017,53,017,"douglas county, washington",SEA
+53019,53,019,"ferry county, washington",SEA
+53021,53,021,"franklin county, washington",SEA
+53023,53,023,"garfield county, washington",SEA
+53025,53,025,"grant county, washington",SEA
+53027,53,027,"grays harbor county, washington",SEA
+53029,53,029,"island county, washington",SEA
+53031,53,031,"jefferson county, washington",SEA
+53033,53,033,"king county, washington",SEA
+53035,53,035,"kitsap county, washington",SEA
+53037,53,037,"kittitas county, washington",SEA
+53039,53,039,"klickitat county, washington",SEA
+53041,53,041,"lewis county, washington",SEA
+53043,53,043,"lincoln county, washington",SEA
+53045,53,045,"mason county, washington",SEA
+53047,53,047,"okanogan county, washington",SEA
+53049,53,049,"pacific county, washington",SEA
+53051,53,051,"pend oreille county, washington",SEA
+53053,53,053,"pierce county, washington",SEA
+53055,53,055,"san juan county, washington",SEA
+53057,53,057,"skagit county, washington",SEA
+53059,53,059,"skamania county, washington",SEA
+53061,53,061,"snohomish county, washington",SEA
+53063,53,063,"spokane county, washington",SEA
+53065,53,065,"stevens county, washington",SEA
+53067,53,067,"thurston county, washington",SEA
+53069,53,069,"wahkiakum county, washington",SEA
+53071,53,071,"walla walla county, washington",SEA
+53073,53,073,"whatcom county, washington",SEA
+53075,53,075,"whitman county, washington",SEA
+53077,53,077,"yakima county, washington",SEA
+54001,54,001,"barbour county, west virginia",PHI
+54003,54,003,"berkeley county, west virginia",PHI
+54005,54,005,"boone county, west virginia",PHI
+54007,54,007,"braxton county, west virginia",PHI
+54009,54,009,"brooke county, west virginia",PHI
+54011,54,011,"cabell county, west virginia",PHI
+54013,54,013,"calhoun county, west virginia",PHI
+54015,54,015,"clay county, west virginia",PHI
+54017,54,017,"doddridge county, west virginia",PHI
+54019,54,019,"fayette county, west virginia",PHI
+54021,54,021,"gilmer county, west virginia",PHI
+54023,54,023,"grant county, west virginia",PHI
+54025,54,025,"greenbrier county, west virginia",PHI
+54027,54,027,"hampshire county, west virginia",PHI
+54029,54,029,"hancock county, west virginia",PHI
+54031,54,031,"hardy county, west virginia",PHI
+54033,54,033,"harrison county, west virginia",PHI
+54035,54,035,"jackson county, west virginia",PHI
+54037,54,037,"jefferson county, west virginia",PHI
+54039,54,039,"kanawha county, west virginia",PHI
+54041,54,041,"lewis county, west virginia",PHI
+54043,54,043,"lincoln county, west virginia",PHI
+54045,54,045,"logan county, west virginia",PHI
+54047,54,047,"mcdowell county, west virginia",PHI
+54049,54,049,"marion county, west virginia",PHI
+54051,54,051,"marshall county, west virginia",PHI
+54053,54,053,"mason county, west virginia",PHI
+54055,54,055,"mercer county, west virginia",PHI
+54057,54,057,"mineral county, west virginia",PHI
+54059,54,059,"mingo county, west virginia",PHI
+54061,54,061,"monongalia county, west virginia",PHI
+54063,54,063,"monroe county, west virginia",PHI
+54065,54,065,"morgan county, west virginia",PHI
+54067,54,067,"nicholas county, west virginia",PHI
+54069,54,069,"ohio county, west virginia",PHI
+54071,54,071,"pendleton county, west virginia",PHI
+54073,54,073,"pleasants county, west virginia",PHI
+54075,54,075,"pocahontas county, west virginia",PHI
+54077,54,077,"preston county, west virginia",PHI
+54079,54,079,"putnam county, west virginia",PHI
+54081,54,081,"raleigh county, west virginia",PHI
+54083,54,083,"randolph county, west virginia",PHI
+54085,54,085,"ritchie county, west virginia",PHI
+54087,54,087,"roane county, west virginia",PHI
+54089,54,089,"summers county, west virginia",PHI
+54091,54,091,"taylor county, west virginia",PHI
+54093,54,093,"tucker county, west virginia",PHI
+54095,54,095,"tyler county, west virginia",PHI
+54097,54,097,"upshur county, west virginia",PHI
+54099,54,099,"wayne county, west virginia",PHI
+54101,54,101,"webster county, west virginia",PHI
+54103,54,103,"wetzel county, west virginia",PHI
+54105,54,105,"wirt county, west virginia",PHI
+54107,54,107,"wood county, west virginia",PHI
+54109,54,109,"wyoming county, west virginia",PHI
+55001,55,001,"adams county, wisconsin",CHI
+55003,55,003,"ashland county, wisconsin",CHI
+55005,55,005,"barron county, wisconsin",CHI
+55007,55,007,"bayfield county, wisconsin",CHI
+55009,55,009,"brown county, wisconsin",CHI
+55011,55,011,"buffalo county, wisconsin",CHI
+55013,55,013,"burnett county, wisconsin",CHI
+55015,55,015,"calumet county, wisconsin",CHI
+55017,55,017,"chippewa county, wisconsin",CHI
+55019,55,019,"clark county, wisconsin",CHI
+55021,55,021,"columbia county, wisconsin",CHI
+55023,55,023,"crawford county, wisconsin",CHI
+55025,55,025,"dane county, wisconsin",CHI
+55027,55,027,"dodge county, wisconsin",CHI
+55029,55,029,"door county, wisconsin",CHI
+55031,55,031,"douglas county, wisconsin",CHI
+55033,55,033,"dunn county, wisconsin",CHI
+55035,55,035,"eau claire county, wisconsin",CHI
+55037,55,037,"florence county, wisconsin",CHI
+55039,55,039,"fond du lac county, wisconsin",CHI
+55041,55,041,"forest county, wisconsin",CHI
+55043,55,043,"grant county, wisconsin",CHI
+55045,55,045,"green county, wisconsin",CHI
+55047,55,047,"green lake county, wisconsin",CHI
+55049,55,049,"iowa county, wisconsin",CHI
+55051,55,051,"iron county, wisconsin",CHI
+55053,55,053,"jackson county, wisconsin",CHI
+55055,55,055,"jefferson county, wisconsin",CHI
+55057,55,057,"juneau county, wisconsin",CHI
+55059,55,059,"kenosha county, wisconsin",CHI
+55061,55,061,"kewaunee county, wisconsin",CHI
+55063,55,063,"la crosse county, wisconsin",CHI
+55065,55,065,"lafayette county, wisconsin",CHI
+55067,55,067,"langlade county, wisconsin",CHI
+55069,55,069,"lincoln county, wisconsin",CHI
+55071,55,071,"manitowoc county, wisconsin",CHI
+55073,55,073,"marathon county, wisconsin",CHI
+55075,55,075,"marinette county, wisconsin",CHI
+55077,55,077,"marquette county, wisconsin",CHI
+55078,55,078,"menominee county, wisconsin",CHI
+55079,55,079,"milwaukee county, wisconsin",CHI
+55081,55,081,"monroe county, wisconsin",CHI
+55083,55,083,"oconto county, wisconsin",CHI
+55085,55,085,"oneida county, wisconsin",CHI
+55087,55,087,"outagamie county, wisconsin",CHI
+55089,55,089,"ozaukee county, wisconsin",CHI
+55091,55,091,"pepin county, wisconsin",CHI
+55093,55,093,"pierce county, wisconsin",CHI
+55095,55,095,"polk county, wisconsin",CHI
+55097,55,097,"portage county, wisconsin",CHI
+55099,55,099,"price county, wisconsin",CHI
+55101,55,101,"racine county, wisconsin",CHI
+55103,55,103,"richland county, wisconsin",CHI
+55105,55,105,"rock county, wisconsin",CHI
+55107,55,107,"rusk county, wisconsin",CHI
+55109,55,109,"st. croix county, wisconsin",CHI
+55111,55,111,"sauk county, wisconsin",CHI
+55113,55,113,"sawyer county, wisconsin",CHI
+55115,55,115,"shawano county, wisconsin",CHI
+55117,55,117,"sheboygan county, wisconsin",CHI
+55119,55,119,"taylor county, wisconsin",CHI
+55121,55,121,"trempealeau county, wisconsin",CHI
+55123,55,123,"vernon county, wisconsin",CHI
+55125,55,125,"vilas county, wisconsin",CHI
+55127,55,127,"walworth county, wisconsin",CHI
+55129,55,129,"washburn county, wisconsin",CHI
+55131,55,131,"washington county, wisconsin",CHI
+55133,55,133,"waukesha county, wisconsin",CHI
+55135,55,135,"waupaca county, wisconsin",CHI
+55137,55,137,"waushara county, wisconsin",CHI
+55139,55,139,"winnebago county, wisconsin",CHI
+55141,55,141,"wood county, wisconsin",CHI
+56001,56,001,"albany county, wyoming",DEN
+56003,56,003,"big horn county, wyoming",DEN
+56005,56,005,"campbell county, wyoming",DEN
+56007,56,007,"carbon county, wyoming",DEN
+56009,56,009,"converse county, wyoming",DEN
+56011,56,011,"crook county, wyoming",DEN
+56013,56,013,"fremont county, wyoming",DEN
+56015,56,015,"goshen county, wyoming",DEN
+56017,56,017,"hot springs county, wyoming",DEN
+56019,56,019,"johnson county, wyoming",DEN
+56021,56,021,"laramie county, wyoming",DEN
+56023,56,023,"lincoln county, wyoming",DEN
+56025,56,025,"natrona county, wyoming",DEN
+56027,56,027,"niobrara county, wyoming",DEN
+56029,56,029,"park county, wyoming",DEN
+56031,56,031,"platte county, wyoming",DEN
+56033,56,033,"sheridan county, wyoming",DEN
+56035,56,035,"sublette county, wyoming",DEN
+56037,56,037,"sweetwater county, wyoming",DEN
+56039,56,039,"teton county, wyoming",DEN
+56041,56,041,"uinta county, wyoming",DEN
+56043,56,043,"washakie county, wyoming",DEN
+56045,56,045,"weston county, wyoming",DEN
+72001,72,001,"adjuntas municipio, puerto rico",MIA
+72003,72,003,"aguada municipio, puerto rico",MIA
+72005,72,005,"aguadilla municipio, puerto rico",MIA
+72007,72,007,"aguas buenas municipio, puerto rico",MIA
+72009,72,009,"aibonito municipio, puerto rico",MIA
+72011,72,011,"añasco municipio, puerto rico",MIA
+72013,72,013,"arecibo municipio, puerto rico",MIA
+72015,72,015,"arroyo municipio, puerto rico",MIA
+72017,72,017,"barceloneta municipio, puerto rico",MIA
+72019,72,019,"barranquitas municipio, puerto rico",MIA
+72021,72,021,"bayamón municipio, puerto rico",MIA
+72023,72,023,"cabo rojo municipio, puerto rico",MIA
+72025,72,025,"caguas municipio, puerto rico",MIA
+72027,72,027,"camuy municipio, puerto rico",MIA
+72029,72,029,"canóvanas municipio, puerto rico",MIA
+72031,72,031,"carolina municipio, puerto rico",MIA
+72033,72,033,"cataño municipio, puerto rico",MIA
+72035,72,035,"cayey municipio, puerto rico",MIA
+72037,72,037,"ceiba municipio, puerto rico",MIA
+72039,72,039,"ciales municipio, puerto rico",MIA
+72041,72,041,"cidra municipio, puerto rico",MIA
+72043,72,043,"coamo municipio, puerto rico",MIA
+72045,72,045,"comerío municipio, puerto rico",MIA
+72047,72,047,"corozal municipio, puerto rico",MIA
+72049,72,049,"culebra municipio, puerto rico",MIA
+72051,72,051,"dorado municipio, puerto rico",MIA
+72053,72,053,"fajardo municipio, puerto rico",MIA
+72054,72,054,"florida municipio, puerto rico",MIA
+72055,72,055,"guánica municipio, puerto rico",MIA
+72057,72,057,"guayama municipio, puerto rico",MIA
+72059,72,059,"guayanilla municipio, puerto rico",MIA
+72061,72,061,"guaynabo municipio, puerto rico",MIA
+72063,72,063,"gurabo municipio, puerto rico",MIA
+72065,72,065,"hatillo municipio, puerto rico",MIA
+72067,72,067,"hormigueros municipio, puerto rico",MIA
+72069,72,069,"humacao municipio, puerto rico",MIA
+72071,72,071,"isabela municipio, puerto rico",MIA
+72073,72,073,"jayuya municipio, puerto rico",MIA
+72075,72,075,"juana díaz municipio, puerto rico",MIA
+72077,72,077,"juncos municipio, puerto rico",MIA
+72079,72,079,"lajas municipio, puerto rico",MIA
+72081,72,081,"lares municipio, puerto rico",MIA
+72083,72,083,"las marías municipio, puerto rico",MIA
+72085,72,085,"las piedras municipio, puerto rico",MIA
+72087,72,087,"loíza municipio, puerto rico",MIA
+72089,72,089,"luquillo municipio, puerto rico",MIA
+72091,72,091,"manatí municipio, puerto rico",MIA
+72093,72,093,"maricao municipio, puerto rico",MIA
+72095,72,095,"maunabo municipio, puerto rico",MIA
+72097,72,097,"mayagüez municipio, puerto rico",MIA
+72099,72,099,"moca municipio, puerto rico",MIA
+72101,72,101,"morovis municipio, puerto rico",MIA
+72103,72,103,"naguabo municipio, puerto rico",MIA
+72105,72,105,"naranjito municipio, puerto rico",MIA
+72107,72,107,"orocovis municipio, puerto rico",MIA
+72109,72,109,"patillas municipio, puerto rico",MIA
+72111,72,111,"peñuelas municipio, puerto rico",MIA
+72113,72,113,"ponce municipio, puerto rico",MIA
+72115,72,115,"quebradillas municipio, puerto rico",MIA
+72117,72,117,"rincón municipio, puerto rico",MIA
+72119,72,119,"río grande municipio, puerto rico",MIA
+72121,72,121,"sabana grande municipio, puerto rico",MIA
+72123,72,123,"salinas municipio, puerto rico",MIA
+72125,72,125,"san germán municipio, puerto rico",MIA
+72127,72,127,"san juan municipio, puerto rico",MIA
+72129,72,129,"san lorenzo municipio, puerto rico",MIA
+72131,72,131,"san sebastián municipio, puerto rico",MIA
+72133,72,133,"santa isabel municipio, puerto rico",MIA
+72135,72,135,"toa alta municipio, puerto rico",MIA
+72137,72,137,"toa baja municipio, puerto rico",MIA
+72139,72,139,"trujillo alto municipio, puerto rico",MIA
+72141,72,141,"utuado municipio, puerto rico",MIA
+72143,72,143,"vega alta municipio, puerto rico",MIA
+72145,72,145,"vega baja municipio, puerto rico",MIA
+72147,72,147,"vieques municipio, puerto rico",MIA
+72149,72,149,"villalba municipio, puerto rico",MIA
+72151,72,151,"yabucoa municipio, puerto rico",MIA
+72153,72,153,"yauco municipio, puerto rico",MIA
