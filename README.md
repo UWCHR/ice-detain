@@ -9,9 +9,9 @@ The datasets analyzed here were released by ICE's Enforcement and Removal Operat
 > We are seeking person-by-person, facility-by-facility detention history records from the ERO LESA Statistical Tracking Unit of all people in immigration detention nationwide from 10/1/2011 to date, in XLS, XLSX, or CSV spreadsheet format; including but not limited to the following fields and including any related definitions, legends, or codebooks: - Unique subject identifier: Non-personally identifiable sequence number or other designation to identify records relating to the same subject. (Such information was previously released pursuant to FOIA 2015-ICFO-95379.) - Detention Stay Book In Date - Book In Date And Time - Book Out Date And Time - Detention Stay Book Out Date - Birth Country - Citizenship Country - Race - Ethnicity - Gender - Age at Book In - Entry Date - Entry Status - LPR Yes No - Most Serious Criminal Conviction (MSCC) - MSCC Code - MSCC Conviction Date - MSCC Sentence Days - MSCC Sentence Months - MSCC Sentence Years - Aggravated Felon - Aggravated Felon Type - Rc Threat Level - Apprehension COL - 287(g) Arrest - Border Patrol Arrest or Arresting Agency - Book In After Detainer - Apprehension Program - Initial Detention Facility Code - Initial Detention Facility - History Detention Facility Code - History Detention Facility - Order of Detention - History Book In DCO - History Book Out Date And Time - History Release Reason - Detainer Prepare Date - Detainer Prior to Bookin Date (Yes/No) - Detainer Threat Level - Detainer Detention Facility - Detainer Detention Facility Code.
 > We are not providing third party consent forms for all those whose data would be included and therefore understand that as a result, personally-identifiable information will be redacted to protect their privacy. However, the FOIA requires that all segregable information be provided to requesters, and personally-identifiable information is segregable from the remainder of this information. Such information was previously released pursuant to FOIA 2015-ICFO-95379 and FOIA 2019-ICFO-10844.
 
-# Respository description
+## Respository description
 
-## Data
+### Data
 
 Large data files are excluded from this repository; data associated with this repository can be obtained here: https://drive.google.com/drive/folders/1Guhtpv80sh2FJ90-t1GyCtNzSa0Jsvzr?usp=drive_link
 
@@ -19,7 +19,7 @@ To execute tasks in this repository, first download the data files linked above 
 
 Final datasets with minimal cleaning and standardization are stored/generated in `export/output/`. Users interested in reviewing the final datasets without executing the code contained in this repository can find export datasets as of Sept. 4, 2024 at the following link: https://drive.google.com/drive/folders/1OQLU7IzhbodsrD2wZm-5fV57UIsnOW4x?usp=drive_link
 
-## Structure
+### Structure
 
 This project uses "Principled Data Processing" techniques and tools developed by [@HRDAG](https://github.com/HRDAG); see for example ["The Task Is A Quantum of Workflow."](https://hrdag.org/2016/06/14/the-task-is-a-quantum-of-workflow/)
 
@@ -30,11 +30,11 @@ This project uses "Principled Data Processing" techniques and tools developed by
 - `export/` - Convenience task, final datasets in `output/`.
 - `share/` - Resources potentially used by multiple tasks but not created or transformed in this repo.
 
-# Data description
+## Data description
 
 Each row represents an individual detention placement record per person per facility. Consecutive records represent successive detention placements in an overall detention stay of one or more placements. Individual people can experience one or more detention stay.
 
-## Original data fields
+### Original data fields
 
 Data was released without any data dictionary or field definitions; therefore we have had to infer significance of some values.
 
@@ -72,7 +72,7 @@ Data was released without any data dictionary or field definitions; therefore we
 - `alien_file_number`: Redacted
 - `anonymized_identifier`: Anonymized unique individual identifier, assumed to be generated from hash of `alien_file_number`
 
-## Additional analysis fields
+### Additional analysis fields
 
 - `filename`: Original data filename
 - `hash`: Unique row identifier based on original data fields
@@ -92,11 +92,11 @@ Data was released without any data dictionary or field definitions; therefore we
 - `last_facil`: Stay book-out facility
 - `longest_placement_facil`: Longest placement facility per stay
 
-# Acknowledgements
+## Acknowledgements
 
 UWCHR is grateful to [Prof. David Hausman](https://www.david-hausman.com/) and the ACLU of California for obtaining and sharing a previous verison of this dataset; and to [Prof. Abraham Flaxman](https://globalhealth.washington.edu/faculty/abraham-flaxman) for assistance in analyzing a previous version of this dataset.
 
-# To-do
+## To-do
 
 - [ ] Create `docs/` and associated tasks
 - [ ] Bring in ICE detention facility characteristics and related notes, analyze how many facilities here are represented
