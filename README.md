@@ -25,7 +25,7 @@ This project uses "Principled Data Processing" techniques and tools developed by
 
 - `import/` - Convenience task for file import; original Excel files in `input/` are saved as compressed csv files in `frozen/`.
 - `concat/` - Concatenates individual input files into Feather format output, standardizes column names, drops records missing `anonymized_identifier`, adds row and sequence ids, drops trivial number of duplicated records.
-- `unique-stays/` - Performs various calculations per placement, individual, and stay and adds relevant fields; outputs full dataset, as well as dataset with one representative record per stay for calculations which require unique stay records. This task could be broken into separate steps for additional clarity.
+- `unique-stays/` - Performs various calculations per placement, individual, and stay and adds relevant fields; outputs full dataset (`ice_detentions_fy11-24ytd.feather`) with additional analysis fields; as well as dataset with final placement per stay as representative record (`ice_unique_stays_fy11-24ytd.feather`) calculations which require unique stay records (e.g. Average Length of Stay). This task could be broken into separate steps for additional clarity.
 - `headcount/` - Calculates daily detention headcount by given characteristic, e.g. per facility, by gender/nationality. Very slow, could this be optimized?
 - `export/` - Convenience task, final datasets in `output/`.
 - `share/` - Resources potentially used by multiple tasks but not created or transformed in this repo.
