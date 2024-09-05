@@ -15,7 +15,7 @@ The datasets analyzed here were released by ICE's Enforcement and Removal Operat
 
 Large data files are excluded from this repository; data associated with this repository can be obtained here: https://drive.google.com/drive/folders/1Guhtpv80sh2FJ90-t1GyCtNzSa0Jsvzr?usp=drive_link
 
-To execute tasks in this repository, first download the data files linked above and ensure they are stored in the indicated directory within the Git respository: original, untransformed datasets are stored in `import/input/`; compressed, CSV-formatted files are stored in `import/frozen/`.
+To execute tasks in this repository, first download the data files linked above and ensure they are stored in the indicated directory within the Git repository: original, untransformed datasets are stored in `import/input/`; compressed, CSV-formatted files are stored in `import/frozen/`.
 
 Final datasets with minimal cleaning and standardization are stored/generated in `export/output/`. Users interested in reviewing the final datasets without executing the code contained in this repository can find export datasets as of Sept. 4, 2024 at the following link: https://drive.google.com/drive/folders/1OQLU7IzhbodsrD2wZm-5fV57UIsnOW4x?usp=drive_link
 
