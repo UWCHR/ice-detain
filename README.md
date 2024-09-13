@@ -34,7 +34,7 @@ This project uses "Principled Data Processing" techniques and tools developed by
 
 Each row represents an individual detention placement record per person per facility. Consecutive records represent successive detention placements in an overall detention stay of one or more placements. Individual people can experience one or more detention stay. In some cases, an individual's `stay_book_in_date_time` does not coincide with the `detention_book_in_date_and_time` of the individual's first detention placement; this is most common in records from the earlier period of the data (FY2011 and prior). Records with missing `stay_book_out_date_time` and `detention_release_reason`/`stay_release_reason` values represent individuals whose detention stays were ongoing at the time the dataset was generated.
 
-This dataset lacks information regarding detention facility characteristics such as precise location (other than ) or facility type which may be relevant for detailed analysis.
+This dataset lacks information regarding detention facility characteristics such as precise location (other than ICE `area_of_responsibility`) or facility type which may be relevant for detailed analysis.
 
 ### Original data fields
 
