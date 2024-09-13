@@ -26,13 +26,15 @@ This project uses "Principled Data Processing" techniques and tools developed by
 - `import/` - Convenience task for file import; original Excel files in `input/` are saved as compressed csv files in `frozen/`.
 - `concat/` - Concatenates individual input files into Feather format output, standardizes column names, drops records missing `anonymized_identifier`, adds row and sequence ids, drops trivial number of duplicated records.
 - `unique-stays/` - Performs various calculations per placement, individual, and stay and adds relevant fields; outputs full dataset (`ice_detentions_fy11-24ytd.feather`) with additional analysis fields; as well as dataset with final placement per stay as representative record (`ice_unique_stays_fy11-24ytd.feather`) calculations which require unique stay records (e.g. Average Length of Stay). This task could be broken into separate steps for additional clarity.
-- `headcount/` - Calculates daily detention headcount by given characteristic, e.g. per facility, by gender/nationality. Very slow, could this be optimized?
+- `headcount/` - Calculates daily detention headcount by given characteristic, e.g. per facility, by gender/nationality. Very slow, could likely be optimized/improved
 - `export/` - Convenience task, final datasets in `output/`.
 - `share/` - Resources potentially used by multiple tasks but not created or transformed in this repo.
 
 ## Data description
 
-Each row represents an individual detention placement record per person per facility. Consecutive records represent successive detention placements in an overall detention stay of one or more placements. Individual people can experience one or more detention stay.
+Each row represents an individual detention placement record per person per facility. Consecutive records represent successive detention placements in an overall detention stay of one or more placements. Individual people can experience one or more detention stay. In some cases, an individual's `stay_book_in_date_time` does not coincide with the `detention_book_in_date_and_time` of the individual's first detention placement; this is most common in records from the earlier period of the data (FY2011 and prior). Records with missing `stay_book_out_date_time` and `detention_release_reason`/`stay_release_reason` values represent individuals whose detention stays were ongoing at the time the dataset was generated.
+
+This dataset lacks information regarding detention facility characteristics such as precise location (other than ) or facility type which may be relevant for detailed analysis.
 
 ### Original data fields
 
@@ -42,31 +44,31 @@ Data was released without any data dictionary or field definitions; therefore we
 - `detention_book_in_date_and_time`: Detention placement start date (per facility)
 - `detention_book_out_date_time`: Detention placement end date; missing values represent current placement at time of release of data
 - `stay_book_out_date_time`: Detention stay end date, missing values represent current stay at time of release of data
-- `birth_country_per`: Unclear how different from `birth_country_ero`
-- `birth_country_ero`: Unclear how different from `birth_country_per`
-- `citizenship_country`: Largely complete
-- `race`: Largely incomplete
-- `ethnic`: Largely incomplete
-- `gender`: Largely complete
+- `birth_country_per`: Unclear how different from `birth_country_ero`/`citizenship_country`
+- `birth_country_ero`: Unclear how different from `birth_country_per`/`citizenship_country`
+- `citizenship_country`: Individual's country of citizenship
+- `race`: Individual's race (Largely missing)
+- `ethnic`: Individual's ethnicity (Largely missing)
+- `gender`: Individual's gender
 - `birth_date`: Redacted
-- `birth_year`:
-- `entry_date`:
-- `entry_status`:
-- `most_serious_conviction_(msc)_criminal_charge_category`:
-- `msc_charge`:
-- `msc_charge_code`:
-- `msc_conviction_date`:
-- `msc_sentence_days`:
-- `msc_sentence_months`:
-- `msc_sentence_years`:
-- `msc_crime_class`:
+- `birth_year`: Individual year of birth
+- `entry_date`: Individual's entry date
+- `entry_status`: Individual's entry status
+- `most_serious_conviction_(msc)_criminal_charge_category`: Most serious conviction category
+- `msc_charge`: Most serious conviction charge
+- `msc_charge_code`: Most serious conviction charge code
+- `msc_conviction_date`: Most serious conviction date
+- `msc_sentence_days`: Most serious conviction sentence length (days)
+- `msc_sentence_months`: Most serious conviction sentence length (months)
+- `msc_sentence_years`: Most serious conviction sentence length (years)
+- `msc_crime_class`: Most serious conviction crime class
 - `case_threat_level`: Redacted
 - `apprehension_threat_level`: Redacted
 - `final_program`: Appears to represent DHS division responsible for decision to detain
-- `detention_facility_code`:
-- `detention_facility`:
+- `detention_facility_code`: Detention facility code
+- `detention_facility`: Detention facility full title
 - `area_of_responsibility`: ICE field office responsible for detention facility
-- `docket_control_office`:
+- `docket_control_office`: DOJ EOIR docket
 - `detention_release_reason`: Missing values indiciate ongoing detention
 - `stay_release_reason`: Missing values indiciate ongoing detention
 - `alien_file_number`: Redacted
