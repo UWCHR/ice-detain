@@ -103,3 +103,4 @@ UWCHR is grateful to [Prof. David Hausman](https://www.david-hausman.com/) and t
 - [ ] Create `docs/` and associated tasks
 - [ ] Bring in ICE detention facility characteristics and related notes, analyze how many facilities here are represented
 - [ ] Test whether possible to generate headcount as vector of detention dates and record/individual hash values so that we can easily join in other characteristics: would this be too cumbersome?
+- [ ] Create `stayid` key value for record blocs representing unique stays (combination of `anonymized_identifier`, `stay_book_in_date_time`).
