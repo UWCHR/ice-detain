@@ -24,9 +24,9 @@ Final datasets with minimal cleaning and standardization are stored/generated in
 This project uses "Principled Data Processing" techniques and tools developed by [@HRDAG](https://github.com/HRDAG); see for example ["The Task Is A Quantum of Workflow."](https://hrdag.org/2016/06/14/the-task-is-a-quantum-of-workflow/)
 
 - `import/` - Convenience task for file import; original Excel files in `input/` are saved as compressed csv files in `frozen/`.
-- `concat/` - Concatenates individual input files into Feather format output, standardizes column names, drops records missing `anonymized_identifier`, adds row and sequence ids, drops trivial number of duplicated records.
+- `concat/` - Concatenates individual input files into Feather format output, standardizes column names, drops records missing `anonymized_identifier`, and trivial number of duplicated records, logging stats to `output/concat.log`; , adds `hash`, row, and sequence ids.
 - `unique-stays/` - Performs various calculations per placement, individual, and stay and adds relevant fields; outputs full dataset (`ice_detentions_fy11-24ytd.feather`) with additional analysis fields; as well as dataset with final placement per stay as representative record (`ice_unique_stays_fy11-24ytd.feather`) to facilitate calculations which require unique stay records (e.g. Average Length of Stay). This task could be broken into separate steps for additional clarity.
-- `headcount/` - Calculates daily detention headcount by given characteristic, e.g. per facility, by gender/nationality. Very slow, could likely be optimized/improved
+- `headcount/` - Calculates daily detention headcount by given characteristic, e.g. per facility, by gender/nationality. Very slow when applied to full dataset, could likely be optimized/improved.
 - `export/` - Convenience task, final datasets in `output/`.
 - `share/` - Resources potentially used by multiple tasks but not created or transformed in this repo.
 
