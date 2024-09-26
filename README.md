@@ -44,8 +44,8 @@ Data was released without any data dictionary or field definitions; therefore we
 - `detention_book_in_date_and_time`: Detention placement start date (per facility)
 - `detention_book_out_date_time`: Detention placement end date; missing values represent current placement at time of release of data
 - `stay_book_out_date_time`: Detention stay end date, missing values represent current stay at time of release of data
-- `birth_country_per`: Unclear how different from `birth_country_ero`
-- `birth_country_ero`: Unclear how different from `birth_country_per`
+- `birth_country_per`: Individual's country of birth, unclear how different from `birth_country_ero`
+- `birth_country_ero`: Individual's country of birth, unclear how different from `birth_country_per`
 - `citizenship_country`: Individual's country of citizenship
 - `race`: Individual's race (Largely missing)
 - `ethnic`: Individual's ethnicity (Largely missing)
@@ -82,8 +82,8 @@ Data was released without any data dictionary or field definitions; therefore we
 - `file_rowid`: Record sequece within input file
 - `stay_length`: Length of stay (missing for ongoing stays)
 - `placement_length`: Length of placement (missing for ongoing placement)
-- `stay_length_min`: Minimum length of stay (based on date of release of dataset for ongoing stays)
-- `placement_length_min`: Minimum length of placement (based on date of release of dataset for ongoing placements)
+- `stay_length_min`: Minimum length of stay (as of 2024-01-15, date of release of dataset)
+- `placement_length_min`: Minimum length of placement (as of 2024-01-15, date of release of dataset)
 - `total_stays`: Total completed/ongoing detention stays per individual
 - `total_placements`: Total completed/ongoing detention placements per individual
 - `current_stay`: Does row relate to a current detention stay?
