@@ -44,8 +44,8 @@ Data was released without any data dictionary or field definitions; therefore we
 - `detention_book_in_date_and_time`: Detention placement start date (per facility)
 - `detention_book_out_date_time`: Detention placement end date; missing values represent current placement at time of release of data
 - `stay_book_out_date_time`: Detention stay end date, missing values represent current stay at time of release of data
-- `birth_country_per`: Unclear how different from `birth_country_ero`/`citizenship_country`
-- `birth_country_ero`: Unclear how different from `birth_country_per`/`citizenship_country`
+- `birth_country_per`: Unclear how different from `birth_country_ero`
+- `birth_country_ero`: Unclear how different from `birth_country_per`
 - `citizenship_country`: Individual's country of citizenship
 - `race`: Individual's race (Largely missing)
 - `ethnic`: Individual's ethnicity (Largely missing)
