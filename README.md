@@ -68,7 +68,7 @@ Data was released without any data dictionary or field definitions; therefore we
 - `detention_facility_code`: Detention facility code
 - `detention_facility`: Detention facility full title
 - `area_of_responsibility`: ICE field office responsible for detention facility
-- `docket_control_office`: DOJ EOIR docket
+- `docket_control_office`: ICE docket control office
 - `detention_release_reason`: Missing values indiciate ongoing detention
 - `stay_release_reason`: Missing values indiciate ongoing detention
 - `alien_file_number`: Redacted
