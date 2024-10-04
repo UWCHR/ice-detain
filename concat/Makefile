@@ -8,13 +8,13 @@
 #
 
 all: \
-	output/ice_detentions_fy11-24ytd.feather
+	output/ice_detentions_fy11-24ytd.csv.gz
 	
 PHONY: all
 
 # UWCHR 2024 lawsuit production data
 
-output/ice_detentions_fy11-24ytd.feather: \
+output/ice_detentions_fy11-24ytd.csv.gz: \
 	src/concat.R \
 	../import/frozen/ICE_Detentions_FY2011_and_Prior_LESA-STU_FINAL-Redacted.csv.gz \
 	../import/frozen/ICE_Detentions_FY2012_LESA-STU_FINAL-Redacted.csv.gz \

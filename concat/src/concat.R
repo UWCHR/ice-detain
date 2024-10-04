@@ -14,10 +14,6 @@ parser$add_argument("--log", default = "concat/output/panel.log")
 parser$add_argument("--output", default = "concat/output/ice_detentions_fy11-24ytd.feather")
 args <- parser$parse_args()
 
-# formatter_data_frame <- function(df, ...) {
-#     apply(df, 1, paste, collapse = ' ')
-# }
-
 # append log file
 f = args$log
 # log_formatter(formatter_data_frame)
@@ -80,6 +76,8 @@ col_types <- cols(
 
 ## Compact expansion of dataframe from list of filenames
 
+print(paste("Reading input files from", input_dir))
+
 df <- data.frame(filename = filenames) %>%
   reframe(read_delim(here::here(input_dir, filename),
                      delim='|',
@@ -120,6 +118,8 @@ log_info("Total rows in: {nrow(df)}")
 
 log_info("Column names in: {names(df)}")
 
+print("Standardizing column names")
+
 names(df) %<>% stringr::str_replace_all("\\s","_") %>% tolower
 
 df <- df %>%
@@ -127,6 +127,8 @@ df <- df %>%
   group_by(filename) %>%
   mutate(file_rowid = row_number()) %>%
   ungroup()
+
+print("Dropping records missing `anonymized_identifier`")
 
 predrop <- nrow(df)
 
@@ -139,17 +141,23 @@ log_info("Dropped {predrop - postdrop} records missing `anonymized_identifier`")
 
 vdigest <- Vectorize(digest)
 
+print("Generating record/stay hash ids")
+
 df <- df %>% rowwise() %>% 
   unite(allCols, !c(filename, rowid, file_rowid), sep = "", remove = FALSE) %>% 
-  mutate(hash = vdigest(allCols)) %>%
-  select(-allCols)
+  unite(stayCols, c(anonymized_identifier, stay_book_in_date_time), sep = "", remove = FALSE) %>% 
+  mutate(recid = vdigest(allCols),
+         stayid = vdigest(stayCols)) %>%
+  select(-c(allCols, stayCols))
 
-skimr::skim(df)
+# skimr::skim(df)
+
+print("Dropping duplicate records")
 
 predrop <- nrow(df)
 
 df <- df %>%
-  distinct(hash, .keep_all = TRUE)
+  distinct(recid, .keep_all = TRUE)
 
 postdrop <- nrow(df)
 
@@ -159,6 +167,10 @@ log_info("Column names out: {names(df)}")
 
 log_info("Rows out: {nrow(df)}")
 
-write_feather(df, args$output)
+log_info("Output dir: {args$output}")
+
+print(paste("Writing output to", here::here(args$output)))
+
+write_delim(df, args$output, delim='|')
 
 # END.
