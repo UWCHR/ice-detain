@@ -7,7 +7,7 @@
 # ---
 
 library(pacman)
-p_load(argparse, logger, tidyverse, arrow, lubridate, zoo, digest)
+p_load(argparse, here, skimr, logger, tidyverse, arrow, lubridate, zoo, digest)
 
 parser <- ArgumentParser()
 parser$add_argument("--log", default = "concat/output/panel.log")
