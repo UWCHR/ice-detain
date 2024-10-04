@@ -123,9 +123,9 @@ print("Standardizing column names")
 names(df) %<>% stringr::str_replace_all("\\s","_") %>% tolower
 
 df <- df %>%
-  mutate(rowid = row_number()) %>%
+  mutate(rowseq = row_number()) %>%
   group_by(filename) %>%
-  mutate(file_rowid = row_number()) %>%
+  mutate(file_rowseq = row_number()) %>%
   ungroup()
 
 print("Dropping records missing `anonymized_identifier`")
@@ -144,13 +144,20 @@ vdigest <- Vectorize(digest)
 print("Generating record/stay hash ids")
 
 df <- df %>% rowwise() %>% 
-  unite(allCols, !c(filename, rowid, file_rowid), sep = "", remove = FALSE) %>% 
+  unite(allCols, !c(filename, rowseq, file_rowseq), sep = "", remove = FALSE) %>% 
   unite(stayCols, c(anonymized_identifier, stay_book_in_date_time), sep = "", remove = FALSE) %>% 
   mutate(recid = vdigest(allCols),
          stayid = vdigest(stayCols)) %>%
   select(-c(allCols, stayCols))
 
 # skimr::skim(df)
+
+distinct_stays <- df %>%
+  distinct(anonymized_identifier, stay_book_in_date_time)
+
+stopifnot(length(unique(df$stayid)) == nrow(distinct_stays))
+
+rm(distinct_stays)
 
 print("Dropping duplicate records")
 
@@ -160,6 +167,8 @@ df <- df %>%
   distinct(recid, .keep_all = TRUE)
 
 postdrop <- nrow(df)
+
+stopifnot(length(unique(df$recid)) == nrow(df))
 
 log_info("Dropped {predrop - postdrop} duplicate rows")
 
