@@ -23,12 +23,12 @@ Final datasets with minimal cleaning and standardization are stored/generated in
 
 This project uses "Principled Data Processing" techniques and tools developed by [@HRDAG](https://github.com/HRDAG); see for example ["The Task Is A Quantum of Workflow."](https://hrdag.org/2016/06/14/the-task-is-a-quantum-of-workflow/)
 
-- `import/` - Convenience task for file import; original Excel files in `input/` are saved as compressed csv files in `frozen/`.
-- `concat/` - Concatenates individual input files into Feather format output, standardizes column names, drops records missing `anonymized_identifier`, and trivial number of duplicated records, logging stats to `output/concat.log`; , adds `hash`, row, and sequence ids.
-- `unique-stays/` - Performs various calculations per placement, individual, and stay and adds relevant fields; outputs full dataset (`ice_detentions_fy11-24ytd.feather`) with additional analysis fields; as well as dataset with final placement per stay as representative record (`ice_unique_stays_fy11-24ytd.feather`) to facilitate calculations which require unique stay records (e.g. Average Length of Stay). This task could be broken into separate steps for additional clarity.
-- `headcount/` - Calculates daily detention headcount by given characteristic, e.g. per facility, by gender/nationality. Very slow when applied to full dataset, could likely be optimized/improved.
-- `export/` - Convenience task, final datasets in `output/`.
-- `share/` - Resources potentially used by multiple tasks but not created or transformed in this repo.
+- `import/`: Convenience task for file import; original Excel files in `input/` are saved as compressed csv files in `frozen/`.
+- `concat/`: Concatenates individual input files, standardizes column names, drops records missing `anonymized_identifier`, and trivial number of duplicated records, logging stats to `output/concat.log`; adds hash record and stay identifiers, and record sequence.
+- `unique-stays/`: Performs various calculations per placement, individual, and stay and adds relevant fields; outputs full dataset (`ice_detentions_fy11-24ytd.feather`) with additional analysis fields; as well as dataset with final placement per stay as representative record (`ice_unique_stays_fy11-24ytd.feather`) to facilitate calculations which require unique stay records (e.g. Average Length of Stay). This task could be broken into separate steps for additional clarity.
+- `headcount/`: Calculates daily detention headcount by given characteristic, e.g. per facility, by gender/nationality. Very slow when applied to full dataset, could likely be optimized/improved.
+- `export/`: Convenience task, final datasets in `output/`.
+- `share/`: Resources potentially used by multiple tasks but not created or transformed in this repo.
 
 ## Data description
 
@@ -77,9 +77,10 @@ Data was released without any data dictionary or field definitions; therefore we
 ### Additional analysis fields
 
 - `filename`: Original data filename
-- `hash`: Unique row identifier based on original data fields
-- `rowid`: Record sequence across input files
-- `file_rowid`: Record sequece within input file
+- `recid`: Unique record identifier based on original data fields
+- `stayid`: Unique stay identifier based on `anonymized_identifier` and `stay_book_in_date_time`
+- `rowseq`: Record sequence across input files
+- `file_rowseq`: Record sequece within input file
 - `stay_length`: Length of stay (missing for ongoing stays)
 - `placement_length`: Length of placement (missing for ongoing placement)
 - `stay_length_min`: Minimum length of stay (as of 2024-01-15, date of release of dataset)
