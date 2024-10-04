@@ -10,20 +10,26 @@
 .PHONY: all
 
 all: \
+	input/ice_detentions_fy11-24ytd.csv.gz \
 	output/headcount_fy11-24ytd.csv.gz
 
 clean: 
 	-rm -r output/*
 
+input/ice_detentions_fy11-24ytd.csv.gz: \
+	../concat/output/ice_detentions_fy11-24ytd.csv.gz .
+	mkdir -p input
+	cd input/ && ln -sf ../../import/output/ice_detentions_fy11-24ytd.csv.gz .
+
 output/headcount_fy11-24ytd.csv.gz: \
 	src/headcount.R \
-	../unique-stays/output/ice_detentions_fy11-24ytd.feather
-	mkdir -p input output
-	cd input/ && ln -sf ../../unique-stays/output/ice_detentions_fy11-24ytd.feather . 
+	input/ice_detentions_fy11-24ytd.csv.gz
+	mkdir -p output
+	cd input/ && ln -sf ../../concat/output/ice_detentions_fy11-24ytd.csv.gz . 
 	Rscript $< \
-		--input=input/ice_detentions_fy11-24ytd.feather \
+		--input=input/ice_detentions_fy11-24ytd.csv.gz \
 		--group='detention_facility_code' \
 		--log=output/headcount.R.log \
-		--output=output/headcount_fy11-24ytd.csv.gz
+		--output=$@
 
 # End.
