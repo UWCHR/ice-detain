@@ -22,14 +22,12 @@ args <- parser$parse_args()
 f = args$log
 log_appender(appender_file(f))
 
-col_types <- cols(
+df <- read_delim(args$input, col_types = cols(
   "stay_book_in_date_time" = col_datetime(format =  "%Y-%m-%dT%H:%M:%SZ"),
   "detention_book_in_date_and_time" = col_datetime(format =  "%Y-%m-%dT%H:%M:%SZ"),
   "detention_book_out_date_time" = col_datetime(format =  "%Y-%m-%dT%H:%M:%SZ"),
   "stay_book_out_date_time" = col_datetime(format =  "%Y-%m-%dT%H:%M:%SZ"),
-)
-
-df <- read_delim(args$input, col_types = col_types)
+))
 
 # problems(df)
 
