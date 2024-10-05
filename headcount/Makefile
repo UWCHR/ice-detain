@@ -10,18 +10,18 @@
 .PHONY: all
 
 all: \
-	output/headcount_fy11-24ytd.csv.gz
+	output/headcount_fy12-24ytd.csv.gz
 
 clean: 
 	-rm -r output/*
 
-output/headcount_fy11-24ytd.csv.gz: \
+output/headcount_fy12-24ytd.csv.gz: \
 	src/headcount.R \
-	../concat/output/ice_detentions_fy11-24ytd.csv.gz .
+	../concat/output/ice_detentions_fy12-24ytd.csv.gz .
 	mkdir -p output
 	cd input/ && ln -sf ../../concat/output/* .
 	Rscript $< \
-		--input=input/ice_detentions_fy11-24ytd.csv.gz \
+		--input=input/ice_detentions_fy12-24ytd.csv.gz \
 		--group='detention_facility_code' \
 		--log=output/headcount.R.log \
 		--output=$@
