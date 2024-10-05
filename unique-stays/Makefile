@@ -7,23 +7,23 @@
 #
 #
 
+.PHONY: all
+
 all: \
-	output/ice_unique_stays_fy11-24ytd.feather
+	output/ice_unique_stays_fy11-24ytd.csv.gz
 
 clean: 
 		-rm -r output/*
 
-PHONY: all
-
-output/ice_unique_stays_fy11-24ytd.feather: \
+output/ice_unique_stays_fy11-24ytd.csv.gz: \
 	src/unique-stays.R \
-	../concat/output/ice_detentions_fy11-24ytd.feather
+	../concat/output/ice_detentions_fy11-24ytd.csv.gz
 	mkdir -p input output
 	cd input/ && ln -sf ../../concat/output/* . 
 	Rscript $< \
-		--input=input/ice_detentions_fy11-24ytd.feather \
+		--input=input/ice_detentions_fy11-24ytd.csv.gz \
 		--log=output/unique-stays.R.log \
-		--unique_output=output/ice_unique_stays_fy11-24ytd.feather \
-		--full_output=output/ice_detentions_fy11-24ytd.feather
+		--unique_output=output/ice_unique_stays_fy11-24ytd.csv.gz \
+		--full_output=output/ice_detentions_fy11-24ytd.csv.gz
 
 # End.

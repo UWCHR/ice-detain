@@ -10,10 +10,10 @@ library(pacman)
 p_load(argparse, logger, tidyverse, arrow, lubridate, zoo, digest)
 
 parser <- ArgumentParser()
-parser$add_argument("--input", default = "unique-stays/input/ice_detentions_fy11-24ytd.feather")
+parser$add_argument("--input", default = "unique-stays/input/ice_detentions_fy11-24ytd.csv.gz")
 parser$add_argument("--log", default = "unique-stays/output/unique-stays.R.log")
-parser$add_argument("--unique_output", default = "unique-stays/output/ice_unique-stays_fy11-24ytd.feather")
-parser$add_argument("--full_output", default = "unique-stays/output/ice_detentions_fy11-24ytd.feather")
+parser$add_argument("--unique_output", default = "unique-stays/output/ice_unique-stays_fy11-24ytd.csv.gz")
+parser$add_argument("--full_output", default = "unique-stays/output/ice_detentions_fy11-24ytd.csv.gz")
 args <- parser$parse_args()
 
 # append log file
@@ -21,7 +21,13 @@ f = args$log
 log_appender(appender_file(f))
 
 print("Reading data")
-system.time({df <- as.data.frame(read_feather(args$input))})
+
+df <- read_delim(args$input, col_types = cols(
+  "stay_book_in_date_time" = col_datetime(format =  "%Y-%m-%dT%H:%M:%SZ"),
+  "detention_book_in_date_and_time" = col_datetime(format =  "%Y-%m-%dT%H:%M:%SZ"),
+  "detention_book_out_date_time" = col_datetime(format =  "%Y-%m-%dT%H:%M:%SZ"),
+  "stay_book_out_date_time" = col_datetime(format =  "%Y-%m-%dT%H:%M:%SZ"),
+))
 
 log_info("Total rows in: {nrow(df)}")
 
@@ -98,7 +104,7 @@ log_info("Rows out: {nrow(df)}")
 
 print("Write full dataset")
 # Write out full dataset with additional cols
-system.time({write_feather(df, args$full_output)})
+system.time({write_delim(df, args$full_output, delim='|')})
 
 print("Slice final placement")
 # Select final placement record per unique stay
@@ -112,6 +118,6 @@ unique_stays$longest_aor <- names(detloc_aor_list)[match(unique_stays$longest_pl
 
 print("Write unique stay dataset")
 # Write out dataset of unique stays
-write_feather(unique_stays, args$unique_output)
+write_delim(unique_stays, args$unique_output, delim='|')
 
 # END.
