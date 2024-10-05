@@ -18,7 +18,7 @@ library(pacman)
 p_load(tidyverse, arrow, lubridate, zoo, digest, ggplot2, plotly, gghighlight)
 
 # For calculations of variables at placement level
-df <- read_delim(here::here('write', 'input', 'ice_detentions_fy11-24ytd.csv.gz'),
+df <- read_delim(here::here('write', 'input', 'ice_detentions_fy12-24ytd.csv.gz'),
                  delim = '|',
                  col_types = cols(
   "stay_book_in_date_time" = col_datetime(format =  "%Y-%m-%dT%H:%M:%SZ"),
@@ -92,7 +92,7 @@ knitr::kable(example, row.names = FALSE, format = "html") %>%
 
 When performing analysis of this dataset, it is important to consider whether the unit of interest is at the level of unique individuals, placements, or stays.
 
-The full dataset, `unique-stays/output/ice_detentions_fy11-24ytd.feather`, can be used to examine all placement records pertaining to a given individual, demographic characteristic, or specific detention facility. Note that results for calculations such as "average length of stay" will be incorrect if analysis is not restricted to one representative record per individual per stay.
+The full dataset, `unique-stays/output/ice_detentions_fy12-24ytd.feather`, can be used to examine all placement records pertaining to a given individual, demographic characteristic, or specific detention facility. Note that results for calculations such as "average length of stay" will be incorrect if analysis is not restricted to one representative record per individual per stay.
 
 Analysis of characteristics per detention stay can be calculated by selecting distinct combinations of `anonymized_identifier` and `stay_book_in_date_time` values; or simply by using unique `stayid` values:
 
@@ -117,19 +117,19 @@ p1
 
 ```
 
-Because much analysis will be conducted at the level of individual unique detention stays, we have generated a convenience dataset, `unique-stays/output/ice_unique_stays_fy11-24ytd.feather`, which selects the final placement as a representative record for each stay. If first placement per stay is desired instead, it is trivial to filter records at this level, e.g. `df %>% distinct(anonymized_id, stay_book_in_date_time, .keep_all = TRUE) %>% filter(placement_count == 1)`.
+Because much analysis will be conducted at the level of individual unique detention stays, we have generated a convenience dataset, `unique-stays/output/ice_unique_stays_fy12-24ytd.feather`, which selects the final placement as a representative record for each stay. If first placement per stay is desired instead, it is trivial to filter records at this level, e.g. `df %>% distinct(anonymized_id, stay_book_in_date_time, .keep_all = TRUE) %>% filter(placement_count == 1)`.
 
 ## Detention headcount
 
 An obvious usage of this dataset is to calculate the detained population over time, either in total or based on given characteristics such as population demographics or location. Because of the structure of the dataset, this can be done by conditionally indexing records to select in-range detention placements for a given date or timeline; e.g. `df[df$detention_book_in_date_and_time <= date & df$detention_book_out_date_time >= date,]`. (Note that this indexing will fail to select ongoing detention stays missing `detention_book_out_date_time` unless this is accounted for in some way; we do this by setting a temporary `detention_book_out_date_time_min` value equal to the max date in the timeline. This indexing will also double count any records with a book in time that is exactly equal to a preceding book out; and will may fail to account for bookings shorter than one day.)
 
-We have implemented a basic script for this operation at `headcount/src/headcount.R`, which by default outputs daily detained population per detention facility for the time period covered by the dataset as `headcount/output/headcount_fy11-24ytd.csv.gz`. Parameters of this script, including arbitratry grouping variables, can be set in the file `headcount/Makefile`.
+We have implemented a basic script for this operation at `headcount/src/headcount.R`, which by default outputs daily detained population per detention facility for the time period covered by the dataset as `headcount/output/headcount_fy12-24ytd.csv.gz`. Parameters of this script, including arbitratry grouping variables, can be set in the file `headcount/Makefile`.
 
 Note full total detention population is not reached until FY 2012:
 
 ```{r daily_headcount, message=FALSE, warning=FALSE, include=TRUE}
 
-headcount <- read_delim(here::here('write', 'input', 'headcount_fy11-24ytd.csv.gz'), delim='|')
+headcount <- read_delim(here::here('write', 'input', 'headcount_fy12-24ytd.csv.gz'), delim='|')
 
 headcount <- headcount %>% 
   mutate(date = as.Date(date))
