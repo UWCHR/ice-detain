@@ -1817,8 +1817,8 @@ detloc_aor &lt;- df %&gt;%
   arrange(detention_facility_code, area_of_responsibility)</code></pre>
 <p>This dataset includes 8631489 ICE detention placement records after
 dropping duplicate records and records missing
-<code>anonymized_id</code> values[^1], representing 3360633 unique
-individuals and 1122 unique detention facilities.</p>
+<code>anonymized_id</code> values<a href="#fn1" class="footnote-ref" id="fnref1"><sup>1</sup></a>, representing 3360633 unique individuals
+and 1122 unique detention facilities.</p>
 <div id="data-format" class="section level2">
 <h2>Data format</h2>
 <p>Each row in this dataset represents a placement of an individual at a
@@ -2996,8 +2996,13 @@ inferred or joined from other sources. For example, some ICE facilities
 can only hold detained people for 72 hours or less, an important factor
 to control for when comparing placement or stay lengths between
 facilities.</p>
-<p>[^1] For counts of dropped records, see
-<code>ice-detain/concat/output/concat.log</code>.</p>
+</div>
+<div class="footnotes footnotes-end-of-document">
+<hr />
+<ol>
+<li id="fn1"><p>For counts of dropped records, see
+<code>ice-detain/concat/output/concat.log</code>.<a href="#fnref1" class="footnote-back">↩︎</a></p></li>
+</ol>
 </div>
 
 

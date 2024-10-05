@@ -235,4 +235,4 @@ Note that the datasets released by ICE contain minimal information on detention 
 
 Detention facilities represented in this dataset range include dedicated ICE detention facilities, ICE hold rooms, jails and prisons contracted by ICE, medical facilities, hotels, etc.; which differ in important characteristics which are not represented here and must be inferred or joined from other sources. For example, some ICE facilities can only hold detained people for 72 hours or less, an important factor to control for when comparing placement or stay lengths between facilities.
 
-[^1] For counts of dropped records, see `ice-detain/concat/output/concat.log`.
+[^1]: For counts of dropped records, see `ice-detain/concat/output/concat.log`.
