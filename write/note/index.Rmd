@@ -1,0 +1,238 @@
+---
+title: "FY11-24YTD ICE detention analysis"
+author: "UWCHR"
+date: "2024-02-14"
+output:
+    html_document:
+        html_preview: true
+        toc: true
+        toc_depth: 3
+        toc_float: true
+        code_folding: hide
+---
+
+```{r import_data, message=FALSE, warning=FALSE, include=TRUE}
+options(scipen = 1000000)
+
+library(pacman)
+p_load(tidyverse, arrow, lubridate, zoo, digest, ggplot2, plotly, gghighlight)
+
+# For calculations of variables at placement level
+df <- read_delim(here::here('write', 'input', 'ice_detentions_fy11-24ytd.csv.gz'),
+                 delim = '|',
+                 col_types = cols(
+  "stay_book_in_date_time" = col_datetime(format =  "%Y-%m-%dT%H:%M:%SZ"),
+  "detention_book_in_date_and_time" = col_datetime(format =  "%Y-%m-%dT%H:%M:%SZ"),
+  "detention_book_out_date_time" = col_datetime(format =  "%Y-%m-%dT%H:%M:%SZ"),
+  "stay_book_out_date_time" = col_datetime(format =  "%Y-%m-%dT%H:%M:%SZ")))
+
+detloc_aor <- df %>% 
+  distinct(detention_facility_code, area_of_responsibility) %>% 
+  arrange(detention_facility_code, area_of_responsibility)
+
+```
+
+This dataset includes `r nrow(df)` ICE detention placement records after dropping duplicate records and records missing `anonymized_id` values[^1], representing `r length(unique(df$anonymized_identifier))` unique individuals and `r length(unique(df$detention_facility))` unique detention facilities.
+
+## Data format
+
+Each row in this dataset represents a placement of an individual at a specific ICE detention facility. Unique people are identified by the `anonymized_identifier` field. One or more successive placements constitute a detention stay. Unique detention stays are identified by the combination of `anonymized_identifier` and `stay_book_in_date_time` fields. Each unique person represented in the dataset may experience one or more detention stays.
+
+Data was released by ICE in separate annual spreadsheets containing all detention placement records for detention stays with an initial book-in during that U.S. government fiscal year. Stay records spanning multiple fiscal years do not appear to be duplicated in successive datasets. Within each spreadsheet, detention histories are sorted by `anonymized_identifier` and `detention_book_in_date_and_time`, resulting in "blocs" of records for each stay.
+
+Completed detention placements are identified by non-null `detention_book_out_date_time` and `detention_release_reason` fields; associated stay records are identified by non-null `stay_book_out_date_time` and `stay_release_reason` fields. In most cases, these values will match associated `detention_book_out_date_time` and `detention_release_reason` values for the final placement of the stay.
+
+See below for a representative bloc of detention placement records pertaining to a single completed individual detention stay:
+
+```{r detainee_history_complete, message=FALSE, warning=FALSE, include=TRUE}
+
+sample_cols <- c("stay_book_in_date_time",
+                 "detention_book_in_date_and_time", # Note irregular field name format
+                 "detention_book_out_date_time",
+                 "stay_book_out_date_time",
+                 "citizenship_country",
+                 "gender",
+                 "birth_year",
+                 "detention_facility",
+                 "area_of_responsibility",
+                 "detention_release_reason",
+                 "stay_release_reason",
+                 "anonymized_identifier")
+
+example <- df[df$anonymized_identifier == "0000005694c4fd9ebcc71c6a54fca1cdfc516c36", sample_cols]
+
+knitr::kable(example, row.names = FALSE, format = "html") %>%
+  kableExtra::scroll_box(width = "100%", height = "400px")
+
+```
+
+Ongoing detention placements at the time of release of the data on January 15, 2024 are missing `detention_book_out_date_time` and `detention_release_reason` values; associated blocs of records are missing `stay_book_out_date_time` and `stay_release_reason` values. See the below example of an individual with three detention stays, the third of which was ongoing at the time of release of data:
+
+```{r detainee_history_ongoing, message=FALSE, warning=FALSE, include=TRUE}
+
+example <- df[df$anonymized_identifier == "8ede14ebf032fcf92ae3e43675e18a6713af2fac", sample_cols]
+
+knitr::kable(example, row.names = FALSE, format = "html") %>%
+  kableExtra::scroll_box(width = "100%", height = "400px")
+
+```
+
+Note that in some cases, `stay_book_in_date_time` and `stay_book_out_date_time` values do not match their respective `detention_book_in_date_and_time` or `detention_book_out_date_time` values. This is especially prevalent in records with initial detention book in dates during FY 2011 or prior, but is present in all years; it is not clear what accounts for this discrepancy, which may result in under-counting of detained population. See for example:
+
+```{r detainee_history_discrepancy, message=FALSE, warning=FALSE, include=TRUE}
+
+example <- df[df$anonymized_identifier == "0bafe4b223d4a1afe8e4bb95821f00e9183e588b", sample_cols]
+
+knitr::kable(example, row.names = FALSE, format = "html") %>%
+  kableExtra::scroll_box(width = "100%", height = "400px")
+
+```
+
+## Data analysis
+
+When performing analysis of this dataset, it is important to consider whether the unit of interest is at the level of unique individuals, placements, or stays.
+
+The full dataset, `unique-stays/output/ice_detentions_fy11-24ytd.feather`, can be used to examine all placement records pertaining to a given individual, demographic characteristic, or specific detention facility. Note that results for calculations such as "average length of stay" will be incorrect if analysis is not restricted to one representative record per individual per stay.
+
+Analysis of characteristics per detention stay can be calculated by selecting distinct combinations of `anonymized_identifier` and `stay_book_in_date_time` values; or simply by using unique `stayid` values:
+
+```{r initial_bookins, message=FALSE, warning=FALSE, include=TRUE}
+
+dat <- df %>%
+  distinct(stayid, .keep_all = TRUE) %>% 
+  mutate(bookin_fy = substr(quarter(stay_book_in_date_time, type="year.quarter", fiscal_start=10), 1, 4)) %>% 
+  filter(bookin_fy > 2011,
+         bookin_fy < 2024) %>% 
+  group_by(bookin_fy) %>% 
+  summarize(alos = mean(as.numeric(stay_length, units='days'), na.rm=TRUE))
+
+p1 <- dat %>% 
+  ggplot(aes(x = bookin_fy, y = alos)) +
+  geom_col() +
+  xlab("Initial book-in FY") +
+  ylab("Average length of stay (days)") +
+  labs(title = "Average length of stay, FY2012-2023")
+
+p1
+
+```
+
+Because much analysis will be conducted at the level of individual unique detention stays, we have generated a convenience dataset, `unique-stays/output/ice_unique_stays_fy11-24ytd.feather`, which selects the final placement as a representative record for each stay. If first placement per stay is desired instead, it is trivial to filter records at this level, e.g. `df %>% distinct(anonymized_id, stay_book_in_date_time, .keep_all = TRUE) %>% filter(placement_count == 1)`.
+
+## Detention headcount
+
+An obvious usage of this dataset is to calculate the detained population over time, either in total or based on given characteristics such as population demographics or location. Because of the structure of the dataset, this can be done by conditionally indexing records to select in-range detention placements for a given date or timeline; e.g. `df[df$detention_book_in_date_and_time <= date & df$detention_book_out_date_time >= date,]`. (Note that this indexing will fail to select ongoing detention stays missing `detention_book_out_date_time` unless this is accounted for in some way; we do this by setting a temporary `detention_book_out_date_time_min` value equal to the max date in the timeline. This indexing will also double count any records with a book in time that is exactly equal to a preceding book out; and will may fail to account for bookings shorter than one day.)
+
+We have implemented a basic script for this operation at `headcount/src/headcount.R`, which by default outputs daily detained population per detention facility for the time period covered by the dataset as `headcount/output/headcount_fy11-24ytd.csv.gz`. Parameters of this script, including arbitratry grouping variables, can be set in the file `headcount/Makefile`.
+
+Note full total detention population is not reached until FY 2012:
+
+```{r daily_headcount, message=FALSE, warning=FALSE, include=TRUE}
+
+headcount <- read_delim(here::here('write', 'input', 'headcount_fy11-24ytd.csv.gz'), delim='|')
+
+headcount <- headcount %>% 
+  mutate(date = as.Date(date))
+
+# Note data is grouped by `date` and `detention_facility_code`, so we have to
+# sum total population by date
+p1 <- headcount %>% 
+  # filter(date >= '2011-10-01') %>% 
+  group_by(date) %>% 
+  summarize(total_pop = sum(n, na.rm=TRUE)) %>% 
+  ggplot(aes(x = date, y = total_pop)) +
+  geom_line() +
+  ylim(0, NA) +
+  labs(title = "Nationwide daily U.S. ICE detention population") +
+  ylab("Total population") +
+  xlab("Date")
+
+p1
+
+```
+
+We can also filter the default headcount dataset to display population counts for a given facility or subset of facilities:
+
+```{r facil_headcount, message=FALSE, warning=FALSE, include=TRUE}
+
+# `group_by` and `summarize` not necessary but good practice for consistency
+p2 <- headcount %>% 
+  filter(date >= '2011-10-01',
+         detention_facility_code == "CSCNWWA") %>% 
+  group_by(date) %>% 
+  summarize(total_pop = sum(n, na.rm=TRUE)) %>% 
+  ggplot(aes(x = date, y = total_pop)) +
+  geom_line() +
+  ylim(0, NA) +
+  labs(title = "Daily ICE detention population",
+       subtitle = "NW ICE Processing Center (Tacoma, WA)") +
+  ylab("Total population") +
+  xlab("Date")
+
+p2
+
+```
+
+For more limited subsets of data, this can be run inline:
+
+```{r headcounter_example, message=FALSE, warning=FALSE, include=TRUE}
+
+# Transform data to "fill in" missing `detention_book_out_date_time` values
+# in order to account for ongong detention stays at time of release of data
+max_date <- max(df$stay_book_out_date_time, na.rm=TRUE)
+
+df <- df %>%
+  mutate(detention_book_out_date_time_min = 
+           case_when(is.na(detention_book_out_date_time) ~ max_date,
+                     TRUE ~ detention_book_out_date_time))
+
+# Define timeline for calculation of daily detained population
+timeline_start <- min(df$stay_book_in_date_time, na.rm=TRUE)
+timeline_end <- max(df$stay_book_out_date_time, na.rm=TRUE)
+timeline <- seq(timeline_start, timeline_end, by='day')
+
+# Function counts all in-range detention placement records in dataset `df` for a
+# given `date` by a given grouping variable `var`
+headcounter <- function(date, df, group_vars) {
+  
+  in_range <- df[df$detention_book_in_date_and_time <= date & df$detention_book_out_date_time_min >= date,]
+  
+  in_range %>% 
+    group_by(across(all_of(group_vars))) %>% 
+    summarize(n = n()) %>% 
+    complete(fill = list(n = 0)) %>% 
+    mutate(date=date)
+  
+  }
+
+# Generate limited sample dataset
+temp_df <- df %>% 
+  filter(citizenship_country == "ANGOLA")
+
+# Apply function to timeline
+example_headcount <- lapply(timeline, headcounter, df=temp_df, group_vars=c('gender'))
+
+# Transform output into data frame
+example_headcount_data <- map_dfr(example_headcount, bind_rows)
+
+# Plot headcount
+p1 <- example_headcount_data %>% 
+  filter(date >= "2010-10-01") %>% 
+  ggplot(aes(x = date, y = n, fill = gender) ) +
+  geom_area() +
+  labs(title = "Daily detained population by `gender`",
+       subtitle = "`citizenship_country` == 'ANGOLA'")
+
+p1
+
+```
+
+Daily population counts can be used to calculate figures such as "average daily population" (ADP) per month or year.
+
+## Facility characteristics
+
+Note that the datasets released by ICE contain minimal information on detention facility characteristics; this is limited to the fields `detention_facility_code` (also referred to as "DETLOC" in other ICE data sources), `detention_facility` (full facility name), `area_of_responsibility` (ICE area of responsibility where facility is located), and `docket_control_office` (ICE docket control office responsible for facility).
+
+Detention facilities represented in this dataset range include dedicated ICE detention facilities, ICE hold rooms, jails and prisons contracted by ICE, medical facilities, hotels, etc.; which differ in important characteristics which are not represented here and must be inferred or joined from other sources. For example, some ICE facilities can only hold detained people for 72 hours or less, an important factor to control for when comparing placement or stay lengths between facilities.
+
+[^1] For counts of dropped records, see `ice-detain/concat/output/concat.log`.
