@@ -19,9 +19,8 @@ output/headcount_fy12-24ytd.csv.gz: \
 	src/headcount.R \
 	../concat/output/ice_detentions_fy12-24ytd.csv.gz .
 	mkdir -p output
-	cd input/ && ln -sf ../../concat/output/* .
 	Rscript $< \
-		--input=input/ice_detentions_fy12-24ytd.csv.gz \
+		--input=../concat/output/ice_detentions_fy12-24ytd.csv.gz \
 		--group='detention_facility_code' \
 		--log=output/headcount.R.log \
 		--output=$@
