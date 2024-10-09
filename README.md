@@ -30,7 +30,7 @@ This project uses "Principled Data Processing" techniques and tools developed by
 - `export/`: Convenience task, final datasets in `output/`.
 - `share/`: Resources potentially used by multiple tasks but not created or transformed in this repo.
 - `write/` - Generates descriptive notebooks for publication.
-- `docs/` - Descriptive notebooks published at: https://uwchr.github.com/ice-detain/
+- `docs/` - Descriptive notebooks published at: https://uwchr.github.io/ice-detain/
 
 ## Data description
 
