@@ -74,7 +74,7 @@ Data was released without any data dictionary or field definitions; therefore we
 - `detention_release_reason`: Missing values indiciate ongoing detention
 - `stay_release_reason`: Missing values indiciate ongoing detention
 - `alien_file_number`: Redacted
-- `anonymized_identifier`: Anonymized unique individual identifier, assumed to be generated from hash of `alien_file_number`
+- `anonymized_identifier`: Anonymized unique individual identifier
 
 ### Additional analysis fields
 
