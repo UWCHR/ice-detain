@@ -32,7 +32,7 @@ detloc_aor <- df %>%
 
 ```
 
-This dataset of U.S. Immigration and Customs Enforcement (ICE) nationwide detention placements from October 2011 to January 2024 (full U.S. government fiscal years 2012-2023) includes `r nrow(df)` records after dropping duplicate records and records missing `anonymized_id` values[^1], representing `r length(unique(df$anonymized_identifier))` unique individuals and `r length(unique(df$detention_facility))` unique detention facilities.
+This dataset of U.S. Immigration and Customs Enforcement (ICE) nationwide detention placements from October 1, 2011 to January 4, 2024 (full U.S. government fiscal years 2012-2023) includes `r nrow(df)` records after dropping duplicate records and records missing `anonymized_id` values[^1], representing `r length(unique(df$anonymized_identifier))` unique individuals and `r length(unique(df$detention_facility))` unique detention facilities.
 
 ## Data format
 
@@ -67,7 +67,7 @@ kable(example, row.names = FALSE, format = "html") %>%
 ```
 
 
-Ongoing detention placements at the time of release of the data on January 15, 2024 are missing `detention_book_out_date_time` and `detention_release_reason` values; associated blocs of records are missing `stay_book_out_date_time` and `stay_release_reason` values. See the below example of an individual with three detention stays, the third of which was ongoing at the time of release of data:
+Ongoing detention placements at the time of production of the data on January 4, 2024 are missing `detention_book_out_date_time` and `detention_release_reason` values; associated blocs of records are missing `stay_book_out_date_time` and `stay_release_reason` values. See the below example of an individual with three detention stays, the third of which was ongoing at the time of release of data:
 
 ```{r detainee_history_ongoing, message=FALSE, warning=FALSE, include=TRUE}
 
