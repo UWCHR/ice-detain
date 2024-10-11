@@ -124,7 +124,7 @@ Because much analysis will be conducted at the level of individual unique detent
 
 ## Detention headcount
 
-An obvious usage of this dataset is to calculate the detained population over time, either in total or based on given characteristics such as population demographics or location. Because of the structure of the dataset, this can be done by conditionally indexing records to select in-range detention placements for a given date or timeline; e.g. `df[df$detention_book_in_date_and_time <= date & df$detention_book_out_date_time >= date,]`. (Note that this indexing will fail to select ongoing detention stays missing `detention_book_out_date_time` unless this is accounted for in some way; we do this by setting a temporary `detention_book_out_date_time_min` value equal to the max date in the timeline. This indexing will also double count any records with a book in time that is exactly equal to a preceding book out; and may fail to account for bookings shorter than 24 hours.)
+An obvious usage of this dataset is to calculate the detained population over time, either in total or based on given characteristics such as population demographics or location. Because of the structure of the dataset, this can be done by conditionally indexing records to select in-range detention placements for a given date or timeline; e.g. `df[df$detention_book_in_date_and_time <= date & df$detention_book_out_date_time > date,]`. (Note that this indexing will fail to select ongoing detention stays missing `detention_book_out_date_time` unless this is accounted for in some way; we do this by setting a temporary `detention_book_out_date_time_min` value equal to the max date in the timeline. This indexing may fail to account for bookings shorter than 24 hours.)
 
 We have implemented a basic script for this operation at `headcount/src/headcount.R`, which by default outputs daily detained population per detention facility for the time period covered by the dataset as `headcount/output/headcount_fy12-24ytd.csv.gz`. Parameters of this script, including arbitratry grouping variables, can be set in the file `headcount/Makefile`.
 
@@ -198,7 +198,7 @@ timeline <- seq(timeline_start, timeline_end, by='day')
 # given `date` by a given grouping variable `var`
 headcounter <- function(date, df, group_vars) {
   
-  in_range <- df[df$detention_book_in_date_and_time <= date & df$detention_book_out_date_time_min >= date,]
+  in_range <- df[df$detention_book_in_date_and_time <= date & df$detention_book_out_date_time_min > date,]
   
   in_range %>% 
     group_by(across(all_of(group_vars))) %>% 
