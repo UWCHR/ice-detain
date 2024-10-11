@@ -57,7 +57,7 @@ df <- df %>%
 
 headcounter <- function(date, group_vars) {
   
-  in_range <- df[df$detention_book_in_date_and_time <= date & df$detention_book_out_date_time >= date,]
+  in_range <- df[df$detention_book_in_date_and_time <= date & df$detention_book_out_date_time > date,]
   
   in_range %>% 
     group_by(across(all_of(group_vars))) %>% 
