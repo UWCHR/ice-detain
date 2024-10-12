@@ -2,7 +2,7 @@
 
 This repository processes and analyzes U.S. Immigration and Customs Enforcement (ICE) data released pursuant to FOIA requests by the University of Washington Center for Human Rights.
 
-The datasets analyzed here were released by ICE's Enforcement and Removal Operations (ERO) Law Enforcement Systems and Analysis Division (LESA); the datasets represent person-by-person, facility-by-facility detention history records from 2011-10-01 through 2024-01-15.
+The datasets analyzed here were released by ICE's Enforcement and Removal Operations (ERO) Law Enforcement Systems and Analysis Division (LESA); the datasets represent person-by-person, facility-by-facility detention history records from 2011-10-01 through 2024-01-04.
 
 ## FOIA request
 
