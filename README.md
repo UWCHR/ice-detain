@@ -2,7 +2,7 @@
 
 This repository processes and analyzes U.S. Immigration and Customs Enforcement (ICE) data released pursuant to FOIA requests by the University of Washington Center for Human Rights.
 
-The datasets analyzed here were released by ICE's Enforcement and Removal Operations (ERO) Law Enforcement Systems and Analysis Division (LESA); the datasets represent person-by-person, facility-by-facility detention history records from 2011-10-01 through 2024-01-15.
+The datasets analyzed here were released by ICE's Enforcement and Removal Operations (ERO) Law Enforcement Systems and Analysis Division (LESA); the datasets represent person-by-person, facility-by-facility detention history records from 2011-10-01 through 2024-01-04.
 
 ## FOIA request
 
@@ -103,7 +103,8 @@ UWCHR is grateful to [Prof. David Hausman](https://www.david-hausman.com/) and t
 
 ## To-do
 
-- [x] Create `docs/` and associated tasks
 - [ ] Bring in ICE detention facility characteristics and related notes, analyze how many facilities here are represented
 - [ ] Test whether possible to generate headcount as vector of detention dates and record/individual hash values so that we can easily join in other characteristics: would this be too cumbersome?
+- [ ] Instead of generating separate dataset in `unique_stays`, flag final placement per stay in full dataset for simple filtering.
+- [x] Create `docs/` and associated tasks
 - [x] Create `stayid` key value for record blocs representing unique stays (combination of `anonymized_identifier`, `stay_book_in_date_time`).
