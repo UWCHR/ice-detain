@@ -16,7 +16,6 @@ clean:
 output/index.html: \
 		note/index.Rmd \
 		../export/output/ice_detentions_fy12-24ytd.csv.gz \
-		../export/output/ice_unique_stays_fy12-24ytd.csv.gz \
 		../export/output/headcount_fy12-24ytd.csv.gz
 	mkdir -p input output
 	cd input && ln -sf ../../export/output/*.csv.gz .

@@ -32,7 +32,9 @@ detloc_aor <- df %>%
 
 ```
 
-This dataset of U.S. Immigration and Customs Enforcement (ICE) nationwide detention placements from October 1, 2011 to January 4, 2024 (full U.S. government fiscal years 2012-2023) includes `r nrow(df)` records after dropping duplicate records and records missing `anonymized_id` values[^1], representing `r length(unique(df$anonymized_identifier))` unique individuals and `r length(unique(df$detention_facility))` unique detention facilities.
+[This dataset](https://github.com/UWCHR/ice-detain) of U.S. Immigration and Customs Enforcement (ICE) nationwide detention placements from October 1, 2011 to January 4, 2024 (full U.S. government fiscal years 2012-2023) includes `r nrow(df)` records after dropping duplicate records and records missing `anonymized_id` values[^1], representing `r length(unique(df$anonymized_identifier))` unique individuals and `r length(unique(df$detention_facility))` unique detention facilities.
+
+The data and associated code can be found in the following GitHub repository: https://github.com/UWCHR/ice-detain
 
 ## Data format
 
@@ -97,7 +99,7 @@ When performing analysis of this dataset, it is important to consider whether th
 
 The full dataset, `unique-stays/output/ice_detentions_fy12-24ytd.feather`, can be used to examine all placement records pertaining to a given individual, demographic characteristic, or specific detention facility. Note that results for calculations such as "average length of stay" will be incorrect if analysis is not restricted to one representative record per individual per stay.
 
-Analysis of characteristics per detention stay can be calculated by selecting distinct combinations of `anonymized_identifier` and `stay_book_in_date_time` values; or simply by using unique `stayid` values:
+Analysis of characteristics per detention stay can be calculated by selecting distinct combinations of `anonymized_identifier` and `stay_book_in_date_time` values; or simply by using distinct `stayid` values. Additional analysis fields generated in `unique-stays/src/unique-stays.R` can be used to select representative records for each stay based on specific characteristics, such as the `longest_placement` per stay or `last_placement` per stay. To select the first placement per stay, simply filter the dataset to select records where `placement_count == 1`.
 
 ```{r initial_bookins, message=FALSE, warning=FALSE, include=TRUE}
 
@@ -119,8 +121,6 @@ p1 <- dat %>%
 p1
 
 ```
-
-Because much analysis will be conducted at the level of individual unique detention stays, we have generated a convenience dataset, `unique-stays/output/ice_unique_stays_fy12-24ytd.feather`, which selects the final placement as a representative record for each stay. If first placement per stay is desired instead, it is trivial to filter records at this level, e.g. `df %>% distinct(anonymized_id, stay_book_in_date_time, .keep_all = TRUE) %>% filter(placement_count == 1)`.
 
 ## Detention headcount
 
