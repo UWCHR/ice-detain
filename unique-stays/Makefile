@@ -10,12 +10,12 @@
 .PHONY: all
 
 all: \
-	output/ice_unique_stays_fy12-24ytd.csv.gz
+	output/ice_detentions_fy12-24ytd.csv.gz
 
 clean: 
 		-rm -r output/*
 
-output/ice_unique_stays_fy12-24ytd.csv.gz: \
+output/ice_detentions_fy12-24ytd.csv.gz: \
 	src/unique-stays.R \
 	../concat/output/ice_detentions_fy12-24ytd.csv.gz
 	mkdir -p input output
@@ -23,7 +23,6 @@ output/ice_unique_stays_fy12-24ytd.csv.gz: \
 	Rscript $< \
 		--input=input/ice_detentions_fy12-24ytd.csv.gz \
 		--log=output/unique-stays.R.log \
-		--unique_output=$@ \
-		--full_output=output/ice_detentions_fy12-24ytd.csv.gz
+		--output=$@
 
 # End.

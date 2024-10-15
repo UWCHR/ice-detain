@@ -1,5 +1,5 @@
 # ---
-# title: "Generate dataset of unique detention stays"
+# title: "Output dataset with additional analysis fields per stay"
 # author:
 # - "[Phil Neff](https://github.com/philneff)"
 # date: 2024-02-27
@@ -12,8 +12,7 @@ p_load(argparse, logger, tidyverse, arrow, lubridate, zoo, digest)
 parser <- ArgumentParser()
 parser$add_argument("--input", default = "unique-stays/input/ice_detentions_fy12-24ytd.csv.gz")
 parser$add_argument("--log", default = "unique-stays/output/unique-stays.R.log")
-parser$add_argument("--unique_output", default = "unique-stays/output/ice_unique-stays_fy12-24ytd.csv.gz")
-parser$add_argument("--full_output", default = "unique-stays/output/ice_detentions_fy12-24ytd.csv.gz")
+parser$add_argument("--output", default = "unique-stays/output/ice_detentions_fy12-24ytd.csv.gz")
 args <- parser$parse_args()
 
 # append log file
@@ -105,27 +104,12 @@ names(detloc_aor_list) <- detloc_aor$area_of_responsibility
 
 log_info("Rows out: {nrow(df)}")
 
-print("Slice final placement")
-# Select final placement record per unique stay
-system.time({unique_stays <- df %>% 
-  group_by(anonymized_identifier, stay_count) %>% 
-  slice_max(placement_count)})
+df$first_aor <- names(detloc_aor_list)[match(df$first_facil, detloc_aor_list)]
+df$last_aor <- names(detloc_aor_list)[match(df$last_facil, detloc_aor_list)]
+df$longest_aor <- names(detloc_aor_list)[match(df$longest_placement_facil, detloc_aor_list)]
 
-unique_stays$first_aor <- names(detloc_aor_list)[match(unique_stays$first_facil, detloc_aor_list)]
-unique_stays$last_aor <- names(detloc_aor_list)[match(unique_stays$last_facil, detloc_aor_list)]
-unique_stays$longest_aor <- names(detloc_aor_list)[match(unique_stays$longest_placement_facil, detloc_aor_list)]
-
-print("Write unique stay dataset")
-# Write out dataset of unique stays
-write_delim(unique_stays, args$unique_output, delim='|')
-
-final_placements <- list(unique_stays$recid)
-
-df <- df %>%
-  mutate(final_placement = recid %in% final_placements)
-
-print("Write full dataset")
-# Write out full dataset with additional cols
-system.time({write_delim(df, args$full_output, delim='|')})
+print("Write out dataset")
+# Write out dataset with additional analysis cols
+system.time({write_delim(df, args$output, delim='|')})
 
 # END.
