@@ -1869,45 +1869,46 @@ stay:</p>
 
 example &lt;- df[df$anonymized_identifier == &quot;0000005694c4fd9ebcc71c6a54fca1cdfc516c36&quot;, sample_cols]
 
-kable(example, row.names = FALSE, format = &quot;html&quot;) %&gt;%
-  kable_styling(bootstrap_options = c(&quot;striped&quot;, &quot;hover&quot;, &quot;condensed&quot;, &quot;responsive&quot;))</code></pre>
-<table class="table table-striped table-hover table-condensed table-responsive" style="margin-left: auto; margin-right: auto;">
+knitr::kable(example, row.names = FALSE, format = &quot;html&quot;) %&gt;%
+  kableExtra::scroll_box(width = &quot;100%&quot;, height = &quot;300px&quot;)</code></pre>
+<div style="border: 1px solid #ddd; padding: 0px; overflow-y: scroll; height:300px; overflow-x: scroll; width:100%; ">
+<table>
 <thead>
 <tr>
-<th style="text-align:left;">
+<th style="text-align:left;position: sticky; top:0; background-color: #FFFFFF;">
 stay_book_in_date_time
 </th>
-<th style="text-align:left;">
+<th style="text-align:left;position: sticky; top:0; background-color: #FFFFFF;">
 detention_book_in_date_and_time
 </th>
-<th style="text-align:left;">
+<th style="text-align:left;position: sticky; top:0; background-color: #FFFFFF;">
 detention_book_out_date_time
 </th>
-<th style="text-align:left;">
+<th style="text-align:left;position: sticky; top:0; background-color: #FFFFFF;">
 stay_book_out_date_time
 </th>
-<th style="text-align:left;">
+<th style="text-align:left;position: sticky; top:0; background-color: #FFFFFF;">
 citizenship_country
 </th>
-<th style="text-align:left;">
+<th style="text-align:left;position: sticky; top:0; background-color: #FFFFFF;">
 gender
 </th>
-<th style="text-align:right;">
+<th style="text-align:right;position: sticky; top:0; background-color: #FFFFFF;">
 birth_year
 </th>
-<th style="text-align:left;">
+<th style="text-align:left;position: sticky; top:0; background-color: #FFFFFF;">
 detention_facility
 </th>
-<th style="text-align:left;">
+<th style="text-align:left;position: sticky; top:0; background-color: #FFFFFF;">
 area_of_responsibility
 </th>
-<th style="text-align:left;">
+<th style="text-align:left;position: sticky; top:0; background-color: #FFFFFF;">
 detention_release_reason
 </th>
-<th style="text-align:left;">
+<th style="text-align:left;position: sticky; top:0; background-color: #FFFFFF;">
 stay_release_reason
 </th>
-<th style="text-align:left;">
+<th style="text-align:left;position: sticky; top:0; background-color: #FFFFFF;">
 anonymized_identifier
 </th>
 </tr>
@@ -2105,6 +2106,7 @@ Removed
 </tr>
 </tbody>
 </table>
+</div>
 <p>Ongoing detention placements at the time of production of the data on
 January 4, 2024 are missing <code>detention_book_out_date_time</code>
 and <code>detention_release_reason</code> values; associated blocs of

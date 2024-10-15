@@ -63,8 +63,8 @@ sample_cols <- c("stay_book_in_date_time",
 
 example <- df[df$anonymized_identifier == "0000005694c4fd9ebcc71c6a54fca1cdfc516c36", sample_cols]
 
-kable(example, row.names = FALSE, format = "html") %>%
-  kable_styling(bootstrap_options = c("striped", "hover", "condensed", "responsive"))
+knitr::kable(example, row.names = FALSE, format = "html") %>%
+  kableExtra::scroll_box(width = "100%", height = "300px")
 
 ```
 
