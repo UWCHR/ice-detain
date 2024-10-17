@@ -104,7 +104,6 @@ UWCHR is grateful to [Prof. David Hausman](https://www.david-hausman.com/) and t
 ## To-do
 
 - [ ] Bring in ICE detention facility characteristics and related notes, analyze how many facilities here are represented
-- [ ] Test whether possible to generate headcount as vector of detention dates and record/individual hash values so that we can easily join in other characteristics: would this be too cumbersome?
-- [ ] Instead of generating separate dataset in `unique_stays`, flag final placement per stay in full dataset for simple filtering.
+- [x] Instead of generating separate dataset in `unique_stays`, flag final placement per stay in full dataset for simple filtering.
 - [x] Create `docs/` and associated tasks
 - [x] Create `stayid` key value for record blocs representing unique stays (combination of `anonymized_identifier`, `stay_book_in_date_time`).
