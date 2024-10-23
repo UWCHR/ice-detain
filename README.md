@@ -104,6 +104,7 @@ UWCHR is grateful to [Prof. David Hausman](https://www.david-hausman.com/) and t
 ## To-do
 
 - [ ] Bring in ICE detention facility characteristics and related notes, analyze how many facilities here are represented
+- [ ] Note logic for `current_stay` flag in `unique-stays/src/unique-stays.R` is not correct.
 - [x] Instead of generating separate dataset in `unique_stays`, flag final placement per stay in full dataset for simple filtering.
 - [x] Create `docs/` and associated tasks
 - [x] Create `stayid` key value for record blocs representing unique stays (combination of `anonymized_identifier`, `stay_book_in_date_time`).
