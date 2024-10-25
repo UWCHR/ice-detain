@@ -28,7 +28,7 @@ detloc_aor <- df %>%
 
 ```
 
-[This dataset](https://github.com/UWCHR/ice-detain) of U.S. Immigration and Customs Enforcement (ICE) nationwide detention placements from October 1, 2011 to January 4, 2024 (full U.S. government fiscal years 2012-2023) includes `r nrow(df)` records after dropping duplicate records and records missing `anonymized_id` values[^1], representing `r length(unique(df$anonymized_identifier))` unique individuals and `r length(unique(df$detention_facility))` unique detention facilities.
+[This dataset](https://github.com/UWCHR/ice-detain) of U.S. Immigration and Customs Enforcement (ICE) nationwide detention placements from October 1, 2011 to January 4, 2024 (full U.S. government fiscal years 2012-2023) includes `r nrow(df)` records after dropping duplicate records and records missing `anonymized_id` values[^1], representing `r length(unique(df$anonymized_identifier))` unique individuals and `r length(unique(df$detention_facility))` unique detention facilities. The dataset has been minimally cleaned and standardized and is known to contain inconsistencies; all results should be interpreted with caution.
 
 The data and associated code can be found in the following GitHub repository: https://github.com/UWCHR/ice-detain
 
@@ -122,9 +122,9 @@ p1
 
 An obvious usage of this dataset is to calculate the detained population over time, either in total or based on given characteristics such as population demographics or location. Because of the structure of the dataset, this can be done by conditionally indexing records to select in-range detention placements for a given date or timeline; e.g. `df[df$detention_book_in_date_and_time <= date & df$detention_book_out_date_time > date,]`. (Note that this indexing will fail to select ongoing detention stays missing `detention_book_out_date_time` unless this is accounted for in some way; we do this by setting a temporary `detention_book_out_date_time_min` value equal to the max date in the timeline. This indexing may fail to account for bookings shorter than 24 hours.)
 
-We have implemented a basic script for this operation at `headcount/src/headcount.R`, which by default outputs daily detained population per detention facility for the time period covered by the dataset as `headcount/output/headcount_fy12-24ytd.csv.gz`. Parameters of this script, including arbitratry grouping variables, can be set in the file `headcount/Makefile`.
+We have implemented a basic script for this operation at `headcount/src/headcount.R`, which by default outputs daily detained population per detention facility at 01:00 hours UTC for the time period covered by the dataset as `headcount/output/headcount_fy12-24ytd.csv.gz`. Parameters of this script, including arbitrary grouping variables, can be set in the file `headcount/Makefile`. (At least one grouping variable is required per current implementaiton, if this is not desired it should be trivial to modify script for this purpose.)
 
-Note full total detention population is not reached until FY 2012:
+Results of these calculations should be regarded as approximations of the true detained population.[^2] Note full total detention population is not reached until FY 2012, per the scope of the FOIA request that generated this dataset:
 
 ```{r daily_headcount, message=FALSE, warning=FALSE, include=TRUE}
 
@@ -235,3 +235,4 @@ Note that the datasets released by ICE contain minimal information on detention 
 Detention facilities represented in this dataset range include dedicated ICE detention facilities, ICE hold rooms, jails and prisons contracted by ICE, medical facilities, hotels, etc.; which differ in important characteristics which are not represented here and must be inferred or joined from other sources. For example, some ICE facilities can only hold detained people for 72 hours or less, an important factor to control for when comparing placement or stay lengths between facilities.
 
 [^1]: For counts of dropped records, see `ice-detain/concat/output/concat.log`.
+[^2]: A recent Government Accountability Office (GAO) report indicates that detention population figures reported by ICE underestimate detention population figures obtained by independent calculations apparently using a version of the same dataset analyzed here. See U.S. Government Accountability Office, “Immigration Enforcement: Arrests, Removals, and Detentions Varied Over Time and ICE Should Strengthen Data Reporting”, GAO-24-106233, July 23, 2024, https://www.gao.gov/products/gao-24-106233
