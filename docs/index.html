@@ -1803,14 +1803,10 @@ border-radius: 0px;
 library(pacman)
 p_load(tidyverse, arrow, lubridate, zoo, digest, ggplot2, plotly, gghighlight, knitr, kableExtra)
 
-# For calculations of variables at placement level
-df &lt;- read_delim(here::here(&#39;write&#39;, &#39;input&#39;, &#39;ice_detentions_fy12-24ytd.csv.gz&#39;),
-                 delim = &#39;|&#39;,
-                 col_types = cols(
-  &quot;stay_book_in_date_time&quot; = col_datetime(format =  &quot;%Y-%m-%dT%H:%M:%SZ&quot;),
-  &quot;detention_book_in_date_and_time&quot; = col_datetime(format =  &quot;%Y-%m-%dT%H:%M:%SZ&quot;),
-  &quot;detention_book_out_date_time&quot; = col_datetime(format =  &quot;%Y-%m-%dT%H:%M:%SZ&quot;),
-  &quot;stay_book_out_date_time&quot; = col_datetime(format =  &quot;%Y-%m-%dT%H:%M:%SZ&quot;)))
+df &lt;- data.table::fread(file = here::here(&#39;write&#39;, &#39;input&#39;, &#39;ice_detentions_fy12-24ytd.csv.gz&#39;),
+                        sep = &#39;|&#39;)
+
+data.table::setDF(df)
 
 detloc_aor &lt;- df %&gt;% 
   distinct(detention_facility_code, area_of_responsibility) %&gt;% 
