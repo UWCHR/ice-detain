@@ -11,7 +11,7 @@ output:
         code_folding: hide
 ---
 
-This notebook analyzes characteristics of datetime columns of ICE detention records from October 1, 2011 to January 4, 2024. As discussed in the [dataset overview](index.html), each row in the detention records dataset represents a "placement" of an individual detained person at a specific detention facility, demarcated by start and end booking dates (`detention_book_in_date_and_time`, `detention_book_in_date_time`). One or more successive placement records for an individual constitute a detention "stay", covering the entire period of their detention. Again, these are demarcated with start and end dates (`stay_book_in_date_time`, `stay_book_out_date_time`).
+This notebook analyzes characteristics of datetime columns of ICE detention records from October 1, 2011 to January 4, 2024. As discussed in the [dataset overview](index.html), each row in the detention records dataset represents a "placement" of an individual detained person at a specific detention facility, demarcated by start and end booking datetime values (`detention_book_in_date_and_time`, `detention_book_in_date_time`). One or more successive placement records for an individual constitute a detention "stay", covering the entire period of their detention. Again, these are demarcated with start and end booking datetime values (`stay_book_in_date_time`, `stay_book_out_date_time`).
 
 ```{r import_data, message=FALSE, warning=FALSE, include=TRUE}
 options(scipen = 1000000)
@@ -28,50 +28,58 @@ detloc_aor <- df %>%
   distinct(detention_facility_code, area_of_responsibility) %>% 
   arrange(detention_facility_code, area_of_responsibility)
 
-# Need to look more closely at which records are retained here
-# Assume it is first placement per stay
-# unique_stays <- df %>% 
-#   distinct(stayid, .keep_all = TRUE)
-
 ```
+
+# Duplicate placements
+
+A small number of stays include records with duplicate `detention_book_in_date_and_time` values; a smaller number of stays include duplicate `detention_book_out_date_time` values. In many cases, one of these duplicate placements has `placement_length` equal to zero. These may represent data entry corrections or additions; details in detained person characteristics columns appear to differ in many cases.
+
+Note fully duplicate records have previously been dropped in `concat/src/concat.r`.
 
 ```{r duplicate_placements}
 
-# Some cases have duplicate placement records: two book-ins at same time. For most (not all!) of these, one of the duplicate placement records has placement length equal to zero.
-# These may represent data entry corrections or additions; details in detained person characteristics columns appear to differ in many cases
-
-# Flag duplicate placement book-ins within each stay
+# Flag all duplicate placement book-ins within each stay
 df <- df %>% 
   group_by(stayid) %>% 
-  mutate(isdupe = duplicated(detention_book_in_date_and_time) | duplicated(detention_book_in_date_and_time, fromLast = TRUE)) %>% 
+  mutate(is_dupe_book_in = duplicated(detention_book_in_date_and_time) |
+           duplicated(detention_book_in_date_and_time, fromLast = TRUE),
+         is_dupe_book_out = duplicated(detention_book_out_date_time) |
+            duplicated(detention_book_out_date_time, fromLast = TRUE)) %>% 
   ungroup()
 
-alldupes <- df %>% filter(isdupe == TRUE)
+h1 <- df %>% 
+  filter(is_dupe_book_in == TRUE) %>% 
+  ggplot(aes(x = placement_length_min)) +
+  geom_histogram()
 
-dupe_recids <- alldupes$recid
+h1
 
+```
+
+There are many zero length placements that are not associated with duplicate placement records.
+
+Very small number of duplicate placement records have non-zero placement length (these records may generate double count in `headcount/src/headcount.R`.)
+
+```{r}
+ 
 # Check if all zero length placements are duplicates (probably not)
+dupeplacements <- df[df$is_dupe_book_in == TRUE, "recid"]
+dupeplacementstays <- unique(df[df$is_dupe_book_in == TRUE, "stayid"])
 
-zero_placement <- df %>% 
-  filter(placement_length_min == 0)
+zeroplacements <- df[df$placement_length_min == 0, "recid"]
+zeroplacementstays <- unique(df[df$placement_length_min == 0, "stayid"])
 
-zero_recids <- zero_placement$recid
+# Stays with non zero-length duplicate placements
+non_zero_dupe_stayids <- setdiff(unlist(dupeplacementstays), unlist(zeroplacementstays))
 
-
+non_zero_dupe_stays <- df %>%
+  filter(stayid %in% non_zero_dupe_stayids)
 
 ```
 
 # Date range
 
 The following table offers an overview of placement and stay book-in and book-out fields. Note this dataset should include all detention records for all people who experienced ICE detention during October 1, 2011 through January 4, 2024; accordingly, this includes people with placements and stays beginning prior to October 1, 2011.
-
-We have interpreted records with null placement and stay book-out values as representing ongoing detentions at the time of generation of the dataset. 
-
-It is logical to observe more null stay book-out values than null placement book-out dates, as each "bloc" of successive placement records associated with an ongoing stay will be present multiple null stay book-out values.
-
-We should not expect to see any records with null placement book-out and non-null stay book-out: `r stopifnot(nrow(df[is.na(df$detention_book_out_date_time) & !is.na(df$stay_book_out_date_time),]) == 0)`.
-
-However, we do see records with no null placement book-out values, but null stay book-out values, indicating that the stay appears to be ongoing but no ongoing placement appears in the dataset.
 
 ```{r date_range}
 
@@ -88,7 +96,22 @@ skimr::skim(unique_stays[date_cols])
 
 ```
 
-```{r test}
+# Incomplete placements/stays
+
+We have interpreted records with null placement and stay book-out values as representing ongoing detentions at the time of generation of the dataset. 
+
+It is logical to observe more null stay book-out values than null placement book-out dates, as each "bloc" of successive placement records associated with an ongoing stay will be present multiple null stay book-out values.
+
+We should not expect to see any records with null placement book-out and non-null stay book-out: `r stopifnot(nrow(df[is.na(df$detention_book_out_date_time) & !is.na(df$stay_book_out_date_time),]) == 0)`.
+
+However, we do see records with no null placement book-out values, but null stay book-out values, indicating that the stay appears to be ongoing but no ongoing placement appears in the dataset. These records will not confound detained population calculations in `headcount/src/headcount.R`.
+
+```{r}
+
+unique_stays <- df %>% 
+  distinct(stayid, .keep_all = TRUE)
+
+stopifnot(unique(unique_stays$placement_count) == 1)
 
 test <- unique_stays %>% 
   filter(is.na(stay_book_out_date_time),
@@ -103,7 +126,11 @@ test2 <- df %>%
 
 # Placement length
 
-`r sum(df$placement_length == 0, na.rm = TRUE)` completed placements have a `placement_length` of zero; `r sum(df$placement_length < 0, na.rm = TRUE)` have negative `placement_length` values. 
+`r sum(df$placement_length == 0, na.rm = TRUE)` completed placements have a `placement_length` of zero; `r sum(df$placement_length < 0, na.rm = TRUE)` have negative `placement_length` values.
+
+Placements with length zero will not contribute to headcount calculations in `headcount/src/headcount.R` unless book in time is exactly 01:00 hours UTC; this amounts to very few records at any given time.
+
+Negative length placements will not contribute to headcount calculations.
 
 ```{r placement_length}
 
@@ -166,7 +193,7 @@ Examining stay blocs with odd placement timings (instant transfers, impossible p
 
 Many (but not all) records involving instant transfers (book-out time exactly equal to subsequent book-in time) appear to involve cases with `detention_release_reason` values of "Processing Disposition Changed Locally"; this would make sense if these placements are "on paper only" or simply administrative changes. These cases are not uncommon (`r length(ex_zero_ids)` individual stays during FY2020), so this is a good argument for using a headcount methodology which is not inclusive of book-out dates in order to not double-count these placements (see below).
 
-Negative placement gaps mean that the dataset records an individual as being in two places at one time, e.g. one placement is not completed but subsequent has already started. These are not common (`r length(ex_neg_ids)` individual stays during FY2020).
+Negative placement gaps mean that the dataset records an individual as being in two places at one time, e.g. one placement is not completed but subsequent has already started. These are not common (`r length(ex_neg_ids)` individual stays during FY2020). These records will result in double counting in detention headcounts.
 
 ```{r}
 
@@ -221,15 +248,17 @@ df_ex_gap <- test_df %>%
 
 ```
 
+# Exclusive versus inclusive headcount methods
+
 Comparing outcomes of headcount based on inclusive versus exclusive indexing of placement book-out date-time. Exclusive indexing is more conservative; inclusive indexing may over-count if successive placements have exact same book-out and book-in values.
 
 ```{r daily_headcount, message=FALSE, warning=FALSE, include=TRUE}
 
-# Date exclusive indexing
+# Date exclusive indexing (default output of `headcount/src/headcount.R`)
 headcount_exc <- read_delim(here::here('export', 'output', 'headcount_fy12-24ytd.csv.gz'), delim='|')
 
-# Date inclusive indexing (Note this file not included in GitHub repo)
-headcount_inc <- read_delim(here::here('headcount', 'frozen', 'headcount_fy12-24ytd.csv.gz'), delim='|')
+# Date inclusive indexing
+headcount_inc <- read_delim(here::here('headcount', 'frozen', 'inc_headcount_fy12-24ytd.csv.gz'), delim='|')
 
 # Exclusive of book-out date-time
 headcount_exc <- headcount_exc %>% 
@@ -265,6 +294,13 @@ p2
 
 ```
 
+# Difference between stay/placement book in/out times
+
+Detention stay book in/book out values do not always coincide with associated initial/final detention placement records. This is most common in data for placements in FY2011 and prior, but occurs throughout dataset.
+
+# Difference between stay/placement headcounts
+
+As a result of this and gaps between placements, a detention headcount based on stay book in/out values results in higher approximate total detained population, sometimes by a significant margin.
 
 ```{r stay_headcounter, message=FALSE, warning=FALSE, include=TRUE}
 
@@ -355,6 +391,9 @@ p3
 
 ```
 
+# Headcount of zero length placements
+
+As currently implemented, zero-length placements will only contribute to headcount if placement book in time is at exactly 01:00 hours UTC.
 
 ```{r headcounter, message=FALSE, warning=FALSE, include=TRUE}
 
@@ -386,24 +425,23 @@ headcounter <- function(date, df, group_vars) {
   
   }
 
-# # Generate limited sample dataset
-# test_df_df <- df %>% 
-#   filter(citizenship_country == "ANGOLA")
-# 
-# # Apply function to timeline
-# example_headcount <- lapply(timeline, headcounter, df=test_df_df, group_vars=c('gender'))
-# 
-# # Transform output into data frame
-# example_headcount_data <- map_dfr(example_headcount, bind_rows)
-# 
+# Generate limited sample dataset
+test_df <- df %>%
+  filter(placement_length_min == 0)
+
+# Apply function to timeline
+example_headcount <- lapply(timeline, headcounter, df=test_df, group_vars=c('recid'))
+
+# Transform output into data frame
+example_headcount_data <- map_dfr(example_headcount, bind_rows)
+
 # # Plot headcount
-# p1 <- example_headcount_data %>% 
-#   filter(date >= "2010-10-01") %>% 
-#   ggplot(aes(x = date, y = n, fill = gender) ) +
-#   geom_area() +
-#   labs(title = "Daily detained population by `gender`",
-#        subtitle = "`citizenship_country` == 'ANGOLA'")
-# 
-# p1
+p1 <- example_headcount_data %>%
+  filter(date >= "2010-10-01") %>%
+  ggplot(aes(x = date, y = n) ) +
+  geom_area() +
+  labs(title = "Daily detained population")
+
+p1
 
 ```
