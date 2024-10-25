@@ -21,12 +21,10 @@ log_appender(appender_file(f))
 
 print("Reading data")
 
-df <- read_delim(args$input, col_types = cols(
-  "stay_book_in_date_time" = col_datetime(format =  "%Y-%m-%dT%H:%M:%SZ"),
-  "detention_book_in_date_and_time" = col_datetime(format =  "%Y-%m-%dT%H:%M:%SZ"),
-  "detention_book_out_date_time" = col_datetime(format =  "%Y-%m-%dT%H:%M:%SZ"),
-  "stay_book_out_date_time" = col_datetime(format =  "%Y-%m-%dT%H:%M:%SZ"),
-))
+df <- data.table::fread(file = args$input,
+                        sep = '|')
+
+data.table::setDF(df)
 
 log_info("Total rows in: {nrow(df)}")
 
@@ -56,16 +54,17 @@ stopifnot(pre_nrow == nrow(df))
 pre_nrow <- nrow(df)
 
 print("Calculation 2 (grouped by `anonymized_identifier`)")
-# Count total of distinct stays and placements per ID (based on book in times)
-# Flag if currently detained at time of release of dataset (`NA` release reason)
+# Count total of distinct stays and placements per ID
+# Flag if currently detained at time of release of dataset
 # Enumerate successive stays
 system.time({df <- df %>% 
   filter(!is.na(anonymized_identifier)) %>% 
   group_by(anonymized_identifier) %>% 
   arrange(stay_book_in_date_time, detention_book_in_date_and_time) %>%
   mutate(total_stays = n_distinct(stay_book_in_date_time),
-         total_placements = n_distinct(detention_book_in_date_and_time),
-         current_stay = is.na(detention_release_reason),
+         total_placements = n(),
+         current_stay = is.na(stay_book_out_date_time),
+         current_placement = is.na(detention_book_out_date_time),
          stay_count = data.table::rleid(stay_book_in_date_time)) %>% 
   ungroup()
     }
@@ -81,8 +80,8 @@ print("Calculation 3 (grouped by `stayid`)")
 system.time({df <- df %>% 
   group_by(stayid) %>% 
   arrange(stay_book_in_date_time, detention_book_in_date_and_time) %>%
-  mutate(placement_count = data.table::rleid(detention_book_in_date_and_time),
-         stay_placements = n_distinct(detention_book_in_date_and_time),
+  mutate(placement_count = data.table::rleid(recid),
+         stay_placements = n(),
          first_facil = detention_facility_code[[1]], 
          last_facil = detention_facility_code[[length(detention_facility_code)]],
          longest_placement_facil = detention_facility_code[which.max(placement_length_min)],
