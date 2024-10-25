@@ -86,17 +86,20 @@ Data was released without any data dictionary or field definitions; therefore we
 - `file_rowseq`: Record sequece within input file
 - `stay_length`: Length of stay (missing for ongoing stays)
 - `placement_length`: Length of placement (missing for ongoing placement)
-- `stay_length_min`: Minimum length of stay (as of 2024-01-15, date of release of dataset)
-- `placement_length_min`: Minimum length of placement (as of 2024-01-15, date of release of dataset)
-- `total_stays`: Total completed/ongoing detention stays per individual
-- `total_placements`: Total completed/ongoing detention placements per individual
+- `stay_length_min`: Minimum length of stay (as of 2024-01-4, date of generation of dataset)
+- `placement_length_min`: Minimum length of placement (as of 2024-01-4, date of generation of dataset)
+- `total_stays`: Total detention stays per individual
+- `total_placements`: Total detention placements per individual
 - `current_stay`: Does row relate to a current detention stay?
+- `current_placement`: Does row relate to a current detention placement?
 - `stay_count`: Consecutive identifier per stay per person
 - `placement_count`: Consecutive identifier per placement per person
-- `stay_placements`: Consecutive identifier per placement per stay per person
+- `stay_placements`: Total detention placements per stay
 - `first_facil`: Stay book-in facility
 - `last_facil`: Stay book-out facility
 - `longest_placement_facil`: Longest placement facility per stay
+- `last_placement`: Is this final placement of current stay?
+- `longest_placement`: Is this longest placement of current stay?
 
 ## Acknowledgements
 
