@@ -1818,7 +1818,9 @@ fiscal years 2012-2023) includes 8631489 records after dropping
 duplicate records and records missing <code>anonymized_id</code>
 values<a href="#fn1" class="footnote-ref" id="fnref1"><sup>1</sup></a>,
 representing 3360633 unique individuals and 1122 unique detention
-facilities.</p>
+facilities. The dataset has been minimally cleaned and standardized and
+is known to contain inconsistencies; all results should be interpreted
+with caution.</p>
 <p>The data and associated code can be found in the following GitHub
 repository: <a href="https://github.com/UWCHR/ice-detain" class="uri">https://github.com/UWCHR/ice-detain</a></p>
 <div id="data-format" class="section level2">
@@ -2883,13 +2885,17 @@ date in the timeline. This indexing may fail to account for bookings
 shorter than 24 hours.)</p>
 <p>We have implemented a basic script for this operation at
 <code>headcount/src/headcount.R</code>, which by default outputs daily
-detained population per detention facility for the time period covered
-by the dataset as
+detained population per detention facility at 01:00 hours UTC for the
+time period covered by the dataset as
 <code>headcount/output/headcount_fy12-24ytd.csv.gz</code>. Parameters of
-this script, including arbitratry grouping variables, can be set in the
-file <code>headcount/Makefile</code>.</p>
-<p>Note full total detention population is not reached until FY
-2012:</p>
+this script, including arbitrary grouping variables, can be set in the
+file <code>headcount/Makefile</code>. (At least one grouping variable is
+required per current implementaiton, if this is not desired it should be
+trivial to modify script for this purpose.)</p>
+<p>Results of these calculations should be regarded as approximations of
+the true detained population.<a href="#fn2" class="footnote-ref" id="fnref2"><sup>2</sup></a> Note full total detention population is not
+reached until FY 2012, per the scope of the FOIA request that generated
+this dataset:</p>
 <pre class="r"><code>headcount &lt;- read_delim(here::here(&#39;write&#39;, &#39;input&#39;, &#39;headcount_fy12-24ytd.csv.gz&#39;), delim=&#39;|&#39;)
 
 headcount &lt;- headcount %&gt;% 
@@ -3003,6 +3009,13 @@ facilities.</p>
 <ol>
 <li id="fn1"><p>For counts of dropped records, see
 <code>ice-detain/concat/output/concat.log</code>.<a href="#fnref1" class="footnote-back">↩︎</a></p></li>
+<li id="fn2"><p>A recent Government Accountability Office (GAO) report
+indicates that detention population figures reported by ICE
+underestimate detention population figures obtained by independent
+calculations apparently using a version of the same dataset analyzed
+here. See U.S. Government Accountability Office, “Immigration
+Enforcement: Arrests, Removals, and Detentions Varied Over Time and ICE
+Should Strengthen Data Reporting”, GAO-24-106233, July 23, 2024, <a href="https://www.gao.gov/products/gao-24-106233" class="uri">https://www.gao.gov/products/gao-24-106233</a><a href="#fnref2" class="footnote-back">↩︎</a></p></li>
 </ol>
 </div>
 
