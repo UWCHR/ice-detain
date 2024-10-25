@@ -29,8 +29,9 @@ This project uses "Principled Data Processing" techniques and tools developed by
 - `headcount/`: Calculates daily detention headcount by given characteristic, e.g. per facility, by gender/nationality. Slow when applied to full dataset, could likely be optimized/improved.
 - `export/`: Convenience task, final datasets in `output/`.
 - `share/`: Resources potentially used by multiple tasks but not created or transformed in this repo.
-- `write/` - Generates descriptive notebooks for publication.
-- `docs/` - Descriptive notebooks published at: https://uwchr.github.io/ice-detain/
+- `write/`: Generates descriptive notebooks for publication.
+- `docs/`: Descriptive notebooks published at: https://uwchr.github.io/ice-detain/
+- `analyze/`: Exploratory analysis notebooks; contents are not final and should be considered to be speculative.
 
 ## Data description
 
