@@ -108,7 +108,7 @@ UWCHR is grateful to [Prof. David Hausman](https://www.david-hausman.com/) and t
 ## To-do
 
 - [ ] Bring in ICE detention facility characteristics and related notes, analyze how many facilities here are represented
-- [ ] Resolve problems noted in [issue #3](https://github.com/UWCHR/ice-detain/issues/3).
+- [x] Resolve problems noted in [issue #3](https://github.com/UWCHR/ice-detain/issues/3).
 - [x] Instead of generating separate dataset in `unique_stays`, flag final placement per stay in full dataset for simple filtering.
 - [x] Create `docs/` and associated tasks
 - [x] Create `stayid` key value for record blocs representing unique stays (combination of `anonymized_identifier`, `stay_book_in_date_time`).
