@@ -1,0 +1,170 @@
+---
+title: "FY12-24YTD ICE detention facility analysis"
+author: "UWCHR"
+date: "2024-11-08"
+output:
+    html_document:
+        html_preview: true
+        toc: true
+        toc_depth: 3
+        toc_float: true
+        code_folding: hide
+---
+
+```{r import_data, message=FALSE, warning=FALSE, include=TRUE}
+options(scipen = 1000000)
+
+library(pacman)
+p_load(tidyverse, arrow, lubridate, zoo, digest, ggplot2, plotly, gghighlight, knitr, kableExtra, igraph, ggraph)
+
+df <- data.table::fread(file = here::here('export', 'output', 'ice_detentions_fy12-24ytd.csv.gz'),
+                        sep = '|')
+
+data.table::setDF(df)
+
+detloc_aor <- df %>% 
+  distinct(detention_facility_code, area_of_responsibility) %>% 
+  arrange(detention_facility_code, area_of_responsibility)
+
+```
+
+```{r facility}
+
+detloc <- "CSCNWWA"
+stopifnot(length(unique(df[df$detention_facility_code == detloc, 'detention_facility'])) == 1)
+facil_name <- unique(df[df$detention_facility_code == detloc, 'detention_facility'])
+facil_aor <- detloc_aor[detloc_aor$detention_facility_code == detloc, 'area_of_responsibility']
+
+# All placements at facility
+facil_placements <- df %>% 
+  filter(detention_facility_code == detloc)
+
+# All stays with at least one placement at facility
+facil_stays <- df %>% 
+  filter(stayid %in% unlist(facil_placements$stayid))
+
+```
+
+```{r facil_book_ins}
+
+facil_book_ins_per_fy <- facil_placements %>% 
+  mutate(book_in_fy = substr(quarter(detention_book_in_date_and_time, fiscal_start = 10, type = 'year.quarter'), 0, 4)) %>% 
+  count(book_in_fy)
+
+p1 <- facil_book_ins_per_fy %>% 
+  filter(as.numeric(book_in_fy) >= 2012,
+         as.numeric(book_in_fy) <= 2023) %>% 
+  ggplot(aes(x = book_in_fy, y = n)) +
+  geom_col()
+
+p1
+
+```
+
+```{r facil_stay_outcome}
+
+dat <- facil_stays %>% 
+  distinct(stayid, .keep_all = TRUE) %>% 
+  mutate(book_out_fy = substr(quarter(detention_book_out_date_time, fiscal_start = 10, type = 'year.quarter'), 0, 4)) %>% 
+  count(book_out_fy, stay_release_reason)
+
+p1 <- dat %>% 
+  filter(as.numeric(book_out_fy) >= 2012,
+         as.numeric(book_out_fy) <= 2023) %>% 
+  ggplot(aes(x = book_out_fy, y = n, fill = stay_release_reason)) +
+  geom_col()
+
+ggplotly(p1)
+
+```
+
+```{r facil_initial_placements}
+
+facil_initial_placements <- df %>% 
+  filter(first_facil == detloc,
+         placement_count == 1)
+
+p1 <- facil_initial_placements %>% 
+  mutate(book_in_fy = substr(quarter(detention_book_in_date_and_time, fiscal_start = 10, type = 'year.quarter'), 0, 4)) %>% 
+  filter(book_in_fy >= "2012") %>% 
+  count(book_in_fy, final_program) %>% 
+  ggplot(aes(x = as.numeric(book_in_fy), y = n, fill = final_program)) +
+  geom_col()
+
+p1
+
+p2 <- facil_initial_placements %>% 
+  mutate(book_in_fy = substr(quarter(detention_book_in_date_and_time, fiscal_start = 10, type = 'year.quarter'), 0, 4)) %>% 
+  filter(book_in_fy >= "2012") %>% 
+  count(book_in_fy, final_program) %>% 
+  ggplot(aes(x = as.numeric(book_in_fy), y = n, fill = final_program)) +
+  geom_col(position="fill")
+
+p2
+
+```
+
+```{r facil_final_placements}
+
+facil_final_placements <- df %>% 
+  distinct(stayid, .keep_all = TRUE) %>% 
+  filter(last_facil == detloc,
+         placement_count == total_placements)
+
+p1 <- facil_final_placements %>% 
+  mutate(book_out_fy = substr(quarter(detention_book_out_date_time, fiscal_start = 10, type = 'year.quarter'), 0, 4)) %>% 
+  filter(book_out_fy >= "2012") %>% 
+  count(book_out_fy, stay_release_reason) %>% 
+  ggplot(aes(x = as.numeric(book_out_fy), y = n, fill = stay_release_reason)) +
+  geom_col()
+
+ggplotly(p1)
+
+p2 <- facil_final_placements %>% 
+  mutate(book_out_fy = substr(quarter(detention_book_out_date_time, fiscal_start = 10, type = 'year.quarter'), 0, 4)) %>% 
+  filter(book_out_fy >= "2012") %>% 
+  count(book_out_fy, stay_release_reason) %>% 
+  ggplot(aes(x = as.numeric(book_out_fy), y = n, fill = stay_release_reason)) +
+  geom_col(position="fill")
+
+ggplotly(p2)
+
+```
+
+```{r facil_graph}
+
+pacman::p_load(igraph, ggraph, visNetwork)
+
+edges <- facil_stays %>% 
+  group_by(stayid) %>% 
+  mutate(next_facil = lead(detention_facility_code, n=1, order_by=stayid)) %>% 
+  ungroup() %>% 
+  dplyr::select(detention_facility_code, next_facil, recid, detention_book_out_date_time, detention_release_reason) %>%
+  filter(!is.na(next_facil)) %>% 
+  group_by(detention_facility_code, next_facil) %>% 
+  summarize(n = n())
+
+g <- graph_from_data_frame(d=edges, directed=T)
+
+g.visn <- toVisNetworkData(g)
+
+g.visn$edges$width <- g.visn$edges$n * 0.005
+
+g.visn$edges$title <- paste(g.visn$edges$from, "to ", g.visn$edges$to, ": ", g.visn$edges$n)
+
+g.visn$edges$arrows <- "to"
+
+g.visn$nodes$size <- degree(g) * 0.5
+
+# Create an interactive visualization
+interative_graph <- visNetwork(g.visn$nodes, g.visn$edges, width = "100%") %>%
+  visEdges(label = g.visn$edges$label,
+           shadow = FALSE,
+           arrows =list(to = list(enabled = TRUE, scaleFactor = .05)),
+           color = list(color = "lightblue", highlight = "red")) %>%
+  visIgraphLayout(layout = "layout_with_fr") %>%
+  visOptions(highlightNearest = TRUE, nodesIdSelection = TRUE)
+
+interative_graph
+
+```

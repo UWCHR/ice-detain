@@ -1,0 +1,93 @@
+---
+title: "FY12-24YTD ICE detention network analysis"
+author: "UWCHR"
+date: "2024-11-08"
+output:
+    html_document:
+        html_preview: true
+        toc: true
+        toc_depth: 3
+        toc_float: true
+        code_folding: hide
+---
+
+```{r import_data, message=FALSE, warning=FALSE, include=TRUE}
+options(scipen = 1000000)
+
+library(pacman)
+p_load(tidyverse, arrow, lubridate, zoo, digest, ggplot2, plotly, gghighlight, knitr, kableExtra, igraph, ggraph)
+
+df <- data.table::fread(file = here::here('export', 'output', 'ice_detentions_fy12-24ytd.csv.gz'),
+                        sep = '|')
+
+data.table::setDF(df)
+
+detloc_aor <- df %>% 
+  distinct(detention_facility_code, area_of_responsibility) %>% 
+  arrange(detention_facility_code, area_of_responsibility)
+
+```
+
+```{r edge_list_data}
+
+edges <- df %>% 
+  group_by(stayid) %>% 
+  mutate(next_facil = lead(detention_facility_code, n=1, order_by=stayid)) %>% 
+  ungroup() %>% 
+  dplyr::select(detention_facility_code, next_facil, recid, detention_book_out_date_time, detention_release_reason)
+
+```
+
+```{r edge_list_graph}
+
+fy22_transfers <- edges %>% 
+  mutate(transfer_fy = substr(quarter(detention_book_out_date_time, fiscal_start=10, type="year.quarter"), 0, 4)) %>% 
+  filter(transfer_fy == "2022") %>% 
+  group_by(detention_facility_code, next_facil) %>% 
+  summarize(n = n())
+
+g <- graph_from_data_frame(d=fy22_transfers, directed=T) 
+
+plot(g,
+     layout = layout_with_fr(g),
+     vertex.size = 1,
+     vertex.label = NA,
+     edge.arrow.size = .1,
+     edge.arrow.width = .1
+     )
+
+```
+
+```{r interactive}
+
+g <- graph_from_data_frame(d=fy22_transfers, directed=T) 
+
+g.visn <- toVisNetworkData(g)
+
+g.visn$edges$width <- g.visn$edges$n * 0.005
+
+g.visn$edges$title <- paste(g.visn$edges$from, "to ", g.visn$edges$to, ": ", g.visn$edges$n)
+
+g.visn$edges$arrows <- "to"
+
+g.visn$nodes$size <- degree(g) * 0.5
+
+# Create an interactive visualization
+interative_graph <- visNetwork(g.visn$nodes, g.visn$edges, width = "100%") %>%
+  visEdges(label = g.visn$edges$label,
+           shadow = FALSE,
+           arrows =list(to = list(enabled = TRUE, scaleFactor = .05)),
+           color = list(color = "lightblue", highlight = "red")) %>%
+  visIgraphLayout(layout = "layout_with_fr") %>%
+  visOptions(highlightNearest = TRUE, nodesIdSelection = TRUE)
+
+htmltools::save_html(interative_graph, "interactive-network.html")
+
+```
+
+How to represent initial detention / final placements in network graph?
+
+- Initial detention as aor/final_program: this would tell us about facility's "proximity" to various forms of detention
+- Final placement as aor/detention_stay_release_reason
+
+Would we turn graph "physics" off for these?
