@@ -309,14 +309,15 @@ geoid,geoid_state,geoid_county,name,aor
 08121,08,121,"washington county, colorado",DEN
 08123,08,123,"weld county, colorado",DEN
 08125,08,125,"yuma county, colorado",DEN
-09001,09,001,"fairfield county, connecticut",BOS
-09003,09,003,"hartford county, connecticut",BOS
-09005,09,005,"litchfield county, connecticut",BOS
-09007,09,007,"middlesex county, connecticut",BOS
-09009,09,009,"new haven county, connecticut",BOS
-09011,09,011,"new london county, connecticut",BOS
-09013,09,013,"tolland county, connecticut",BOS
-09015,09,015,"windham county, connecticut",BOS
+09110,09,110,"capitol planning region, connecticut",BOS
+09120,09,120,"greater bridgeport planning region, connecticut",BOS
+09130,09,130,"lower connecticut river valley planning region, connecticut",BOS
+09140,09,140,"naugatuck valley planning region, connecticut",BOS
+09150,09,150,"northeastern connecticut planning region, connecticut",BOS
+09160,09,160,"northwest hills planning region, connecticut",BOS
+09170,09,170,"south central connecticut planning region, connecticut",BOS
+09180,09,180,"southeastern connecticut planning region, connecticut",BOS
+09190,09,190,"western connecticut planning region, connecticut",BOS
 10001,10,001,"kent county, delaware",PHI
 10003,10,003,"new castle county, delaware",PHI
 10005,10,005,"sussex county, delaware",PHI
