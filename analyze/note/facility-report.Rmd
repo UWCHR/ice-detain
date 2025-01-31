@@ -1,0 +1,980 @@
+---
+title: "FY11-24YTD ICE detention headcount facility-level analysis"
+author: "UWCHR"
+date: "2025-01-31"
+output:
+    html_document:
+        html_preview: true
+        toc: true
+        toc_depth: 3
+        toc_float: true
+        code_folding: hide
+---
+
+```{r import_data}
+
+library(pacman)
+p_load(tidyverse, arrow, lubridate, zoo, digest, ggplot2, plotly, gghighlight)
+
+headcount <- read_delim(here::here('export', 'output', 'headcount_fy12-24ytd.csv.gz'), delim='|')
+
+df <- data.table::fread(file = here::here('export', 'output', 'ice_detentions_fy12-24ytd.csv.gz'),
+                        sep = '|')
+
+data.table::setDF(df)
+
+detloc_aor <- df %>% 
+  distinct(detention_facility_code, area_of_responsibility) %>% 
+  arrange(detention_facility_code, area_of_responsibility)
+
+df <- df %>% 
+  mutate(arresting_authority = case_when(
+    str_detect(final_program, "287G Program") ~ "ICE",
+    str_detect(final_program, "ERO Criminal Alien Program") ~ "ICE",
+    str_detect(final_program, "Border Patrol") ~ "USBP",
+    str_detect(final_program, "Fugitive Operations") ~ "ICE",
+    str_detect(final_program, "Violent Criminal Alien Section") ~ "ICE",
+    str_detect(final_program, "Law Enforcement Area Response Units") ~ "ICE",
+    str_detect(final_program, "Non-User Fee Investigations") ~ "Other",
+    str_detect(final_program, "Inspections - Land") ~ "CBP",
+    str_detect(final_program, "Detention and Deportation") ~ "ICE",
+    str_detect(final_program, "Intelligence") ~ "ICE",
+    str_detect(final_program, "Detained Docket Control") ~ "ICE",
+    str_detect(final_program, "Non-Detained Docket Control") ~ "ICE",
+    str_detect(final_program, "Inspections - Air") ~ "CBP",
+    str_detect(final_program, "Asylum") ~ "ICE",
+    str_detect(final_program, "Joint Criminal Alien Response Team") ~ "ICE",
+    str_detect(final_program, "Alternatives to Detention") ~ "ICE",
+    str_detect(final_program, "Inspections - Sea") ~ "CBP",
+    str_detect(final_program, "PICS Default Value - for user initialization only") ~ "Other",
+    str_detect(final_program, "Adjudications") ~ "ICE",
+    str_detect(final_program, "User Fee Investigations") ~ "Other",
+    str_detect(final_program, "Joint Terrorism Task Force") ~ "ICE",
+    str_detect(final_program, "Examinations") ~ "ICE",
+    str_detect(final_program, "Quick Response Team") ~ "ICE",
+    str_detect(final_program, "Default program area for interface records") ~ "Other",
+    str_detect(final_program, "Probation and Parole") ~ "ICE",
+    str_detect(final_program, "HSI Criminal Arrest Only") ~ "ICE",
+    str_detect(final_program, "Juvenile") ~ "ICE",
+    str_detect(final_program, "Mobile Criminal Alien Team") ~ "ICE",
+    str_detect(final_program, "ERO Criminal Prosecutions") ~ "ICE"
+  ))
+
+headcount <- left_join(headcount, detloc_aor, by="detention_facility_code")
+
+```
+
+```{r facil_setup}
+# Get records for specific facility:
+facil_code <- "CSCNWWA"
+facil_name <- unique(df[df$detention_facility_code == facil_code, "detention_facility"])
+facil_aor <- unique(df[df$detention_facility_code == facil_code, "area_of_responsibility"])
+
+# Get all anon ID values associated with facility
+facil_ids <- df %>% 
+  filter(detention_facility_code == facil_code) %>% 
+  distinct(anonymized_identifier)
+
+# Get all records for these anon IDs at facility
+facil_records <- df %>% 
+  filter(anonymized_identifier %in% unlist(facil_ids),
+         detention_facility_code == facil_code)
+
+# Get distinct record for each stay by person at facility
+facil_unique_stays <- facil_records %>% 
+  distinct(anonymized_identifier, stay_count, .keep_all = TRUE)
+
+```
+
+## Specific facility: `r facil_name`
+
+```{r facil_headcount}
+
+p1 <- headcount %>% 
+  filter(date >= "2011-10-01",
+         detention_facility_code == facil_code) %>% 
+  ggplot(aes(x = as.Date(date), y = n)) +
+  geom_line() +
+  ylim(0, NA) +
+  ylab("Pop.") +
+  scale_x_date(date_breaks = "years" , date_labels = "%Y") +
+  labs(title = "Daily detained population, FY2012-Jan. 2024",
+       subtitle = paste0(facil_name))
+
+p1
+
+```
+
+```{r det_rank}
+
+adp_fy <- headcount %>% 
+  filter(date >= "2011-10-01") %>% 
+  mutate(fy = as.factor(substr(quarter(date, fiscal_start=10, type="year.quarter"), 1,4))) %>% 
+  group_by(fy, detention_facility_code) %>% 
+  summarize(adp = mean(n, na.rm=TRUE))
+
+active_facil_fy <- headcount %>% 
+  filter(date >= "2011-10-01") %>% 
+  mutate(fy = as.factor(substr(quarter(date, fiscal_start=10, type="year.quarter"), 1,4))) %>% 
+  group_by(fy, detention_facility_code) %>% 
+  summarize(adp = mean(n, na.rm=TRUE)) %>% 
+  filter(adp > 0) %>% 
+  group_by(fy) %>% 
+  summarize(active_facil = n_distinct(detention_facility_code))
+
+adp_rank <- adp_fy %>% 
+  left_join(active_facil_fy, by = 'fy') %>% 
+  arrange(fy, desc(adp)) %>% 
+  group_by(fy) %>% 
+  mutate(ranking = row_number()) %>% 
+  ungroup()
+
+```
+
+With an average detained population of `r as.numeric(adp_rank[adp_rank$detention_facility_code == facil_code & adp_rank$fy == 2023, "adp"])` during FY 2023, `r facil_name` ranked `r as.numeric(adp_rank[adp_rank$detention_facility_code == facil_code & adp_rank$fy == 2023, "ranking"])` out of `r as.numeric(adp_rank[adp_rank$detention_facility_code == facil_code & adp_rank$fy == 2023, "active_facil"])` active detention facilities.
+
+```{r det_compare_natl}
+
+# National daily pop counts
+p1 <- headcount %>% 
+  filter(date >= "2011-10-01") %>% 
+  group_by(date, detention_facility_code) %>% 
+  summarize(total_detained = sum(n)) %>% 
+  ggplot(aes(x = as.Date(date), y = total_detained, color=detention_facility_code, group=detention_facility_code)) +
+  geom_line() +
+  gghighlight(detention_facility_code == facil_code) +
+  ylim(0, NA) +
+  ylab("Pop.") +
+  xlab("Date") +
+  scale_x_date(date_breaks = "years" , date_labels = "%Y") +
+  labs(title = "National daily detained population, FY2012-Jan. 2024",
+       subtitle = paste0(facil_name, " highlighted"))
+
+p1
+
+```
+
+```{r det_compare_aor}
+
+p1 <- headcount %>% 
+  filter(date >= "2011-10-01",
+         area_of_responsibility == facil_aor) %>% 
+  group_by(date, detention_facility_code) %>% 
+  summarize(total_detained = sum(n)) %>% 
+  ggplot(aes(x = as.Date(date), y = total_detained, color=detention_facility_code, group=detention_facility_code)) +
+  geom_line() +
+  gghighlight(detention_facility_code == facil_code) +
+  ylim(0, NA) +
+  ylab("Pop.") +
+  xlab("Date") +
+  scale_x_date(date_breaks = "years" , date_labels = "%Y") +
+  # scale_y_log10() +
+  labs(title = paste0(facil_aor, " daily detained population, FY2012-Jan. 2024"),
+       subtitle = paste0(facil_name, " highlighted"))
+
+p1
+
+p2 <- headcount %>% 
+  filter(date >= "2011-10-01",
+         area_of_responsibility == facil_aor) %>% 
+  mutate(detention_facility_code = case_when(detention_facility_code == facil_code ~ facil_code,
+                                             TRUE ~ "ALL OTHERS")) %>% 
+  group_by(date, detention_facility_code) %>% 
+  summarize(total_detained = sum(n)) %>% 
+  ggplot(aes(x = as.Date(date), y = total_detained, color=detention_facility_code, group=detention_facility_code)) +
+  geom_line() +
+  ylim(0, NA) +
+  ylab("Pop.") +
+  xlab("Date") +
+  scale_x_date(date_breaks = "years" , date_labels = "%Y") +
+  # scale_y_log10() +
+  labs(title = paste0(facil_aor, " daily detained population, FY2012-Jan. 2024"),
+       subtitle = paste0(facil_name, " versus all others"))
+
+p2
+
+```
+
+```{r det_aor_total}
+
+p1 <- headcount %>% 
+  filter(date >= "2011-10-01",
+         area_of_responsibility == facil_aor) %>% 
+  group_by(date) %>% 
+  summarize(total_detained = sum(n)) %>% 
+  mutate(year_mth = as.yearmon(date)) %>% 
+  group_by(year_mth) %>% 
+  summarize(adp = mean(total_detained, na.rm=TRUE)) %>% 
+  ggplot(aes(x = year_mth, y = adp)) +
+  geom_line() +
+  ylim(0, NA) +
+  ylab("ADP") +
+  xlab("") +
+  labs(title = paste0(facil_aor, " avg. daily detained population, FY2012-Jan. 2024"))
+
+p1
+
+```
+
+```{r atd}
+
+# trac_atd <- read_delim(here::here('analyze', 'input', 'trac_atd_2024-02-24.csv'), delim=',')
+# 
+# names(trac_atd) <- tolower(names(trac_atd))
+# names(trac_atd) <- str_replace_all(names(trac_atd), " ", "_")
+# 
+# trac_atd$Date <- as.Date(trac_atd$date, format = "%m/%d/%Y")
+# trac_atd$year_mth <- as.yearmon(trac_atd$Date)
+# 
+# aor_atd <- trac_atd %>% 
+#   filter(!is.na(ice_area_of_responsibility),
+#          atd_technology == "All",
+#          ice_area_of_responsibility == "Seattle")
+# 
+# # Remove outlier
+# aor_atd <- aor_atd[!aor_atd$number_under_atd %in% boxplot.stats(aor_atd$number_under_atd)$out,]
+# 
+# monthly_aor_atd <- aor_atd %>% 
+#   group_by(year_mth) %>% 
+#   summarize(avg_atd = mean(number_under_atd, na.rm = FALSE)) %>% 
+#   mutate(type = "atd") %>% 
+#   rename(n = avg_atd)
+# 
+# monthly_adp <- headcount %>% 
+#   filter(date >= "2011-10-01",
+#          area_of_responsibility == facil_aor) %>% 
+#   group_by(date) %>% 
+#   summarize(total_detained = sum(n)) %>% 
+#   mutate(year_mth = as.yearmon(date)) %>% 
+#   group_by(year_mth) %>% 
+#   summarize(adp = mean(total_detained, na.rm=TRUE)) %>% 
+#   mutate(type = "adp") %>% 
+#   rename(n = adp)
+# 
+# dat <- rbind(monthly_aor_atd, monthly_adp)
+# 
+# dat %>% ggplot(aes(x = year_mth, y = n, color = type, group = type)) +
+#   geom_line() +
+#   labs(title = "Avg. detained pop. + Alternatives to detention",
+#        subtitle = facil_aor)
+
+```
+
+```{r age}
+
+# Includes some invalid birth years, e.g. 1900
+
+facil_unique_stays <- facil_unique_stays %>% 
+  mutate(detention_cy = substr(quarter(detention_book_in_date_and_time, type="year.quarter"), 1, 4),
+         age = as.numeric(detention_cy) - birth_year,
+         age_group = cut(age,
+                         breaks = c(0, 18, 25, 40, 60, Inf),
+                         right = FALSE))
+
+hist(facil_unique_stays$birth_year)
+hist(facil_unique_stays$age)
+
+p1 <- facil_unique_stays %>% 
+  mutate(detention_fy = substr(quarter(detention_book_in_date_and_time, fiscal_start = 10, type="year.quarter"), 1, 4)) %>%
+  count(age_group, detention_fy) %>% 
+  filter(detention_fy >= 2012) %>% 
+  ggplot(aes(x = detention_fy, y = n, fill = age_group)) +
+  geom_col(position="fill")
+  
+p1
+
+p2 <- facil_unique_stays %>% 
+  mutate(detention_fy = substr(quarter(detention_book_in_date_and_time, fiscal_start = 10, type="year.quarter"), 1, 4)) %>%
+  group_by(detention_fy) %>% 
+  summarize(avg_age = mean(age, na.rm=TRUE)) %>% 
+  filter(detention_fy >= 2012) %>% 
+  ggplot(aes(x = detention_fy, y = avg_age)) +
+  geom_col() +
+  labs(title = "Average approx. age of detained pop.")
+  
+p2
+
+```
+
+```{r facil_age_vs_natl}
+
+unique_stays <- df %>%
+  distinct(stayid, .keep_all = TRUE) %>% 
+  mutate(detention_cy = substr(quarter(detention_book_in_date_and_time, type="year.quarter"), 1, 4),
+         age = as.numeric(detention_cy) - birth_year,
+         age_group = cut(age,
+                         breaks = c(0, 18, 25, 40, 60, Inf),
+                         right = FALSE))
+
+dat1 <- facil_unique_stays %>% 
+  mutate(detention_fy = substr(quarter(detention_book_in_date_and_time, fiscal_start = 10, type="year.quarter"), 1, 4)) %>%
+  count(age_group, detention_fy) %>% 
+  filter(detention_fy >= 2012) %>% 
+  mutate(group = facil_code)
+
+dat2 <- unique_stays %>% 
+  mutate(detention_fy = substr(quarter(detention_book_in_date_and_time, fiscal_start = 10, type="year.quarter"), 1, 4)) %>%
+  count(age_group, detention_fy) %>% 
+  filter(detention_fy >= 2012) %>% 
+  mutate(group = "Natl")
+
+dat <- rbind(dat1, dat2)
+
+p1 <- dat %>%
+  ggplot(aes(x = detention_fy, y = n, fill = age_group)) +
+  geom_col(position="fill") + 
+  facet_wrap(~group)
+  
+p1
+
+p2 <- dat %>%
+  filter(age_group != "[0,18)") %>% 
+  ggplot(aes(x = detention_fy, y = n, fill = age_group)) +
+  geom_col(position="fill") + 
+  facet_wrap(~group)
+  
+p2
+
+```
+
+```{r gender}
+
+dat1 <- facil_unique_stays %>% 
+  mutate(detention_fy = substr(quarter(detention_book_in_date_and_time, fiscal_start = 10, type="year.quarter"), 1, 4)) %>%
+  count(gender, detention_fy) %>% 
+  filter(detention_fy >= 2012) %>% 
+  mutate(group = facil_code)
+
+dat2 <- unique_stays %>% 
+  mutate(detention_fy = substr(quarter(detention_book_in_date_and_time, fiscal_start = 10, type="year.quarter"), 1, 4)) %>%
+  count(gender, detention_fy) %>% 
+  filter(detention_fy >= 2012) %>% 
+  mutate(group = "Natl")
+
+
+dat <- rbind(dat1, dat2)
+
+p1 <- dat %>% 
+  ggplot(aes(x = detention_fy, y = n, fill = gender, group = group)) +
+  geom_col(position='fill') + 
+  facet_wrap(~group)
+
+p1
+
+```
+
+
+```{r bookin_facil}
+
+# Book-in facility
+facil_unique_stays %>% 
+  count(first_facil) %>% 
+  arrange(desc(n))
+
+top_bookin_facil <- facil_unique_stays %>% 
+  filter(stay_book_in_date_time >= "2011-10-01") %>% 
+  count(first_facil) %>% 
+  arrange(desc(n)) %>% 
+  head(15)
+
+p1 <- facil_unique_stays %>% 
+  filter(stay_book_in_date_time >= "2011-10-01") %>% 
+  mutate(detention_fy = str_sub(quarter(stay_book_in_date_time,
+                                with_year = TRUE,
+                                fiscal_start = 10), 1, 4),
+         first_facil = case_when(first_facil %in% unlist(top_bookin_facil$first_facil) ~ first_facil,
+                                 TRUE ~ "ALL OTHERS")) %>% 
+  count(detention_fy, first_facil) %>%
+  ggplot(aes(x = detention_fy, y = n, fill=first_facil)) +
+  geom_col(position="fill")
+
+ggplotly(p1)
+
+```
+
+```{r bookin_facil_aor}
+
+facil_unique_stays <- left_join(facil_unique_stays, detloc_aor, by=c("first_facil" = "detention_facility_code"), suffix = c("", "_first_facil"))
+
+dat <- facil_unique_stays %>% 
+  distinct(anonymized_identifier, .keep_all = TRUE) %>% 
+  filter(stay_book_in_date_time >= "2011-10-01") %>% 
+  mutate(detention_fy = str_sub(quarter(stay_book_in_date_time,
+                                with_year = TRUE,
+                                fiscal_start = 10), 1, 4)) %>%
+  count(detention_fy, first_aor)
+
+top_bookin_aors <- facil_unique_stays %>% 
+  count(first_aor) %>% 
+  arrange(desc(n))
+
+p1 <- dat %>% 
+  mutate(first_aor = case_when(first_aor %in% head(top_bookin_aors$first_aor, 5) ~ first_aor,
+         TRUE ~ "All others"),
+    first_aor = str_replace_all(first_aor, " Area of Responsibility", "")) %>% 
+  ggplot(aes(x = detention_fy, y = n, color=first_aor, fill=first_aor, group = first_aor)) +
+  geom_col() +
+  labs(title = "Initial book-in AOR",
+       subtitle = paste0("Individuals with stays at ", facil_name))
+
+p1
+
+p2 <- dat %>% 
+  mutate(first_aor = str_replace_all(first_aor, " Area of Responsibility", "")) %>%
+  ggplot(aes(x = detention_fy, y = n, color=first_aor, fill=first_aor, group = first_aor)) +
+  geom_col() +
+  scale_x_discrete(breaks=seq(2012, 2024, 4)) +
+  facet_wrap(~first_aor) +
+  theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1)) +
+  labs(title = "Initial book-in AOR",
+       subtitle = paste0("Individuals with stays at ", facil_name))
+ 
+p2
+
+```
+
+```{r los}
+
+# LOS groups
+facil_los_groups <- facil_unique_stays %>%
+  dplyr::select(stay_length) %>% 
+  mutate(los_g = cut(as.numeric(stay_length, unit='days'),
+                           breaks = c(-Inf, 3, 15, 30, 90, 180, 365, Inf),
+                           right = FALSE)) %>% 
+  count(los_g) %>% 
+  mutate(prop = n / sum(n)) %>% 
+  ungroup()
+
+natl_los_groups <- unique_stays %>% 
+  dplyr::select(stay_length) %>% 
+  mutate(los_g = cut(as.numeric(stay_length, unit='days'),
+                           breaks = c(-Inf, 3, 15, 30, 90, 180, 365, Inf),
+                           right = FALSE)) %>% 
+  count(los_g) %>% 
+  mutate(prop = n / sum(n)) %>% 
+  ungroup()
+
+
+dat <- left_join(natl_los_groups, facil_los_groups, by='los_g', suffix=c(".natl", ".facil")) %>% 
+  pivot_longer(cols=-c('los_g')) %>%
+  filter(str_detect(name, "prop")) %>% 
+  mutate(value = case_when(name == "prop.natl" ~ -value,
+                   name == "prop.facil" ~ value))
+
+los_prop_range <- range(dat$value)
+los_prop_range_breaks <- pretty(dat$value, 10)
+
+p1 <- dat %>% 
+  filter(!is.na(los_g)) %>% 
+  ggplot(aes(x = value, y = los_g, fill=name, color=name)) +
+    geom_col() +
+    scale_y_discrete(limits=rev) +
+    scale_x_continuous(
+      breaks = los_prop_range_breaks,
+      labels = function(x) scales::percent(abs(x))) +
+  labs(title = "Length of stay distribution",
+       subtitle = paste0(facil_name, " vs. national"),
+       caption = "* Note this comparison includes both under-72 and over-72 hour facilities.")
+
+p1
+
+
+```
+
+```{r alos_trend}
+
+# ALOS over time
+p1 <- facil_unique_stays %>% 
+  distinct(anonymized_identifier, .keep_all=TRUE) %>% 
+  filter(stay_book_in_date_time >= "2011-10-01",
+         stay_book_in_date_time <= "2023-09-30") %>% 
+  mutate(detention_fy = substr(quarter(stay_book_in_date_time, with_year = TRUE, fiscal_start = 10), 1,4)) %>% 
+  group_by(detention_fy) %>% 
+  summarize(alos = mean(as.numeric(stay_length, unit='days'), na.rm=TRUE),
+            alos_min = mean(as.numeric(stay_length_min, unit='days'))) %>% 
+  pivot_longer(cols=-detention_fy) %>% 
+  ggplot(aes(x = detention_fy, y = value, color = name, group=name)) +
+  geom_line() +
+  ylim(0, NA) +
+  labs(title = "Average length of stay",
+       subtitle = paste0("Individuals detained at ", facil_name))
+
+p1
+
+```
+
+```{r alos_compare}
+
+# Facil ALOS versus national ALOS
+
+natl_alos <- unique_stays %>% 
+  filter(stay_book_in_date_time >= "2011-10-01") %>% 
+  mutate(detention_qtr = quarter(stay_book_in_date_time, with_year = TRUE, fiscal_start = 10)) %>% 
+  group_by(detention_qtr) %>% 
+  summarize(alos = mean(as.numeric(stay_length, units='days'), na.rm=TRUE))
+
+# The following includes a quick and dirty method for excluding under 72-hour facilities; but should do a better version of this
+
+facil_alos <- unique_stays %>% 
+  filter(stay_book_in_date_time >= "2011-10-01") %>% 
+  mutate(detention_qtr = quarter(stay_book_in_date_time, with_year = TRUE, fiscal_start = 10)) %>% 
+  group_by(detention_qtr, detention_facility_code) %>% 
+  summarize(alos = mean(as.numeric(stay_length, units='days'), na.rm=TRUE),
+            med_alos = median(as.numeric(stay_length, units='days'), na.rm=TRUE)) %>% 
+  mutate(under_72 = med_alos < 3) %>% 
+  filter(under_72 == FALSE)
+
+dat <- facil_alos %>% 
+  dplyr::select(-c(med_alos, under_72)) %>% 
+  left_join(natl_alos, by = 'detention_qtr', suffix=c(".facil", ".natl")) %>% 
+  rename(national_alos = alos.natl,
+         facility_alos = alos.facil) %>% 
+  pivot_longer(cols=-c('detention_qtr', 'detention_facility_code')) %>% 
+  filter(detention_facility_code == facil_code)
+
+p1 <- dat %>% 
+  ggplot(aes(x=as.factor(detention_qtr), y = value, color = name, group = name)) +
+  geom_line() +
+  scale_x_discrete(breaks = levels(as.factor(dat$detention_qtr))[c(T, rep(F, 3))],
+                   labels = function(x) substr(as.character(x), 1, 4)) +
+  ylim(0, NA) +
+  ylab("Days") +
+  xlab("Detention quarter") +
+  labs(title = "Comparison of quarterly Average Length of Stay (ALOS)",
+       subtitle = paste0("Nat'l vs. ", facil_name))
+
+p1
+
+```
+
+```{r stays}
+
+# Multiple stay trends
+# Multiple placement/transfer trends !DOUBLE CHECK THIS LOGIC!
+# Note we have a few variables to work with here:
+# `total_stays`: number of unique detention stay book in values per anon ID
+# `total_placements`: number of unique detention placement book in values per anon ID
+# `stay_placements`: number of unique detention placement book in values per stay per anon ID
+
+p3 <- facil_unique_stays %>% 
+  filter(stay_book_in_date_time > "2011-10-01",
+         !duplicated(anonymized_identifier)) %>% 
+  mutate(detention_fy = str_sub(quarter(stay_book_in_date_time,
+                                with_year = TRUE,
+                                fiscal_start = 10), 1, 4)) %>% 
+  group_by(detention_fy) %>% 
+  summarize(avg_stays = mean(total_stays, na.rm=TRUE),
+            avg_placements = mean(stay_placements, na.rm=TRUE)) %>%
+  pivot_longer(cols=-detention_fy) %>% 
+  ggplot(aes(x=detention_fy, y=value, fill=name, group=name)) +
+  geom_col(position='dodge')
+
+p3
+
+```
+
+```{r alos_compare}
+
+national_alos <- unique_stays %>% 
+  filter(stay_book_in_date_time > "2011-10-01",
+         stay_book_in_date_time <= "2023-09-30") %>% 
+  mutate(detention_fy = substr(quarter(stay_book_in_date_time, with_year = TRUE, fiscal_start = 10), 1, 4)) %>% 
+  group_by(detention_fy) %>% 
+  summarize(alos = mean(as.numeric(stay_length, unit='days'), na.rm=TRUE),
+            alos_min = mean(as.numeric(stay_length_min, unit='days')))
+
+facil_alos <- facil_unique_stays %>% 
+  filter(stay_book_in_date_time >= "2011-10-01",
+         stay_book_in_date_time <= "2023-09-30") %>% 
+  mutate(detention_fy = substr(quarter(stay_book_in_date_time, with_year = TRUE, fiscal_start = 10), 1, 4)) %>% 
+  group_by(detention_fy) %>% 
+  summarize(alos = mean(as.numeric(stay_length, unit='days'), na.rm=TRUE),
+            alos_min = mean(as.numeric(stay_length_min, unit='days'))) %>% 
+  rename(facil_alos = alos,
+         facil_alos_min = alos_min)
+
+dat <- left_join(national_alos, facil_alos, by='detention_fy')
+
+p1 <- dat %>% 
+  dplyr::select(detention_fy, alos, facil_alos) %>% 
+  pivot_longer(cols=-c('detention_fy')) %>% 
+  ggplot(aes(x=as.factor(detention_fy), y=value, color=name, group=name)) + 
+  geom_line() +
+  ylim(0, NA)
+
+p1  
+
+p2 <- dat %>%
+  mutate(facil_alos_ratio = facil_alos / alos) %>%
+  pivot_longer(cols=-c('detention_fy')) %>% 
+  filter(name == "facil_alos_ratio") %>% 
+  ggplot(aes(x=as.factor(detention_fy), y=value, color=name, fill=name, group=name)) + 
+  geom_col()
+
+p2
+
+```
+
+## Current detained pop
+
+```{r facil_current_detained}
+
+all_current <- unique_stays %>% 
+  filter(current_stay == TRUE) %>% 
+  distinct(anonymized_identifier, .keep_all = TRUE)
+
+stopifnot(length(unique(all_current$anonymized_identifier)) == nrow(all_current))
+
+facil_current <- facil_unique_stays %>% 
+  filter(current_stay == TRUE)
+
+stopifnot(length(unique(facil_current$anonymized_identifier)) == nrow(facil_current))
+
+top_cit <- all_current %>% 
+  filter(detention_facility_code == facil_code) %>% 
+  count(citizenship_country) %>% 
+  arrange(desc(n)) %>% 
+  head(10)
+
+all_current %>% 
+  filter(detention_facility_code == facil_code) %>%  
+  count(gender) %>% 
+  arrange(desc(n))
+
+all_current %>% 
+  filter(detention_facility_code == facil_code) %>%  
+  count(`most_serious_conviction_(msc)_criminal_charge_category`) %>% 
+  arrange(desc(n))
+
+
+all_current %>% 
+  filter(detention_facility_code == facil_code) %>%  
+  count(msc_crime_class) %>% 
+  arrange(desc(n)) %>% 
+  mutate(prop = n / sum(n))
+
+all_current %>% 
+  filter(detention_facility_code != facil_code) %>%  
+  count(msc_crime_class) %>% 
+  arrange(desc(n)) %>% 
+  mutate(prop = n / sum(n))
+
+mean(as.numeric(all_current[all_current$detention_facility_code == facil_code, 'stay_length_min'], units='days'))
+mean(as.numeric(all_current[all_current$detention_facility_code != facil_code, 'stay_length_min'], units='days'))
+
+median(as.numeric(all_current[all_current$detention_facility_code == facil_code, 'stay_length_min'], units='days'))
+median(as.numeric(all_current[all_current$detention_facility_code != facil_code, 'stay_length_min'], units='days'))
+
+
+max(as.numeric(all_current[all_current$detention_facility_code == facil_code, 'stay_length_min'], units='days'))
+min(as.numeric(all_current[all_current$detention_facility_code == facil_code, 'stay_length_min'], units='days'))
+
+p1 <- all_current %>% 
+  mutate(facil = case_when(detention_facility_code == facil_code ~ facil_code,
+                           detention_facility_code != facil_code ~ "ALL OTHERS"),
+         stay_length_min = as.numeric(stay_length_min, unit = "days")) %>% 
+  group_by(facil) %>% 
+  ggplot(aes(x = facil, y = log(stay_length_min), color=facil)) +
+  geom_boxplot() +
+  theme(axis.text.x = element_text(angle = 0, vjust = 0, hjust=0))
+  
+p1
+
+
+p2 <- all_current %>% 
+  mutate(facil = case_when(detention_facility_code == facil_code ~ facil_code,
+                           detention_facility_code != facil_code ~ "ALL OTHERS"),
+         citizenship_country = case_when(citizenship_country == "CHINA, PEOPLES REPUBLIC OF" ~ "CHINA",
+                                         citizenship_country %in% unlist(top_cit$citizenship_country) ~ citizenship_country,
+                                         TRUE ~ "ALL OTHERS"),
+         stay_length_min = as.numeric(stay_length_min, unit = "days")) %>% 
+  group_by(facil, citizenship_country) %>% 
+  ggplot(aes(x = citizenship_country, y = log(stay_length_min), color=facil)) +
+  geom_boxplot() + 
+  scale_x_discrete(guide = guide_axis(n.dodge = 2))
+  
+
+p2
+
+p3 <- all_current %>% 
+  mutate(facil = case_when(detention_facility_code == facil_code ~ facil_code,
+                           detention_facility_code != facil_code ~ "ALL OTHERS"),
+         stay_length_min = as.numeric(stay_length_min, unit = "days")) %>% 
+  group_by(facil, msc_crime_class) %>% 
+  ggplot(aes(y = msc_crime_class, x = log(stay_length_min), color=facil)) +
+  geom_boxplot()
+  
+
+p3
+
+p4 <- unique_stays %>% 
+  filter(stay_length_min > 0) %>% 
+  mutate(facil = case_when(detention_facility_code == facil_code ~ facil_code,
+                           detention_facility_code != facil_code ~ "ALL OTHERS"),
+         stay_length_min = as.numeric(stay_length_min, unit = "days")) %>% 
+  group_by(facil, msc_crime_class) %>% 
+  ggplot(aes(y = msc_crime_class, x = log(stay_length_min), color=facil)) +
+  geom_boxplot()
+
+p4
+
+
+```
+
+```{r final_program}
+
+p1 <- facil_unique_stays %>% 
+  filter(stay_book_in_date_time >= "2011-10-01") %>% 
+  mutate(detention_fy = substr(quarter(stay_book_in_date_time, with_year = TRUE, fiscal_start = 10), 1,4))%>% 
+  count(detention_fy, arresting_authority) %>%
+  ggplot(aes(x=as.factor(detention_fy), y=n, fill=arresting_authority)) +
+  geom_col()
+
+p1
+
+```
+
+```{r arresting_auth_facil_vs_nat}
+
+facil_dat <- facil_unique_stays %>% 
+  filter(stay_book_in_date_time >= "2011-10-01") %>% 
+  mutate(detention_fy = substr(quarter(stay_book_in_date_time, with_year = TRUE, fiscal_start = 10), 1,4))%>% 
+  count(detention_fy, arresting_authority) %>% 
+  mutate(group = facil_code)
+
+natl_dat <- unique_stays %>% 
+  filter(stay_book_in_date_time >= "2011-10-01") %>% 
+  mutate(detention_fy = substr(quarter(stay_book_in_date_time, with_year = TRUE, fiscal_start = 10), 1,4))%>% 
+  count(detention_fy, arresting_authority) %>% 
+  mutate(group = "national")
+
+dat <- rbind(facil_dat, natl_dat)
+
+dat %>% 
+  ggplot(aes(x = detention_fy, y = n, fill=arresting_authority)) +
+  geom_col(position='fill') +
+  facet_wrap(~group)
+
+```
+
+## Facil characteristic headcounts
+
+```{r headcounter}
+
+min_date <- min(df$stay_book_in_date_time, na.rm=TRUE)
+max_date <- max(df$stay_book_out_date_time, na.rm=TRUE)
+
+timeline <- seq(min_date, max_date, by='day')
+
+# Additional argument allowing us to specify which dataframe to apply function to. 
+# We also move some dataframe setup requirements into function
+# `timeline` needs to exist outside of function
+headcounter <- function(date, df=df, var=var) {
+  df[[var]] <- factor(df[[var]], levels = sort(unique(df[[var]])))
+  df <- df %>%
+    mutate(detention_book_out_date_time_min = case_when(is.na(detention_book_out_date_time) ~ max_date,
+                                                    TRUE ~ detention_book_out_date_time))
+  df[df$detention_book_in_date_and_time <= date & df$detention_book_out_date_time_min >= date,] %>% 
+  count(.data[[var]]) %>% 
+  complete(.data[[var]], fill = list(n = 0)) %>% 
+  arrange(.data[[var]]) %>% 
+  mutate(date=date)
+  }
+
+```
+
+```{r citizenship_headcount}
+
+system.time({facil_cit_headcount <- lapply(timeline, headcounter, df=facil_records, var='citizenship_country')})
+
+facil_cit_headcount_data <- map_dfr(facil_cit_headcount, bind_rows)
+
+facil_top_citizenship <- facil_unique_stays %>% 
+  count(citizenship_country) %>% 
+  arrange(desc(n))
+
+p1 <- facil_cit_headcount_data %>% 
+  mutate(citizenship_country = case_when(citizenship_country %in% unlist(head(facil_top_citizenship, 10)) ~ citizenship_country,
+                                         TRUE ~ "ALL OTHERS")) %>% 
+  group_by(date, citizenship_country) %>% 
+  summarize(total_detained = sum(n)) %>% 
+  filter(date > "2011-10-01") %>% 
+  ggplot(aes(x = date, y = total_detained, color=citizenship_country, fill=citizenship_country, group=citizenship_country)) +
+  geom_line() +
+  labs(title = "Daily pop. per citizenship country",
+       subtitle = facil_name)
+
+p1
+
+p1.1 <- facil_cit_headcount_data %>% 
+  mutate(citizenship_country = case_when(citizenship_country %in% unlist(head(facil_top_citizenship, 10)) ~ citizenship_country,
+                                         TRUE ~ "ALL OTHERS")) %>% 
+  group_by(date, citizenship_country) %>% 
+  summarize(total_detained = sum(n)) %>% 
+  mutate(year_mth = as.yearmon(date)) %>% 
+  group_by(year_mth, citizenship_country) %>% 
+  summarize(adp = mean(total_detained, na.rm=TRUE)) %>% 
+  filter(year_mth > "2011-10-01") %>% 
+  ggplot(aes(x = year_mth, y = adp, color=citizenship_country, fill=citizenship_country, group=citizenship_country)) +
+  geom_col(position="fill") +
+  labs(title = "Monthly ADP per citizenship country",
+       subtitle = facil_name)
+
+p1.1
+
+p1.2 <- facil_cit_headcount_data %>% 
+  mutate(citizenship_country = case_when(citizenship_country %in% unlist(head(facil_top_citizenship, 10)) ~ citizenship_country,
+                                         TRUE ~ "ALL OTHERS")) %>% 
+  group_by(date, citizenship_country) %>% 
+  summarize(total_detained = sum(n)) %>% 
+  mutate(fy = substr(quarter(date, with_year = TRUE, fiscal_start = 10), 1, 4)) %>% 
+  group_by(fy, citizenship_country) %>% 
+  summarize(adp = mean(total_detained, na.rm=TRUE)) %>% 
+  filter(fy > "2011-10-01") %>% 
+  ggplot(aes(x = fy, y = adp, color=citizenship_country, fill=citizenship_country, group=citizenship_country)) +
+  geom_col() +
+  labs(title = "Annual ADP per citizenship country",
+       subtitle = facil_name)
+
+p1.2
+
+facil_top_citizenship <- facil_unique_stays %>% 
+  filter(detention_book_in_date_and_time > "2019-10-01") %>% 
+  count(citizenship_country) %>% 
+  arrange(desc(n))
+
+
+p2 <- facil_cit_headcount_data %>% 
+  mutate(citizenship_country = case_when(citizenship_country %in% unlist(head(facil_top_citizenship, 10)) ~ citizenship_country,
+                                         TRUE ~ "ALL OTHERS")) %>% 
+  group_by(date, citizenship_country) %>% 
+  summarize(total_detained = sum(n)) %>% 
+  filter(date > "2019-10-01") %>% 
+  ggplot(aes(x = date, y = total_detained, color=citizenship_country, fill=citizenship_country, group=citizenship_country)) +
+  geom_line() +
+  labs(title = "Daily pop. per citizenship country",
+       subtitle = facil_name)
+
+p2
+
+p2.1 <- facil_cit_headcount_data %>% 
+  mutate(citizenship_country = case_when(citizenship_country %in% unlist(head(facil_top_citizenship, 10)) ~ citizenship_country,
+                                         TRUE ~ "ALL OTHERS")) %>% 
+  group_by(date, citizenship_country) %>% 
+  summarize(total_detained = sum(n)) %>% 
+  mutate(year_mth = as.yearmon(date)) %>% 
+  group_by(year_mth, citizenship_country) %>% 
+  summarize(adp = mean(total_detained, na.rm=TRUE)) %>% 
+  filter(year_mth > "2019-10-01") %>% 
+  ggplot(aes(x = year_mth, y = adp, color=citizenship_country, fill=citizenship_country, group=citizenship_country)) +
+  geom_line() +
+  labs(title = "Monthly ADP per citizenship country",
+       subtitle = facil_name)
+
+p2.1
+
+```
+
+```{r final_program_headcount}
+
+system.time({facil_fp_headcount <- lapply(timeline, headcounter, df=facil_records, var='final_program')})
+
+facil_fp_headcount_data <- map_dfr(facil_fp_headcount, bind_rows)
+
+facil_top_program <- facil_unique_stays %>% 
+  count(final_program) %>% 
+  arrange(desc(n))
+
+p1 <- facil_fp_headcount_data %>% 
+  mutate(final_program = case_when(final_program %in% unlist(head(facil_top_program, 5)) ~ final_program,
+                                         TRUE ~ "ALL OTHERS")) %>% 
+  group_by(date, final_program) %>% 
+  summarize(total_detained = sum(n)) %>% 
+  filter(date > "2011-10-01") %>% 
+  ggplot(aes(x = date, y = total_detained, color=final_program, fill=final_program, group=final_program)) +
+  geom_col() + 
+  labs(title = "Daily population per `final_program`",
+       subtitle = facil_name)
+
+p1
+
+```
+
+```{r headcount_experiment}
+
+system.time({facil_exp_headcount <- lapply(timeline, headcounter, df=facil_records, var='first_facil')})
+
+facil_exp_headcount_data <- map_dfr(facil_exp_headcount, bind_rows)
+
+facil_top_facil <- facil_unique_stays %>% 
+  count(first_facil) %>% 
+  arrange(desc(n))
+
+p1 <- facil_exp_headcount_data %>% 
+  group_by(date, first_facil) %>% 
+  summarize(total_detained = sum(n)) %>% 
+  filter(date > "2011-10-01") %>% 
+  ggplot(aes(x = date, y = total_detained, color=first_facil, fill=first_facil, group=first_facil)) +
+  geom_line()
+
+ggplotly(p1)
+
+
+active_facil <- facil_exp_headcount_data %>% 
+  mutate(year_mth = as.yearmon(date)) %>% 
+  filter(n > 0) %>% 
+  group_by(year_mth) %>% 
+  summarize(n_facil = n_distinct(first_facil))
+
+p2 <- active_facil %>% 
+  filter(year_mth >= "2011-10-01") %>% 
+  ggplot(aes(x = year_mth, y = n_facil)) +
+  geom_col()
+
+p2
+
+```
+
+```{r entry_date}
+
+facil_unique_stays$entry_date <- as.Date(facil_unique_stays$entry_date, format="%Y-%m-%d")
+
+p1 <- facil_unique_stays %>% 
+  filter(entry_date < as.Date("2024-12-31"),
+         entry_date > as.Date("1945-01-01"),
+         detention_book_in_date_and_time > as.Date("2011-10-01")) %>% 
+  mutate(detention_fy = substr(quarter(detention_book_in_date_and_time, fiscal_start = 10, type="year.quarter"), 1, 4)) %>% 
+  ggplot(aes(x = detention_fy, y = entry_date)) +
+  geom_boxplot()
+
+p1
+
+facil_unique_stays$diff_entry_det <- facil_unique_stays$entry_date - 
+  as.Date(paste(year(facil_unique_stays$detention_book_in_date_and_time),
+                 month(facil_unique_stays$detention_book_in_date_and_time),
+                 day(facil_unique_stays$detention_book_in_date_and_time),
+                 sep='-'))
+
+p2 <- facil_unique_stays %>% 
+  filter(entry_date < as.Date("2024-12-31"),
+         entry_date > as.Date("1945-01-01"),
+         detention_book_in_date_and_time > as.Date("2011-10-01")) %>% 
+  mutate(detention_fy = substr(quarter(detention_book_in_date_and_time, fiscal_start = 10, type="year.quarter"), 1, 4)) %>% 
+  ggplot(aes(x = detention_fy, y = abs(as.numeric(diff_entry_det)))) +
+  scale_y_log10() +
+  geom_boxplot()
+
+p2
+
+p3 <- facil_unique_stays %>% 
+  filter(entry_date < as.Date("2024-12-31"),
+         entry_date > as.Date("1945-01-01"),
+         detention_book_in_date_and_time > as.Date("2011-10-01")) %>% 
+  ggplot(aes(x = detention_book_in_date_and_time, y = entry_date)) +
+  geom_point()
+
+p3
+
+
+```
+
