@@ -1,0 +1,109 @@
+---
+title: "FY12-24YTD ICE detention facility characteristics"
+author: "UWCHR"
+date: "2024-11-08"
+output:
+    html_document:
+        html_preview: true
+        toc: true
+        toc_depth: 3
+        toc_float: true
+        code_folding: hide
+---
+
+```{r import_data, message=FALSE, warning=FALSE, include=TRUE}
+options(scipen = 1000000)
+
+library(pacman)
+p_load(tidyverse, arrow, lubridate, zoo, digest, ggplot2, plotly, gghighlight, knitr, kableExtra, igraph, ggraph)
+
+df <- data.table::fread(file = here::here('export', 'output', 'ice_detentions_fy12-24ytd.csv.gz'),
+                        sep = '|')
+
+data.table::setDF(df)
+
+detloc_aor <- df %>% 
+  distinct(detention_facility_code, area_of_responsibility) %>% 
+  arrange(detention_facility_code, area_of_responsibility)
+
+in_ice_detain <- unique(df$detention_facility_code)
+
+```
+
+```{r facility_characeristics}
+
+# Data from NIJC 2017, UWCHR
+facilities <- read_delim(here::here('analyze', 'input', 'facilities.csv.gz'), delim = "|")
+
+in_ice_facil <- unique(facilities$detloc)
+
+missing_facil <- setdiff(in_ice_detain, in_ice_facil)
+
+```
+
+```{r headcount_known_facilities} 
+
+headcount <- read_delim(here::here('export', 'output', 'headcount_fy12-24ytd.csv.gz'), delim='|')
+
+headcount <- headcount %>% 
+  mutate(known_facil = detention_facility_code %in% in_ice_facil)
+
+p1 <- headcount %>% 
+  filter(date >= "2011-10-01") %>% 
+  group_by(date, known_facil) %>% 
+  summarize(n = sum(n)) %>% 
+  ggplot(aes(x = date, y = n, color = known_facil)) +
+  geom_line()
+
+p1
+
+```
+
+```{r headcount_facil_characeristics}
+
+p1 <- headcount %>% 
+  filter(date >= as.Date("2011-10-01")) %>% 
+  left_join(facilities, by = c('detention_facility_code' = 'detloc')) %>% 
+  group_by(date, type) %>% 
+  summarize(n = sum(n)) %>% 
+  ggplot(aes(x = date, y = n, color = type)) +
+  geom_line()
+
+p1
+
+p2 <- headcount %>% 
+  filter(date >= as.Date("2011-10-01")) %>% 
+  left_join(facilities, by = c('detention_facility_code' = 'detloc')) %>% 
+  group_by(date, over_72) %>% 
+  summarize(n = sum(n)) %>% 
+  ggplot(aes(x = date, y = n, color = over_72)) +
+  geom_line()
+
+p2
+
+```
+
+```{r first_last_obs}
+
+first_headcount <- headcount %>% 
+  group_by(detention_facility_code=factor(detention_facility_code)) %>%
+  arrange(date) %>% 
+  slice(1) %>% 
+  ungroup() %>% 
+  complete(detention_facility_code) %>% 
+  select(-c('n')) %>% 
+  rename(date_of_first_headcount = date) %>% 
+  mutate(date_of_first_headcount = as.Date(date_of_first_headcount, format = "%Y-%m-%d"))
+
+last_headcount <- headcount %>% 
+  group_by(detention_facility_code=factor(detention_facility_code)) %>% 
+  arrange(desc(date)) %>% 
+  slice(1) %>% 
+  ungroup() %>% 
+  complete(detention_facility_code) %>% 
+  select(-c('n')) %>% 
+  rename(date_of_last_headcount = date) %>% 
+  mutate(date_of_last_headcount = as.Date(date_of_last_headcount, format = "%Y-%m-%d"))
+
+active_facilities <- left_join(first_headcount, last_headcount, by=c("detention_facility_code", "known_facil"))
+```
