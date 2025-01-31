@@ -15,4 +15,5 @@
 *.log
 write/output/*
 !analyze/frozen/stay_headcount_fy12-24ytd.csv.gz
+!analyze/input/facilities.csv.gz
 !headcount/frozen/inc_headcount_fy12-24ytd.csv.gz
