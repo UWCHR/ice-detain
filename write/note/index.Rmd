@@ -93,7 +93,7 @@ knitr::kable(example, row.names = FALSE, format = "html") %>%
 
 When performing analysis of this dataset, it is important to consider whether the unit of interest is at the level of unique individuals, placements, or stays.
 
-The full dataset, `unique-stays/output/ice_detentions_fy12-24ytd.feather`, can be used to examine all placement records pertaining to a given individual, demographic characteristic, or specific detention facility. Note that results for calculations such as "average length of stay" will be incorrect if analysis is not restricted to one representative record per individual per stay.
+The full dataset, `unique-stays/output/ice_detentions_fy12-24ytd.csv.gz`, can be used to examine all placement records pertaining to a given individual, demographic characteristic, or specific detention facility. Note that results for calculations such as "average length of stay" will be incorrect if analysis is not restricted to one representative record per individual per stay.
 
 Analysis of characteristics per detention stay can be calculated by selecting distinct combinations of `anonymized_identifier` and `stay_book_in_date_time` values; or simply by using distinct `stayid` values. Additional analysis fields generated in `unique-stays/src/unique-stays.R` can be used to select representative records for each stay based on specific characteristics, such as the `longest_placement` per stay or `last_placement` per stay. To select the first placement per stay, simply filter the dataset to select records where `placement_count == 1`.
 
