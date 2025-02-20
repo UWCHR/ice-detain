@@ -11,6 +11,8 @@ output:
         code_folding: hide
 ---
 
+One use case for ICE detention history data is to analyze networks of detention transfers. In the below we set up a very basic framework for such analysis.
+
 ```{r import_data, message=FALSE, warning=FALSE, include=TRUE}
 options(scipen = 1000000)
 
@@ -28,33 +30,41 @@ detloc_aor <- df %>%
 
 
 ```
-```{r network_setup}
 
+Generate a detention transfer "edge list" by lagging detention placements per `stayid`. Each row represents a facility transfer where `from_facil` is the previous placement `detention_facility_code` and `to_facil` is current placement `detention_facility_code`. Initial detention book-ins will have missing `from_facil` values. We can assume that placement start dates in `detention_book_in_date_and_time` represent the approximate date of transfer between facilities. Other placement characteristics can included in the `dplyr::select()` call or joined back to the resulting dataframe by `recid`.
+
+```{r network_setup, message=FALSE, warning=FALSE, include=TRUE}
+
+# Set up transfer "edge list" with one row per facility transfer
+# Initial placements will have `from_facil` == NA
+# Take placement start date `detention_book_in_date_and_time` as approximate date of transfer 
+# Can bring back in other placement characteristics from full dataframe by joining with `recid`
 transfers <- df %>% 
   dplyr::select(stayid, recid, stay_book_in_date_time, detention_book_in_date_and_time, detention_facility_code) %>% 
   group_by(stayid) %>% 
-  mutate(from_facil = dplyr::lag(detention_facility_code, n = 1, default = NA)) %>% 
+  mutate(from_facil = dplyr::lag(detention_facility_code, n = 1, default = NA),
+         transfer_fy = as.numeric(substr(quarter(detention_book_in_date_and_time, with_year = TRUE, fiscal_start = 10), 1, 4))) %>% 
   rename(to_facil = detention_facility_code)
 
-transfers <- transfers %>% 
-  mutate(transfer_fy = as.numeric(substr(quarter(detention_book_in_date_and_time, with_year = TRUE, fiscal_start = 10), 1, 4)))
+```
 
-transfers_fy23 <- transfers %>% 
-  filter(transfer_fy == 2023)
+Very basic example implementation of network graph plot for nationwide facility transfers since FY2023; not immediately useful in this form, except to note that a small subsection is isolated from the broader network.
 
-# Transfers to/from NWIPC during FY 2023
-dat <- transfers_fy23 %>% 
-  filter(!is.na(from_facil),
+Numeric summary of transfers may be more informative than visual plot for many purposes. Network graph could be configured to represent real-world facility location by geocoding and joining in facility addresses from `analyze/input/facilities.csv.gz`.
+
+Extensive documentation of network graph techniques: https://kateto.net/netscix2016.html
+
+```{r network_graph, message=FALSE, warning=FALSE, include=TRUE}
+
+# Summarize transfers since FY 2023
+# Can also filter for all transfers involving specific facility, etc.
+dat <- transfers %>% 
+  filter(transfer_fy >= 2023,
+         !is.na(from_facil),
          # to_facil == "CSCNWWA" | from_facil == "CSCNWWA"
          ) %>% 
   group_by(from_facil) %>% 
   count(to_facil)
-
-```
-
-https://kateto.net/netscix2016.html
-
-```{r network_graph}
 
 # create the network object
 network <- graph_from_data_frame(d=dat, directed=T)

@@ -92,6 +92,9 @@ date_cols <- c("stay_book_in_date_time",
 
 skimr::skim(df[date_cols])
 
+unique_stays <- df %>% 
+  distinct(stayid, .keep_all=TRUE)
+
 skimr::skim(unique_stays[date_cols])
 
 ```
@@ -189,12 +192,6 @@ hist(dat, right = T, breaks=c(-100, -1, 0, 1, 250))
 
 ```
 
-Examining stay blocs with odd placement timings (instant transfers, impossible placement lengths, long gaps between placements).
-
-Many (but not all) records involving instant transfers (book-out time exactly equal to subsequent book-in time) appear to involve cases with `detention_release_reason` values of "Processing Disposition Changed Locally"; this would make sense if these placements are "on paper only" or simply administrative changes. These cases are not uncommon (`r length(ex_zero_ids)` individual stays during FY2020), so this is a good argument for using a headcount methodology which is not inclusive of book-out dates in order to not double-count these placements (see below).
-
-Negative placement gaps mean that the dataset records an individual as being in two places at one time, e.g. one placement is not completed but subsequent has already started. These are not common (`r length(ex_neg_ids)` individual stays during FY2020). These records will result in double counting in detention headcounts.
-
 ```{r}
 
 sample_cols <- c("stay_book_in_date_time",
@@ -247,6 +244,13 @@ df_ex_gap <- test_df %>%
   dplyr::select(all_of(sample_cols))
 
 ```
+
+
+Examining stay blocs with odd placement timings (instant transfers, impossible placement lengths, long gaps between placements).
+
+Many (but not all) records involving instant transfers (book-out time exactly equal to subsequent book-in time) appear to involve cases with `detention_release_reason` values of "Processing Disposition Changed Locally"; this would make sense if these placements are "on paper only" or simply administrative changes. These cases are not uncommon (`r length(ex_zero_ids)` individual stays during FY2020), so this is a good argument for using a headcount methodology which is not inclusive of book-out dates in order to not double-count these placements (see below).
+
+Negative placement gaps mean that the dataset records an individual as being in two places at one time, e.g. one placement is not completed but subsequent has already started. These are not common (`r length(ex_neg_ids)` individual stays during FY2020). These records will result in double counting in detention headcounts.
 
 # Exclusive versus inclusive headcount methods
 
