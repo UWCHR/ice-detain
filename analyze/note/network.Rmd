@@ -1,0 +1,80 @@
+---
+title: "FY12-24YTD ICE detention facility network"
+author: "UWCHR"
+date: "2025-02-19"
+output:
+    html_document:
+        html_preview: true
+        toc: true
+        toc_depth: 3
+        toc_float: true
+        code_folding: hide
+---
+
+```{r import_data, message=FALSE, warning=FALSE, include=TRUE}
+options(scipen = 1000000)
+
+library(pacman)
+p_load(tidyverse, arrow, lubridate, zoo, digest, ggplot2, plotly, gghighlight, knitr, kableExtra, igraph, ggraph)
+
+df <- data.table::fread(file = here::here('export', 'output', 'ice_detentions_fy12-24ytd.csv.gz'),
+                        sep = '|')
+
+data.table::setDF(df)
+
+detloc_aor <- df %>% 
+  distinct(detention_facility_code, area_of_responsibility) %>% 
+  arrange(detention_facility_code, area_of_responsibility)
+
+
+```
+```{r network_setup}
+
+transfers <- df %>% 
+  dplyr::select(stayid, recid, stay_book_in_date_time, detention_book_in_date_and_time, detention_facility_code) %>% 
+  group_by(stayid) %>% 
+  mutate(from_facil = dplyr::lag(detention_facility_code, n = 1, default = NA)) %>% 
+  rename(to_facil = detention_facility_code)
+
+transfers <- transfers %>% 
+  mutate(transfer_fy = as.numeric(substr(quarter(detention_book_in_date_and_time, with_year = TRUE, fiscal_start = 10), 1, 4)))
+
+transfers_fy23 <- transfers %>% 
+  filter(transfer_fy == 2023)
+
+# Transfers to/from NWIPC during FY 2023
+dat <- transfers_fy23 %>% 
+  filter(!is.na(from_facil),
+         # to_facil == "CSCNWWA" | from_facil == "CSCNWWA"
+         ) %>% 
+  group_by(from_facil) %>% 
+  count(to_facil)
+
+```
+
+https://kateto.net/netscix2016.html
+
+```{r network_graph}
+
+# create the network object
+network <- graph_from_data_frame(d=dat, directed=T)
+
+# E(network)$width <- 1+E(network)$n/12
+
+l <- layout_with_fr(network)
+
+V(network)$size <- 8
+
+V(network)$frame.color <- "white"
+
+V(network)$color <- "orange"
+
+V(network)$label <- "" 
+
+E(network)$arrow.mode <- 0
+
+# plot it
+plot(network, layout=l)
+
+```
+
